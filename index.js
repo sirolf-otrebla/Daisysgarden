@@ -2,14 +2,33 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const sqlDbFactory = require("knex");
+const process = require("process");
 
-const sqlDb = sqlDbFactory({
-  client: "sqlite3",
-  debug: true,
-  connection: {
-    filename: "./petsdb.sqlite"
+let sqlDb;
+
+function initSqlDB() {
+  /* Locally we should launch the app with TEST=true to use SQLlite:
+
+       > TEST=true node ./index.js
+
+    */
+  if (process.env.TEST) {
+    sqlDb = sqlDbFactory({
+      client: "sqlite3",
+      debug: true,
+      connection: {
+        filename: "./petsdb.sqlite"
+      }
+    });
+  } else {
+    sqlDb = sqlDbFactory({
+      debug: true,
+      client: "pg",
+      connection: process.env.DATABASE_URL,
+      ssl: true
+    });
   }
-});
+}
 
 function initDb() {
   return sqlDb.schema.hasTable("pets").then(exists => {
@@ -90,6 +109,7 @@ app.post("/pets", function(req, res) {
 
 app.set("port", serverPort);
 
+initSqlDB();
 initDb();
 
 /* Start the server on port 3000 */
