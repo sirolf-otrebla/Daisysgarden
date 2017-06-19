@@ -18,7 +18,8 @@ function initSqlDB() {
       debug: true,
       connection: {
         filename: "./petsdb.sqlite"
-      }
+      },
+      useNullAsDefault: true
     });
   } else {
     sqlDb = sqlDbFactory({
