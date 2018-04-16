@@ -78,17 +78,23 @@ app.get("/pets", function(req, res) {
   } else if (sortby === "-age") {
     myQuery = myQuery.orderBy("born", "desc");
   }
-  myQuery.limit(limit).offset(start).then(result => {
-    res.send(JSON.stringify(result));
-  });
+  myQuery
+    .limit(limit)
+    .offset(start)
+    .then(result => {
+      res.send(JSON.stringify(result));
+    });
 });
 
 app.delete("/pets/:id", function(req, res) {
   let idn = parseInt(req.params.id);
-  sqlDb("pets").where("id", idn).del().then(() => {
-    res.status(200);
-    res.send({ message: "ok" });
-  });
+  sqlDb("pets")
+    .where("id", idn)
+    .del()
+    .then(() => {
+      res.status(200);
+      res.send({ message: "ok" });
+    });
 });
 
 app.post("/pets", function(req, res) {
@@ -97,10 +103,12 @@ app.post("/pets", function(req, res) {
     tag: req.body.tag,
     born: req.body.born
   };
-  sqlDb("pets").insert(toappend).then(ids => {
-    let id = ids[0];
-    res.send(_.merge({ id, toappend }));
-  });
+  sqlDb("pets")
+    .insert(toappend)
+    .then(ids => {
+      let id = ids[0];
+      res.send(_.merge({ id, toappend }));
+    });
 });
 
 // app.use(function(req, res) {
