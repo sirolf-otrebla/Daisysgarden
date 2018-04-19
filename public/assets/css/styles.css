@@ -1,0 +1,230 @@
+
+body{
+    margin: 0%;
+    background-color: #C0CFE8;
+}
+
+
+.page-header-bar {
+    display: block;
+    position: -webkit-sticky;
+    position: sticky;
+    margin-top: 0;
+    top: 0vh;
+    z-index: 100;
+    background-color: #29384F;
+    width: 100%;
+    min-height: 6vh;
+}
+.container-fluid.main_image{
+    display: flex;
+    position: relative;
+    z-index: 0;
+    top: 0px;
+    height: 92vh;
+    width: 100%;
+    margin: 0px;
+    padding: 0;
+    min-height: 94vh;
+    opacity: 0.45;
+    background-image: url("../test.jpg");
+    background-size: cover;
+}
+
+.page-header .navigation{
+    margin-top: 0px;
+    position: relative;
+    border-radius: 10px;
+    border-color: #dac0ff;
+}
+
+.page-header .logo-bar{
+    position: relative;
+    padding-top: 0%;
+    border-radius: 10px;
+    border-color: beige;
+
+}
+
+
+logo-bar .logo-container{
+
+
+}
+.container.home-section{
+    padding: 0;
+    margin-top: 6vh;
+    margin-bottom: 6vh;
+
+}
+.container.home-section-title{
+    margin: 0;
+    left: 0;
+    right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 1vh;
+    font-size: 40pt;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    color: #29384F;
+}
+.container.home-section-content {
+    padding-top: 8vh;
+    padding-bottom: 8vh;
+    border-top: 1vh solid #29384F;
+    border-bottom: 1vh solid #29384F;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14pt;
+    text-align: center;
+    top: 5vh;
+    bottom: 5vh;
+
+
+}
+
+.container-fluid.mi_background_container{
+    margin: 0px;
+    padding: 0px;
+    z-index: -1;
+    background-color: #29384F;
+}
+
+.container-fluid.news-container{
+    position: relative;
+    border-top: 1.5vh solid white;
+    border-bottom: 1.5vh solid white;
+    height: 45vh;
+    max-height: 45vh;
+    padding-left: 0;
+    padding-right: 0;
+    z-index: 0;
+
+}
+.container-fluid.news-container.top{
+    margin-top: 2vh;
+    border-top: 0px;
+    padding-top: 0vh;
+    z-index: 0;
+}
+
+.container-fluid.news-container.bottom{
+    margin-bottom: 2vh;
+    padding-bottom: 1vh;
+    border-bottom: 0;
+    z-index: 0;
+}
+.container-fluid.news-background{
+    display: block;
+    position: absolute;
+    height: 45vh;
+    top: 0;
+    bottom: 0;
+    min-height: 45vh;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+
+}
+
+
+.container-fluid.news-background.image{
+    display: block;
+    position: relative;
+    z-index: 0;
+    top: 0px;
+    width: 100%;
+    background-image: url("../082616_childsports_THUMB_LARGE.jpg");
+    background-size: cover;
+    margin-left: 0;
+    margin-right: 0;
+    z-index: 1;
+    opacity: 0.45;
+}
+.container-fluid.news-background.color{
+    position: relative;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    background-color: #29384F;
+
+}
+
+.page-footer {
+    display: block;;
+    position: relative;
+    background-color: #29384F;
+    bottom: 0;
+    width: 100%;
+    min-height: 20vh;
+
+
+}
+
+
+.container.news-title.left{
+    position: absolute;
+    top: 2vh;
+    padding-left: 3vh;
+    z-index: 2;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 40pt;
+    text-align: left;
+    align-content: right;
+    color: #ffffff;
+}
+
+.container.news-title.right{
+    position: absolute;
+    right: 0;
+    top: 2vh;
+    padding-right: 3vh;
+    z-index: 2;
+    text-align: right;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 40pt;
+    color: #ffffff;
+}
+
+.container.news-content.left{
+    position: absolute;
+    top: 20vh;
+    padding-left: 3vh;
+    padding-right: 20%;
+    font-family: 'Raleway', sans-serif;
+    text-align: left;
+    font-size: 16pt;
+    z-index: 3;
+    color: #ffffff;
+}
+
+.container-fluid.page{
+    margin: 0;
+    padding: 0;
+    background-image: url("../bkg_up-mod2.png");
+    background-size: cover;
+    z-index: -100;
+}
+.container.news-content.right{
+    position: absolute;
+    top: 20vh;
+    right: 0;
+    padding-right: 3vh;
+    padding-left: 20%;
+    font-family: 'Raleway', sans-serif;
+    text-align: right;
+    font-size: 16pt;
+    z-index: 3;
+    color: #ffffff;
+}
+
+.nav-item.my-nav-item{
+    padding-left: 2vh;
+    padding-right: 2vh;
+}
+.nav-link.my-nav-link{
+    font-family: 'Raleway', sans-serif;
+    font-size: 14pt;
+    padding-left: 2vh;
+    padding-right: 2vh;
+}
