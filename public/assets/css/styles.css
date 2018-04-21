@@ -281,3 +281,19 @@ logo-bar .logo-container{
     background-color: rgba(0,0,0,0.4);
 }
 
+
+
+nav.sub-nav{
+    position: relative;
+    font-family: 'Raleway', sans-serif;
+    font-size: 12pt;
+    display: block;
+    margin: 5vh 0;
+    left: 0;
+    right: 0;
+    width: 100vh;
+    border-top: 1vh solid #29384F;
+    border-bottom: 1vh solid #29384F;
+    text-align: center;
+
+}
