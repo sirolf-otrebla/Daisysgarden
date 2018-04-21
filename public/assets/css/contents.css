@@ -1,6 +1,10 @@
 
 .container.page-content{
-
+    margin-top: 5vh;
+    margin-bottom: 10vh;
+    border-bottom: 1vh solid #29384F;
+    padding-bottom: 5vh;
+    z-index: -100;
 
 }
 
@@ -21,12 +25,10 @@
 .container-fluid.content-title-image.image{
     display: block;
     position: relative;
-    z-index: 0;
     top: 0px;
     width: 100%;
     background-size: cover;
-    margin-left: 0;
-    margin-right: 0;
+    background-image: url("../location2.jpg");
     z-index: 1;
     opacity: 0.45;
 }
@@ -34,16 +36,20 @@
 .container-fluid.content-title-image.color{
     position: relative;
     top: 0;
-    z-index: -1;
     width: 100%;
     background-color: #29384F;
 
 }
 
-.container-fluid.content-title{
+.container.content-title{
+    position: absolute;
+    padding-top: 15vh;
+    margin: 0;
     text-align: center;
     font-family: 'Montserrat', Arial, sans-serif;
     font-size: 40pt;
+    z-index: 10;
+    color: #ffffff;
 
 }
 
@@ -58,4 +64,13 @@
     font-family: 'Raleway', sans-serif;
     font-size: 14pt;
 
+}
+
+.container-fluid.sub-nav{
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    border-top: 0.5vh solid #29384F;
+    border-bottom: 0.5vh solid #29384F;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
 }
