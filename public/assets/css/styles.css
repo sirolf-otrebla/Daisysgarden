@@ -4,6 +4,10 @@ body{
     background-color: #C0CFE8;
 }
 
+img{
+    max-width: 95%;
+}
+
 
 .page-header-bar {
     display: block;
@@ -29,6 +33,21 @@ body{
     min-height: 93vh;
     opacity: 0.45;
     background-image: url("../test.jpg");
+    background-size: cover;
+}
+
+.container-fluid.second-image{
+    display: flex;
+    position: relative;
+    z-index: 0;
+    top: 0px;
+    height: 92vh;
+    width: 100%;
+    margin: 0px;
+    padding: 0;
+    min-height: 93vh;
+    opacity: 0.45;
+    background-image: url("../business-people-1.jpg");
     background-size: cover;
 }
 
@@ -236,3 +255,29 @@ logo-bar .logo-container{
     padding-left: 2vh;
     padding-right: 2vh;
 }
+
+/* Bottom left text */
+.bottom-left {
+    position: absolute;
+    bottom: 0;
+    left: 15px;
+    width: 95%;
+    max-width: 150px;
+}
+
+.title{
+    color: white;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.54);
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 15px;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.subText{
+    color: white;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.54);
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 10px;
+    background-color: rgba(0,0,0,0.4);
+}
+
