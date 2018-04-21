@@ -281,3 +281,13 @@ logo-bar .logo-container{
     background-color: rgba(0,0,0,0.4);
 }
 
+.nav-link.my-nav-pills.active{
+    background-color: #29384F!important;
+    color: white!important;
+}
+
+.nav-link.my-nav-pills{
+    /*border-radius: 0!important;*/
+    /*background-color: #29384F!important;*/
+    color: #29384F!important;
+}
