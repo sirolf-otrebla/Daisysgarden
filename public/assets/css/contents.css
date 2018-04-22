@@ -1,7 +1,10 @@
-
-.container.page-content{
-    margin-top: 5vh;
-    margin-bottom: 10vh;
+.container-fluid.c-page{
+    padding: 5vh 0 10vh;
+    background-image: url("../bkg_up-mod2.png");
+    background-size: cover;
+    z-index: -100;
+}
+.container.page-content{;
     border-bottom: 1vh solid #29384F;
     padding-bottom: 5vh;
     z-index: -100;
@@ -57,6 +60,8 @@
     font-family: 'Raleway', sans-serif;
     font-size: 14pt;
     text-align: justify;
+    padding-top: 7vh;
+    padding-bottom: 2vh;
 
 }
 
@@ -73,4 +78,30 @@
     border-bottom: 0.5vh solid #29384F;
     padding-top: 1vh;
     padding-bottom: 1vh;
+}
+
+
+.container.row.link-container{
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.btn.btn-outline-primary.btn-large.link-button{
+    border-color: #29384F!important;
+    border-radius: 0;
+    border: 0.5vh solid;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14pt;
+    color: #29384F!important;
+    width: 30vh;
+
+}
+.btn.btn-outline-primary.btn-large.link-button:focus{
+    color: white;
+    background-color: #29384F!important;
+}
+
+.btn.btn-outline-primary.btn-large.link-button:hover{
+    color: white!important;
+    background-color: #29384F!important;
 }

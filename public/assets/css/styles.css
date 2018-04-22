@@ -225,7 +225,7 @@ logo-bar .logo-container{
     color: #ffffff;
 }
 
-.container-fluid.page{
+.container-fluid.nc-page{
     margin: 0;
     padding: 0;
     background-image: url("../bkg_up-mod2.png");
