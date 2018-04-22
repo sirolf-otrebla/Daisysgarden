@@ -1,5 +1,5 @@
 .container-fluid.c-page{
-    padding: 5vh 0 10vh;
+    padding: 2vh 0 10vh;
     background-image: url("../bkg_up-mod2.png");
     background-size: cover;
     z-index: -100;
@@ -105,3 +105,4 @@
     color: white!important;
     background-color: #29384F!important;
 }
+

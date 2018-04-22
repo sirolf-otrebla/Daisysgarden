@@ -8,7 +8,6 @@ img{
     max-width: 95%;
 }
 
-
 .page-header-bar {
     display: block;
     position: -webkit-sticky;
@@ -290,4 +289,29 @@ logo-bar .logo-container{
     /*border-radius: 0!important;*/
     /*background-color: #29384F!important;*/
     color: #29384F!important;
+}
+
+.breadcrumb.oi{
+    background-color: white;
+    border: 0 solid #29384F;
+    border-bottom-width: 0.5vh;
+    border-radius: 0;
+
+}
+
+.breadcrumb-item.oi-item{
+    font-family: 'Raleway', sans-serif;
+    font-size: 10pt;
+    color: #29384F;
+}
+
+.breadcrumb-item.oi-item.active{
+    font-family: 'Raleway', sans-serif;
+    font-size: 10pt;
+    color: dimgrey;
+}
+
+a.oi-item-link{
+    color: #29384F!important;
+
 }
