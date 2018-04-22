@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
+    <!--per adattarsi al cellulare-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Corinto</title>
 
     <link href="https://fonts.googleapis.com/css?family=Raleway:600" rel="stylesheet">
@@ -22,15 +26,10 @@
 
     <style>
 
-        /* solo prova */
-        .img-valign {
-            vertical-align: middle;
-            horizontal-align:left;
-            margin-bottom: 0.75em;
-        }
+
 
         /*override della classe in css */
-        .container.single_person-section-content {
+        .container .single-person-section-content {
             padding-top: 8vh;
             padding-bottom: 8vh;
             border-top: 1vh solid #29384F;
@@ -39,24 +38,21 @@
             font-size: 14pt;
             top: 5vh;
             bottom: 5vh;
-
-
         }
 
-        /* per mettere distanza tra immagine e testo alla sua destra */
-        .gap-right {
-            margin-right: 30px;
+
+        .contacts{
+            text-align: center;
+            margin-top: 10%;
         }
 
-        /* solo prove */
-        .text1 {
-            font-size: 44px;
+
+        .gap-bottom {
+            margin-bottom: 30px;
         }
 
-        .text2 {
-            font-size: 24px;
-        }
-    </style>
+
+    </style>-->
 
 
 </head>
@@ -115,42 +111,23 @@
         <div class="container home-section-title">
             MARIO ROSSI
         </div>
-        <div class="container single_person-section-content">
-            <div>
-                <!--clearfix è per equilibrare immagine, testo e bordo -->
-                <!-- rounded-circle e float-left sono delle classi di bootstrap -->
-                <div class="clearfix ">
-                    <img src="http://www.venablesbell.com/api/image?path=people/Paul_Venables_final.jpg&width=350&height=350" class="rounded-circle float-left gap-right" />
-                    wtf
-                    <h4>wotwotowtowotwob</h4>
+        <div class="container single-person-section-content">
 
-
+            <div class="row">
+                <div class=" col-12 col-sm-5 ">
+                    <img src="http://www.venablesbell.com/api/image?path=people/Paul_Venables_final.jpg&width=350&height=350" class=" img-fluid rounded-circle mx-auto d-block gap-bottom " />
                 </div>
-                <div>
-                    <h1>wtf</h1>
-                    <h4>wotwotowtowotwob</h4>
+                <div class=" col-12 col-sm-7 col-md-6  contacts">
+                    <span>Email: mario.rossi@gmail.com</span><br>
+                    <span>N. Telefono: 333-5467890</span>
                 </div>
-
-
-
-
-
-                <img class="img-valign" src="http://www.placehold.it/20x20" alt="" />
-                <span class="text1">some text1</span>
-
             </div>
 
-            <br/><br/><br/>
+            <div class></div>
 
-            <!-- Case 2) image height is bigger than text height -->
-            <div>
 
-                <img class="img-valign" src="http://www.placehold.it/50x50" alt="" />
-                <span class="text2">some text2</span>
-                <img class="img-valign" src="http://www.placehold.it/70x70" alt="" />
-                <span class="text2">some text2</span>
 
-            </div>
+
         </div>
 
 
