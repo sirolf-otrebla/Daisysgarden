@@ -74,11 +74,11 @@
         <ol class="breadcrumb oi">
             <li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../../index.html" >Home</a></li>
             <li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../location_transition_static.html">Sedi</a></li>
-            <li class="breadcrumb-item oi-item"><a class="oi-item-link" href="location01_static.html">Sede di Dachau</a></li>
-            <li class="breadcrumb-item oi-item active">Mappa</li>
+            <li class="breadcrumb-item oi-item"><a class="oi-item-link" href="location03_static.html">Sede di Buchenwald</a></li>
+            <li class="breadcrumb-item oi-item active">Contatti</li>
         </ol>
         <div class="container content-title">
-            LA SEDE DI DACHAU
+            LA SEDE DI BUCHENWALD
         </div>
         <div class="container-fluid content-title-image color ">
             <div class="container-fluid content-title-image image">
@@ -89,42 +89,29 @@
         <div class="container-fluid sub-nav" id="sub-nav">
             <ul class="nav nav-pills nav-justified">
                 <li class="nav-item">
-                    <a class="nav-link my-nav-pills" href="location01_static.html">Presentazione</a>
+                    <a class="nav-link my-nav-pills" href="location03_static.html">Presentazione</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link my-nav-pills active" href="location01_map_static.html">Mappa</a>
+                    <a class="nav-link my-nav-pills" href="location03_map_static.html">Mappa</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link my-nav-pills" href="location01_contacts_static.html">Contatti</a>
+                    <a class="nav-link my-nav-pills active" href="location03_contacts_static.html">Contatti</a>
                 </li>
             </ul>
         </div>
-        <div class="container-fluid content-body d-flex flex-row">
-            <div id="map" class="p2">
-            </div>
-            <script>
-                function initMap() {
-                    var uluru = {lat: 48.270278, lng: 11.468056};
-                    var map = new google.maps.Map(document.getElementById('map'), {
-                        zoom: 15,
-                        center: uluru
-                    });
-                    var marker = new google.maps.Marker({
-                        position: uluru,
-                        map: map
-                    });
-                }
-            </script>
-            <script async defer
-                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBTfsJBBs3nIrg_V30s_cqsNQ80ze51Lo&callback=initMap">
-            </script>
-            <div class="p2 half-right align-middle">
-                    <p><img src="../../assets/location.svg"> Dachau, via dei martiri 10</p>
-                    <br>
-                    <p><img src="../../assets/calendar.svg"> Lun-Ven</p>
-                    <br>
-                    <p><img src="../../assets/clock.svg"> 09:00-18:00</p>
-            </div>
+        <div class="container-fluid content-body">
+            <p><img src="../../assets/device-mobile.svg"> <a href="tel:1-847-555-5555">Reception</a><br>
+                <img src="../../assets/mail.svg"> <a href="mailto:reception@mgarden.it">Reception</a>
+            </p>
+            <br>
+            <p><img src="../../assets/device-mobile.svg"> <a href="tel:1-847-555-5555">Reparto 1</a><br>
+                <img src="../../assets/mail.svg"> <a href="mailto:reparto1@mgarden.it">Reparto 1</a>
+            </p>
+            <br>
+            <p><img src="../../assets/device-mobile.svg"> <a href="tel:1-847-555-5555">Direttore</a><br>
+                <img src="../../assets/mail.svg"> <a href="mailto:direttoren@mgarden.it">Direttore</a>
+            </p>
+            <br>
         </div>
     </div>
     <div class="d-flex flex-row justify-content-around" style="margin-top: 7vh">
@@ -138,5 +125,6 @@
 
 
 <div class="page-footer"> FOOTER</div>
+</body>
 </body>
 </html>

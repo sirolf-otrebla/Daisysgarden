@@ -315,3 +315,19 @@ a.oi-item-link{
     color: #29384F!important;
 
 }
+
+.half-right{
+    position: relative;
+    padding-left: 5vh;
+    vertical-align: middle;
+}
+
+#map{
+    position: relative;
+    display: flex;
+    width: 60%;
+    max-height: 400px;
+    min-height: 200px;
+    height: 400px;
+    left: 0;
+}
