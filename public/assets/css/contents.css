@@ -28,7 +28,7 @@
 .container-fluid.content-title-image.image{
     display: block;
     position: relative;
-    top: 0px;
+    top: 0;
     width: 100%;
     background-size: cover;
     background-image: url("../location2.jpg");
