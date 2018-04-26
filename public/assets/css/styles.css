@@ -334,3 +334,9 @@ a.oi-item-link{
     height: 400px;
     left: 0;
 }
+
+.navbar-logo{
+    height: 40px;
+    padding-left: 2vh;
+    padding-right: 2vh;
+}
