@@ -6,6 +6,7 @@
 }
 .container.page-content{;
     border-bottom: 1vh solid #29384F;
+    margin-bottom: 5vh;
     padding-bottom: 5vh;
     z-index: -100;
 
