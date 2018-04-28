@@ -1,6 +1,6 @@
 .container-fluid.c-page{
     padding: 2vh 0 10vh;
-    background-image: url("../bkg_up-mod2.png");
+    background-image: url("../images/bkg_up-mod2.png");
     background-size: cover;
     z-index: -100;
 }
@@ -32,7 +32,7 @@
     top: 0;
     width: 100%;
     background-size: cover;
-    background-image: url("../location2.jpg");
+    background-image: url("../images/location2.jpg");
     z-index: 1;
     opacity: 0.45;
 }

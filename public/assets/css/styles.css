@@ -31,7 +31,7 @@ img{
     padding: 0;
     min-height: 93vh;
     opacity: 0.45;
-    background-image: url("../test.jpg");
+    background-image: url("../images/test.jpg");
     background-size: cover;
 }
 
@@ -154,11 +154,11 @@ img{
 }
 
 .container-fluid.list-background.image.news{
-    background-image: url("../082616_childsports_THUMB_LARGE.jpg");
+    background-image: url("../images/082616_childsports_THUMB_LARGE.jpg");
 }
 
 .container-fluid.list-background.image.service{
-    background-image: url("../082616_childsports_THUMB_LARGE.jpg");
+    background-image: url("../images/082616_childsports_THUMB_LARGE.jpg");
 
 }
 .container-fluid.list-background.color{
@@ -230,7 +230,7 @@ img{
 .container-fluid.nc-page{
     margin: 0;
     padding: 0;
-    background-image: url("../bkg_up-mod2.png");
+    background-image: url("../images/bkg_up-mod2.png");
     background-size: cover;
     z-index: -100;
 }
@@ -361,4 +361,10 @@ a.oi-item-link{
     min-width: 51vh;
     border-radius: 0;
 
+}
+
+.navbar-logo{
+    height: 40px;
+    padding-left: 2vh;
+    padding-right: 2vh;
 }
