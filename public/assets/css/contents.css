@@ -107,3 +107,28 @@
     background-color: #29384F!important;
 }
 
+.container.contacts-text-fields{
+}
+
+.container.contacts-mail-field{
+
+}
+
+.container.contacts-message-field{
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+
+}
+
+.form-control.contacts{
+    /* put something here /*
+
+     */
+}
+
+.container.contact-type{
+    font-family: 'Montserrat', Arial, sans-serif;
+    margin-bottom: 1vh;
+    color: #29384F;
+    text-transform: uppercase;
+}
