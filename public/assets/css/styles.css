@@ -370,7 +370,7 @@ a.oi-item-link{
     padding-right: 2vh;
 }
 
-.container.single-person-section-content {
+.single-person-section-content {
     padding-top: 8vh;
     padding-bottom: 8vh;
     border-top: 1vh solid #29384F;
@@ -382,12 +382,12 @@ a.oi-item-link{
 }
 
 
-.contacts{
+.contacts-single-person{
     text-align: center;
     margin-top: 10%;
 }
 
-.story{
+.story-single-person{
     text-align: justify;
 
 }
@@ -396,7 +396,7 @@ a.oi-item-link{
     margin-bottom: 30px;
 }
 
-.button{
+.button-single-person{
     border-color: #29384F!important;
     border-radius: 0;
     border: 0.5vh solid;
@@ -405,12 +405,12 @@ a.oi-item-link{
     color: #29384F!important;
     width: 40vh;
 }
-.button:focus{
+.button-single-person:focus{
     color: white;
     background-color: #29384F!important;
 }
 
-.button:hover{
+.button-single-person:hover{
     color: white!important;
     background-color: #29384F!important;
 }
