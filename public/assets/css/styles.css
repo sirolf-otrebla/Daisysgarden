@@ -33,7 +33,6 @@ img{
     opacity: 0.45;
     background-image: url("../images/test.jpg");
     background-size: cover;
-    background-position: center;
 }
 
 .container-fluid.second-image{
@@ -369,4 +368,49 @@ a.oi-item-link{
     height: 40px;
     padding-left: 2vh;
     padding-right: 2vh;
+}
+
+.container.single-person-section-content {
+    padding-top: 8vh;
+    padding-bottom: 8vh;
+    border-top: 1vh solid #29384F;
+    border-bottom: 1vh solid #29384F;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14pt;
+    top: 5vh;
+    bottom: 5vh;
+}
+
+
+.contacts{
+    text-align: center;
+    margin-top: 10%;
+}
+
+.story{
+    text-align: justify;
+
+}
+
+.gap-bottom {
+    margin-bottom: 30px;
+}
+
+.button{
+    border-color: #29384F!important;
+    border-radius: 0;
+    border: 0.5vh solid;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14pt;
+    color: #29384F!important;
+    width: 40vh;
+}
+.button:focus{
+    color: white;
+    background-color: #29384F!important;
+}
+
+.button:hover{
+    color: white!important;
+    background-color: #29384F!important;
 }
