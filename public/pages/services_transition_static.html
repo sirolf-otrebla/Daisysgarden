@@ -25,7 +25,7 @@
 <div class="page-header-bar">
     <nav class="navbar navbar-expand-xl bg-dark navbar-dark" style=" top: 0; bottom: 0; background-color: #29384F!important">
         <!-- Brand -->
-        <a class="navbar-brand" href="../index.html"><img class="navbar-logo" src="../assets/logo.png"> Daisy's Garden</a>
+        <a class="navbar-brand" href="../index.html"><img class="navbar-logo" src="../assets/images/logo.png"> Daisy's Garden</a>
 
         <!-- Toggler/collapsibe Button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -67,10 +67,11 @@
     </nav>
 </div>
 <div class="container-fluid nc-page ">
-    <div class="container" >
-        <ol class="breadcrumb oi">
+    <div class="container breadcrumb-transition-container" >
+        <ol class="breadcrumb oi" style="border-bottom-width: 1vh ">
             <li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../index.html" >Home</a></li>
-            <li class="breadcrumb-item oi-item active">Servizi</li>
+            <li class="breadcrumb-item oi-item"><a class="oi-item-link" href="#" >Servizi</a></li></li>
+            <li class="breadcrumb-item oi-item active">Tutte le Sedi</li>
         </ol>
     </div>
     <div class="container home-section">
@@ -80,15 +81,16 @@
         <div class="container home-section-content">
             <div class="container-fluid sub-nav" id="sub-nav">
                 <ul class="nav nav-pills nav-justified">
-                    <li class="nav-item">
-                        <a class="nav-link my-nav-pills active" href="#">Elenco</a>
-                    </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link my-nav-pills dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Per Location</a>
-                        <div id="dropdown" class="dropdown-menu my-nav-pills">
-                            <a class="dropdown-item my-nav-pills" href="location01_services_static.html">Dachau</a>
-                            <a class="dropdown-item my-nav-pills" href="#">Birkenau</a>
-                            <a class="dropdown-item my-nav-pills" href="#">Buchenwald</a>
+                        <a class="nav-link my-nav-pills dropdown-toggle service-by-location" data-toggle="dropdown"
+                           href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                            Per Location</a>
+                        <div id="dropdown" class="dropdown-menu my-nav-pills by-location-dropdown">
+                            <a class="dropdown-item my-nav-pills" href="location01_services_static.html">Sede di Dachau</a>
+                            <a class="dropdown-item my-nav-pills" href="location02_services_static.html"> Sede di Birkenau</a>
+                            <a class="dropdown-item my-nav-pills" href="location03_services_static.html"> Sede di Buchenwald</a>
+                            <a class="dropdown-item my-nav-pills" href="services_transition_static.html"> Tutti i Servizi</a>
+
                         </div>
                     </li>
 
@@ -101,7 +103,7 @@
                 <div class="container list-content left">
                 </div>
                 <div class="container-fluid list-background color">
-                    <div class="container-fluid list-background image" style="background-image: url(../assets/service3.jpg)">
+                    <div class="container-fluid list-background image" style="background-image: url(../assets/images/service3.jpg)">
                     </div>
                 </div>
             </div>
@@ -111,7 +113,7 @@
                     Inceneritori
                 </div>
                 <div class="container-fluid list-background color">
-                    <div class="container-fluid list-background image" style="background-image: url(../assets/service1.jpg)">
+                    <div class="container-fluid list-background image" style="background-image: url(../assets/images/service1.jpg)">
                     </div>
                 </div>
             </div>
@@ -121,7 +123,7 @@
                     Test sulle persone
                 </div>
                 <div class="container-fluid list-background color">
-                    <div class="container-fluid list-background image" style="background-image: url(../assets/servizio2jpg.jpg)">
+                    <div class="container-fluid list-background image" style="background-image: url(../assets/images/servizio2jpg.jpg)">
                     </div>
                 </div>
             </div>
@@ -131,7 +133,7 @@
                     Docce
                 </div>
                 <div class="container-fluid list-background color">
-                    <div class="container-fluid list-background image" style="background-image: url(../assets/servizio2jpg.jpg)">
+                    <div class="container-fluid list-background image" style="background-image: url(../assets/images/servizio2jpg.jpg)">
                     </div>
                 </div>
             </div>

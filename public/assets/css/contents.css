@@ -1,11 +1,12 @@
 .container-fluid.c-page{
     padding: 2vh 0 10vh;
-    background-image: url("../bkg_up-mod2.png");
+    background-image: url("../images/bkg_up-mod2.png");
     background-size: cover;
     z-index: -100;
 }
 .container.page-content{;
     border-bottom: 1vh solid #29384F;
+    margin-bottom: 5vh;
     padding-bottom: 5vh;
     z-index: -100;
 
@@ -31,7 +32,7 @@
     top: 0;
     width: 100%;
     background-size: cover;
-    background-image: url("../location2.jpg");
+    background-image: url("../images/location2.jpg");
     z-index: 1;
     opacity: 0.45;
 }
@@ -106,3 +107,28 @@
     background-color: #29384F!important;
 }
 
+.container.contacts-text-fields{
+}
+
+.container.contacts-mail-field{
+
+}
+
+.container.contacts-message-field{
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+
+}
+
+.form-control.contacts{
+    /* put something here /*
+
+     */
+}
+
+.container.contact-type{
+    font-family: 'Montserrat', Arial, sans-serif;
+    margin-bottom: 1vh;
+    color: #29384F;
+    text-transform: uppercase;
+}

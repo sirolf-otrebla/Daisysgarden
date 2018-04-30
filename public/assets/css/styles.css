@@ -31,7 +31,7 @@ img{
     padding: 0;
     min-height: 93vh;
     opacity: 0.45;
-    background-image: url("../test.jpg");
+    background-image: url("../images/test.jpg");
     background-size: cover;
 }
 
@@ -154,11 +154,11 @@ img{
 }
 
 .container-fluid.list-background.image.news{
-    background-image: url("../082616_childsports_THUMB_LARGE.jpg");
+    background-image: url("../images/082616_childsports_THUMB_LARGE.jpg");
 }
 
 .container-fluid.list-background.image.service{
-    background-image: url("../082616_childsports_THUMB_LARGE.jpg");
+    background-image: url("../images/082616_childsports_THUMB_LARGE.jpg");
 
 }
 .container-fluid.list-background.color{
@@ -230,7 +230,7 @@ img{
 .container-fluid.nc-page{
     margin: 0;
     padding: 0;
-    background-image: url("../bkg_up-mod2.png");
+    background-image: url("../images/bkg_up-mod2.png");
     background-size: cover;
     z-index: -100;
 }
@@ -296,6 +296,7 @@ img{
 }
 
 .breadcrumb.oi{
+    margin-top: 2vh;
     background-color: white;
     border: 0 solid #29384F;
     border-bottom-width: 0.5vh;
@@ -334,6 +335,33 @@ a.oi-item-link{
     min-height: 200px;
     height: 400px;
     left: 0;
+}
+
+.container.breadcrumb-transition-container{
+    margin-top: 2vh;
+    padding: 0;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+    background-color: #29384F!important;
+    color: white!important;
+}
+
+.nav-link.my-nav-pills.dropdown-toggle.service-by-location{
+    margin-left: 33vh;
+    min-width: 51vh;
+    border-radius: 0;
+    margin-right: 33vh;
+}
+.nav-link.my-nav-pills.dropdown-toggle.service-by-location:hover{
+    background-color: #29384F!important;
+    color: white!important;
+    transition: .2s;
+}
+.dropdown-menu.my-nav-pills.by-location-dropdown.show{
+    min-width: 51vh;
+    border-radius: 0;
+
 }
 
 .navbar-logo{
