@@ -30,7 +30,7 @@ img{
     display: flex;
     position: relative;
     z-index: 0;
-    top: 0px;
+    top: 0;
     height: 91vh;
     width: 100%;
     margin: 0;
@@ -267,10 +267,11 @@ img{
 /* Bottom left text */
 .bottom-left {
     position: absolute;
-    bottom: 0;
-    left: 15px;
+    bottom: 5%;
+    left: 35%;
     width: 95%;
     max-width: 150px;
+    padding: 5px;
 }
 
 .title{
@@ -373,4 +374,49 @@ a.oi-item-link{
     height: 40px;
     padding-left: 2vh;
     padding-right: 2vh;
+}
+
+.single-person-section-content {
+    padding-top: 8vh;
+    padding-bottom: 8vh;
+    border-top: 1vh solid #29384F;
+    border-bottom: 1vh solid #29384F;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14pt;
+    top: 5vh;
+    bottom: 5vh;
+}
+
+
+.contacts-single-person{
+    text-align: center;
+    margin-top: 10%;
+}
+
+.story-single-person{
+    text-align: justify;
+
+}
+
+.gap-bottom {
+    margin-bottom: 30px;
+}
+
+.button-single-person{
+    border-color: #29384F!important;
+    border-radius: 0;
+    border: 0.5vh solid;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14pt;
+    color: #29384F!important;
+    width: 40vh;
+}
+.button-single-person:focus{
+    color: white;
+    background-color: #29384F!important;
+}
+
+.button-single-person:hover{
+    color: white!important;
+    background-color: #29384F!important;
 }
