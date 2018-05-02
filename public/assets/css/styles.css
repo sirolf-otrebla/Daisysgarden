@@ -1,12 +1,12 @@
 body{
-        font-size: 10pt;
+        font-size: 12pt;
         background-color: #C0CFE8;
 }
 
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-device-width: 600px) {
     body {
-        font-size: 36pt;
+        font-size: 17pt!important;
         background-color: #C0CFE8;
     }
 }
@@ -84,7 +84,7 @@ img{
     padding-left: 0;
     padding-right: 0;
     padding-bottom: 1vh;
-    font-size: 400%;
+    font-size: 390%;
     font-family: 'Raleway', sans-serif;
     text-align: center;
     color: #29384F;
@@ -95,7 +95,7 @@ img{
     border-top: 1vh solid #29384F;
     border-bottom: 1vh solid #29384F;
     font-family: 'Raleway', sans-serif;
-    font-size: 130%;
+    font-size: 120%;
     text-align: center;
     top: 5vh;
     bottom: 5vh;
@@ -203,7 +203,7 @@ img{
     padding-left: 3vh;
     z-index: 2;
     font-family: 'Montserrat', Arial, sans-serif;
-    font-size: 400%;
+    font-size: 390%;
     text-align: left;
     align-content: right;
     color: #ffffff;
@@ -217,7 +217,7 @@ img{
     z-index: 2;
     text-align: right;
     font-family: 'Montserrat', Arial, sans-serif;
-    font-size: 400%;
+    font-size: 390%;
     color: #ffffff;
 }
 
@@ -228,7 +228,7 @@ img{
     padding-right: 20%;
     font-family: 'Raleway', sans-serif;
     text-align: left;
-    font-size: 120%;
+    font-size: 110%;
     z-index: 3;
     color: #ffffff;
 }
@@ -248,7 +248,7 @@ img{
     padding-left: 20%;
     font-family: 'Raleway', sans-serif;
     text-align: right;
-    font-size: 120%;
+    font-size: 110%;
     z-index: 3;
     color: #ffffff;
 }
