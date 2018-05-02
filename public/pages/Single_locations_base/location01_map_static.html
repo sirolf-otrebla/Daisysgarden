@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Birkenau</title>
+    <title>Dachau</title>
 
     <link href="https://fonts.googleapis.com/css?family=Raleway:600" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
@@ -38,16 +38,16 @@
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav" style="padding-left: 5vh">
                 <li class="nav-item my-nav-item">
-                    <a class="nav-link my-nav-link" href="../who_we_are_base/who_we_are_static.html">Chi Siamo</a>
+                    <a class="nav-link my-nav-link" href="../Who_we_are_base/Who_we_are_Intro_static.html">Chi Siamo</a>
                 </li>
                 <li class="nav-item my-nav-item">
-                    <a class="nav-link my-nav-link" href="../people.html">Personale </a>
+                    <a class="nav-link my-nav-link" href="../People.html">Personale </a>
                 </li>
                 <li class="nav-item my-nav-item">
-                    <a class="nav-link my-nav-link active" href="../location_transition_static.html">Sedi</a>
+                    <a class="nav-link my-nav-link active" href="../All_locations_static.html">Sedi</a>
                 </li>
                 <li class="nav-item my-nav-item">
-                    <a class="nav-link my-nav-link" href=../services_transition_static.html>Servizi</a>
+                    <a class="nav-link my-nav-link" href=../All_services_static.html>Servizi</a>
                 </li>
                 <li class="nav-item my-nav-item">
                     <a class="nav-link my-nav-link" href="../Page_under_Construction.html">News </a>
@@ -56,7 +56,7 @@
                     <a class="nav-link my-nav-link" href="../Page_under_Construction.html">Eventi </a>
                 </li>
                 <li class="nav-item my-nav-item">
-                    <a class="nav-link my-nav-link" href="../Page_under_Construction.html">Contattaci </a>
+                    <a class="nav-link my-nav-link" href="../Contact_us.html">Contattaci </a>
                 </li>
                 <li class="nav-item my-nav-item">
                     <a class="nav-link my-nav-link" href="../Page_under_Construction.html">Sostienici </a>
@@ -73,12 +73,12 @@
     <div class="container" >
         <ol class="breadcrumb oi">
             <li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../../index.html" >Home</a></li>
-            <li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../location_transition_static.html">Sedi</a></li>
-            <li class="breadcrumb-item oi-item"><a class="oi-item-link" href="location02_static.html">Sede di Birkenau</a></li>
-            <li class="breadcrumb-item oi-item active">Contatti</li>
+            <li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../All_locations_static.html">Sedi</a></li>
+            <li class="breadcrumb-item oi-item"><a class="oi-item-link" href="location01_Intro_static.html">Sede di Location 1</a></li>
+            <li class="breadcrumb-item oi-item active">Mappa</li>
         </ol>
         <div class="container content-title">
-            LA SEDE DI BIRKENAU
+            LA SEDE DI Location 1
         </div>
         <div class="container-fluid content-title-image color ">
             <div class="container-fluid content-title-image image">
@@ -89,29 +89,42 @@
         <div class="container-fluid sub-nav" id="sub-nav">
             <ul class="nav nav-pills nav-justified">
                 <li class="nav-item">
-                    <a class="nav-link my-nav-pills" href="location02_static.html">Presentazione</a>
+                    <a class="nav-link my-nav-pills" href="location01_Intro_static.html">Presentazione</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link my-nav-pills" href="location02_map_static.html">Mappa</a>
+                    <a class="nav-link my-nav-pills active" href="location01_map_static.html">Mappa</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link my-nav-pills active" href="location02_contacts_static.html">Contatti</a>
+                    <a class="nav-link my-nav-pills" href="location01_contacts_static.html">Contatti</a>
                 </li>
             </ul>
         </div>
-        <div class="container-fluid content-body">
-            <p><img src="../../assets/images/device-mobile.svg"> <a href="tel:1-847-555-5555">Reception</a><br>
-                <img src="../../assets/images/mail.svg"> <a href="mailto:reception@mgarden.it">Reception</a>
-            </p>
-            <br>
-            <p><img src="../../assets/images/device-mobile.svg"> <a href="tel:1-847-555-5555">Reparto 1</a><br>
-                <img src="../../assets/images/mail.svg"> <a href="mailto:reparto1@mgarden.it">Reparto 1</a>
-            </p>
-            <br>
-            <p><img src="../../assets/images/device-mobile.svg"> <a href="tel:1-847-555-5555">Direttore</a><br>
-                <img src="../../assets/images/mail.svg"> <a href="mailto:direttoren@mgarden.it">Direttore</a>
-            </p>
-            <br>
+        <div class="container-fluid content-body d-flex flex-row">
+            <div id="map" class="p2">
+            </div>
+            <script>
+                function initMap() {
+                    var uluru = {lat: 45.4641892, lng: 9.1897542};
+                    var map = new google.maps.Map(document.getElementById('map'), {
+                        zoom: 15,
+                        center: uluru
+                    });
+                    var marker = new google.maps.Marker({
+                        position: uluru,
+                        map: map
+                    });
+                }
+            </script>
+            <script async defer
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBTfsJBBs3nIrg_V30s_cqsNQ80ze51Lo&callback=initMap">
+            </script>
+            <div class="p2 half-right align-middle">
+                    <p><img src="../../assets/images/location.svg"> Piazza Duomo, Milano</p>
+                    <br>
+                    <p><img src="../../assets/images/calendar.svg"> Lun-Ven</p>
+                    <br>
+                    <p><img src="../../assets/images/clock.svg"> 09:00-18:00</p>
+            </div>
         </div>
     </div>
     <div class="d-flex flex-row justify-content-around" style="margin-top: 7vh">
@@ -125,6 +138,5 @@
 
 
 <div class="page-footer"> FOOTER</div>
-</body>
 </body>
 </html>

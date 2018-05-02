@@ -2,17 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Servizi</title>
+    <title>Location</title>
 
     <link href="https://fonts.googleapis.com/css?family=Raleway:600" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
 
-
     <link rel="stylesheet" type="text/css" href="../assets/css/styles.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/contents.css">
-
-    <!-- popper source-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
@@ -22,10 +17,14 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
+    <!-- popper source-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+
+
 </head>
 <body>
 <div class="page-header-bar">
-    <nav class="navbar navbar-expand-xl bg-dark navbar-dark" style=" top: 0; bottom: 0; background-color: #29384F!important">
+    <nav class="navbar navbar-expand-xl bg-dark navbar-dark" style=" top: 0; bottom: 0; background-color: #29384F!important;">
         <!-- Brand -->
         <a class="navbar-brand" href="../index.html"><img class="navbar-logo" src="../assets/images/logo.png"> Daisy's Garden</a>
 
@@ -38,16 +37,16 @@
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav" style="padding-left: 5vh">
                 <li class="nav-item my-nav-item">
-                    <a class="nav-link my-nav-link" href="who_we_are_base/who_we_are_static.html">Chi Siamo</a>
+                    <a class="nav-link my-nav-link" href="Who_we_are_base/Who_we_are_Intro_static.html">Chi Siamo</a>
                 </li>
                 <li class="nav-item my-nav-item">
-                    <a class="nav-link my-nav-link" href="people.html">Personale </a>
+                    <a class="nav-link my-nav-link" href="People.html">Personale </a>
                 </li>
                 <li class="nav-item my-nav-item">
-                    <a class="nav-link my-nav-link" href="location_transition_static.html">Sedi</a>
+                    <a class="nav-link my-nav-link active" href="All_locations_static.html">Sedi</a>
                 </li>
                 <li class="nav-item my-nav-item">
-                    <a class="nav-link my-nav-link active" href=services_transition_static.html>Servizi</a>
+                    <a class="nav-link my-nav-link" href=All_services_static.html>Servizi</a>
                 </li>
                 <li class="nav-item my-nav-item">
                     <a class="nav-link my-nav-link" href="Page_under_Construction.html">News </a>
@@ -56,7 +55,7 @@
                     <a class="nav-link my-nav-link" href="Page_under_Construction.html">Eventi </a>
                 </li>
                 <li class="nav-item my-nav-item">
-                    <a class="nav-link my-nav-link" href="Page_under_Construction.html">Contattaci </a>
+                    <a class="nav-link my-nav-link" href="Contact_us.html">Contattaci </a>
                 </li>
                 <li class="nav-item my-nav-item">
                     <a class="nav-link my-nav-link" href="Page_under_Construction.html">Sostienici </a>
@@ -72,73 +71,60 @@
     <div class="container breadcrumb-transition-container" >
         <ol class="breadcrumb oi" style="border-bottom-width: 1vh ">
             <li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../index.html" >Home</a></li>
-            <li class="breadcrumb-item oi-item"><a class="oi-item-link" href="#" >Servizi</a></li></li>
-            <li class="breadcrumb-item oi-item active">Tutte le Sedi</li>
+            <li class="breadcrumb-item oi-item active">Sedi</li>
         </ol>
     </div>
     <div class="container home-section">
         <div class="container home-section-title">
-            I NOSTRI SERVIZI
+            Le nostre sedi
         </div>
         <div class="container home-section-content">
-            <div class="container-fluid sub-nav" id="sub-nav">
-                <ul class="nav nav-pills nav-justified">
-                    <li class="nav-item dropdown">
-                        <!--<a class="nav-link my-nav-pills dropdown-toggle service-by-location" data-toggle="dropdown"
-                           href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                           -->
-                        <a class="nav-link my-nav-pills dropdown-toggle" data-toggle="dropdown"
-                           href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                            Per Location</a>
-                        <div id="dropdown" class="dropdown-menu my-nav-pills by-location-dropdown">
-                            <a class="dropdown-item my-nav-pills" href="location01_services_static.html">Sede di Dachau</a>
-                            <a class="dropdown-item my-nav-pills" href="location02_services_static.html"> Sede di Birkenau</a>
-                            <a class="dropdown-item my-nav-pills" href="location03_services_static.html"> Sede di Buchenwald</a>
-                            <a class="dropdown-item my-nav-pills" href="services_transition_static.html"> Tutti i Servizi</a>
-
-                        </div>
-                    </li>
-
-                </ul>
-            </div>
-            <div onclick="location.href='services_base/service01_static.html'" style="cursor: pointer" class="container-fluid list-container top">
+            <div class="container-fluid list-container" onclick="location.href='Single_locations_base/location01_Intro_static.html'" style="cursor: pointer" class="container-fluid list-container top">
                 <div class="container list-title left">
-                    Saponette
-                </div>
-                <div class="container list-content left">
+                    Location 1
                 </div>
                 <div class="container-fluid list-background color">
-                    <div class="container-fluid list-background image" style="background-image: url(../assets/images/service3.jpg)">
+                    <div class="container-fluid list-background image" style="background-image: url(../assets/images/location1.jpg)">
                     </div>
                 </div>
             </div>
 
-            <div onclick="location.href='services_base/service02_static.html'" style="cursor: pointer" class="container-fluid list-container">
+            <div class="container-fluid list-container" onclick="location.href='Single_locations_base/location01_Intro_static.html'" style="cursor: pointer" >
                 <div class="container list-title right">
-                    Inceneritori
+                    Location 2
                 </div>
                 <div class="container-fluid list-background color">
-                    <div class="container-fluid list-background image" style="background-image: url(../assets/images/service1.jpg)">
+                    <div class="container-fluid list-background image" style="background-image: url(../assets/images/location2.jpg)">
                     </div>
                 </div>
             </div>
 
-            <div onclick="location.href='services_base/service03_static.html'" style="cursor: pointer" class="container-fluid list-container">
+            <div class="container-fluid list-container" onclick="location.href='Single_locations_base/location01_Intro_static.html'" style="cursor: pointer" >
                 <div class="container list-title left">
-                    Test sulle persone
+                    Location 3
                 </div>
                 <div class="container-fluid list-background color">
-                    <div class="container-fluid list-background image" style="background-image: url(../assets/images/servizio2jpg.jpg)">
+                    <div class="container-fluid list-background image" style="background-image: url(../assets/images/location3.jpg)">
                     </div>
                 </div>
             </div>
 
-            <div onclick="location.href='services_base/service04_static.html'" style="cursor: pointer" class="container-fluid list-container bottom">
+            <div class="container-fluid list-container" onclick="location.href='Single_locations_base/location01_Intro_static.html'" style="cursor: pointer" >
                 <div class="container list-title right">
-                    Docce
+                    Location 4
                 </div>
                 <div class="container-fluid list-background color">
-                    <div class="container-fluid list-background image" style="background-image: url(../assets/images/servizio2jpg.jpg)">
+                    <div class="container-fluid list-background image" style="background-image: url(../assets/images/location2.jpg)">
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid list-container bottom" onclick="location.href='Single_locations_base/location01_Intro_static.html'" style="cursor: pointer" >
+                <div class="container list-title left">
+                    Location 5
+                </div>
+                <div class="container-fluid list-background color">
+                    <div class="container-fluid list-background image" style="background-image: url(../assets/images/location3.jpg)">
                     </div>
                 </div>
             </div>
