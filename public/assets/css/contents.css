@@ -66,6 +66,15 @@
 
 }
 
+.container-fluid.content-contacts{
+    font-family: 'Raleway', sans-serif;
+    font-size: 140%;
+    text-align: center;
+    padding-top: 7vh;
+    padding-bottom: 2vh;
+
+}
+
 .container-fluid.content-footer{
     font-family: 'Raleway', sans-serif;
     font-size: 140%;
