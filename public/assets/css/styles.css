@@ -384,7 +384,7 @@ a.oi-item-link{
     border-top: 1vh solid #29384F;
     border-bottom: 1vh solid #29384F;
     font-family: 'Raleway', sans-serif;
-    font-size: 14pt;
+    font-size: 120%;
     top: 5vh;
     bottom: 5vh;
 }
@@ -409,7 +409,7 @@ a.oi-item-link{
     border-radius: 0;
     border: 0.5vh solid;
     font-family: 'Raleway', sans-serif;
-    font-size: 14pt;
+    font-size: 120%;
     color: #29384F!important;
     width: 40vh;
 }
