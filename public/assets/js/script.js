@@ -1,4 +1,7 @@
-    var isMobile = {
+
+const wMobile = 600;
+
+var isMobile = {
         Android: function() {
             return navigator.userAgent.match(/Android/i);
         },
@@ -22,14 +25,14 @@
     $(document).ready( function() {
       console.log("ready");
         /* Check width on page load*/
-        if ( isMobile.any() || $(document).width() < 544) {
+        if ( isMobile.any() || $(document).width() < wMobile) {
             $('#subnav').addClass('flex-column');
         }
     });
 
     $(window).resize(function() {
         /*If browser resized, check width again */
-        if (isMobile.any() || $(document).width() < 544) {
+        if (isMobile.any() || $(document).width() < wMobile) {
             $('#subnav').addClass('flex-column');
         }
         else {$('#subnav').removeClass('flex-column');}
