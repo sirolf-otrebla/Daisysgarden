@@ -8,7 +8,7 @@ body{
 
 @media only screen and (max-device-width: 600px) {
     body {
-        font-size: 17pt!important;
+        font-size: 20pt!important;
         background-color: #C0CFE8;
     }
 }
@@ -86,7 +86,7 @@ img{
     padding-left: 0;
     padding-right: 0;
     padding-bottom: 1vh;
-    font-size: 390%;
+    font-size: 300%;
     font-family: 'Raleway', sans-serif;
     text-align: center;
     color: #29384F;
@@ -208,7 +208,7 @@ img{
     padding-left: 3vh;
     z-index: 2;
     font-family: 'Montserrat', Arial, sans-serif;
-    font-size: 390%;
+    font-size: 300%;
     text-align: left;
     align-content: right;
     color: #ffffff;
@@ -222,7 +222,7 @@ img{
     z-index: 2;
     text-align: right;
     font-family: 'Montserrat', Arial, sans-serif;
-    font-size: 390%;
+    font-size: 300%;
     color: #ffffff;
 }
 
