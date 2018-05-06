@@ -1,7 +1,7 @@
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
 body{
-        font-size: 12pt;
+        font-size: 14pt;
         background-color: #C0CFE8;
 }
 
@@ -86,7 +86,7 @@ img{
     padding-left: 0;
     padding-right: 0;
     padding-bottom: 1vh;
-    font-size: 300%;
+    font-size: 320%;
     font-family: 'Raleway', sans-serif;
     text-align: center;
     color: #29384F;
@@ -114,6 +114,7 @@ img{
     z-index: -1;
     background-color: #29384F;
 }
+
 
 .container-fluid.list-container{
     position: relative;
@@ -208,7 +209,7 @@ img{
     padding-left: 3vh;
     z-index: 2;
     font-family: 'Montserrat', Arial, sans-serif;
-    font-size: 300%;
+    font-size: 290%;
     text-align: left;
     align-content: right;
     color: #ffffff;
@@ -222,18 +223,18 @@ img{
     z-index: 2;
     text-align: right;
     font-family: 'Montserrat', Arial, sans-serif;
-    font-size: 300%;
+    font-size: 290%;
     color: #ffffff;
 }
 
 .container.list-content.left{
     position: absolute;
-    top: 20vh;
+    top: 15vh;
     padding-left: 3vh;
     padding-right: 20%;
     font-family: 'Raleway', sans-serif;
     text-align: left;
-    font-size: 110%;
+    font-size: 100%;
     z-index: 3;
     color: #ffffff;
 }
@@ -247,13 +248,13 @@ img{
 }
 .container.list-content.right{
     position: absolute;
-    top: 20vh;
+    top: 15vh;
     right: 0;
     padding-right: 3vh;
     padding-left: 20%;
     font-family: 'Raleway', sans-serif;
     text-align: right;
-    font-size: 110%;
+    font-size: 100%;
     z-index: 3;
     color: #ffffff;
 }
@@ -370,9 +371,12 @@ a.oi-item-link{
     transition: .2s;
 }
 .dropdown-menu.my-nav-pills.by-location-dropdown.show{
-    min-width: 51vh;
     border-radius: 0;
-
+    top: 0.5vh!important;
+    left: 0!important;
+    right: 0!important;
+    font-size: 130%!important;
+    text-align: center!important;
 }
 
 .navbar-logo{

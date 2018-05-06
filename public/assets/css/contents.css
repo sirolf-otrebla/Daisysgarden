@@ -116,11 +116,14 @@
     background-color: #29384F!important;
 }
 
-
+.btn.btn-outline-primary.btn-large.link-button.all-news-btn{
+    margin-top: 4vh;
+}
 .btn.btn-outline-primary.btn-large.link-button.send-msg-btn{
     margin-bottom: 10vh;
     width: 20vw;
 }
+
 .container.contacts-text-fields{
 }
 
