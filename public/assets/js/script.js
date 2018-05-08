@@ -30,6 +30,7 @@ var isMobile = {
             $('#map_container').addClass('flex-column').addClass('justify-content-center').addClass('align-items-center');
             document.getElementById("map").style.width = "80%";
             document.getElementById("map").style.height= "600px";
+            document.getElementById("map").style.marginBottom = "2rem";
         }
     });
 
@@ -40,11 +41,13 @@ var isMobile = {
             $('#map_container').addClass('flex-column').addClass('justify-content-center').addClass('align-items-center');
             document.getElementById("map").style.width = "80%";
             document.getElementById("map").style.height= "600px";
+            document.getElementById("map").style.marginBottom = "2rem";
         }
         else {
             $('#subnav').removeClass('flex-column');
             $('#map_container').removeClass('flex-column').removeClass('justify-content-center').removeClass('align-items-center');
             document.getElementById("map").style.width = "";
             document.getElementById("map").style.height= "";
+            document.getElementById("map").style.marginBottom = "";
         }
     });
