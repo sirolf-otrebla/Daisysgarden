@@ -1,14 +1,25 @@
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
 body{
-        font-size: 14pt;
+        font-size: 10pt!important;
         background-color: #C0CFE8;
 }
-
+@media only screen and (max-device-width: 1025px) {
+    body {
+        font-size: 12pt!important;
+        background-color: #C0CFE8;
+    }
+}
+@media only screen and (max-device-width: 800px) {
+    body {
+        font-size: 14pt!important;
+        background-color: #C0CFE8;
+    }
+}
 
 @media only screen and (max-device-width: 600px) {
     body {
-        font-size: 20pt!important;
+        font-size: 21pt!important;
         background-color: #C0CFE8;
     }
 }
@@ -32,8 +43,7 @@ img{
     display: flex;
     position: relative;
     z-index: 0;
-    top: 0;
-    height: 91vh;
+    height: 93vh;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -112,6 +122,7 @@ img{
     margin: 0;
     padding: 0;
     z-index: -1;
+    height: 93vh;
     background-color: #29384F;
 }
 
@@ -119,13 +130,12 @@ img{
 .container-fluid.list-container{
     position: relative;
     height: 45vh;
-    max-height: 45vh;
     padding-left: 0;
     padding-right: 0;
     margin: 3vh 0;
     z-index: 0;
-
 }
+
 .container-fluid.list-container.top{
     margin-top: 2vh;
     margin-bottom: 3vh;
@@ -133,11 +143,42 @@ img{
     z-index: 0;
 }
 
-.container-fluid.list-container.bottom{
+.container-fluid.site-title{
+    position: absolute;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 1100%;
+    padding: 0;
+    text-align: center;
+    top: 25vh;
+    width: 98vw;
+    color: #ffffff;
+    z-index: 20;
+
+}
+
+@media only screen and (max-width: 1178px){
+    .container-fluid.site-title{
+        position: absolute;
+        font-family: 'Montserrat Alternates', sans-serif;
+        font-size: 600%;
+        padding: 0;
+        text-align: center;
+        top: 25vh;
+        width: 100vw;
+        color: #ffffff;
+        z-index: 20;
+
+    }
+}
+    .container-fluid.list-container.bottom{
     margin-bottom: 2vh;
     margin-top: 3vh;
     border-bottom: 0;
     z-index: 0;
+}
+
+.container-fluid.list-container:hover .container-fluid.list-background.image{
+    opacity: 0.2;
 }
 .container-fluid.list-background{
     display: block;
@@ -163,6 +204,8 @@ img{
     margin-right: 0;
     z-index: 1;
     opacity: 0.45;
+    transition: opacity linear .2s;
+
 }
 
 .container-fluid.list-background.image.news{
@@ -503,4 +546,55 @@ section .section-title {
         padding-bottom: 0px;
         margin-bottom: 10px;
     }
+}
+
+@media only screen and (max-device-height: 600px){
+    .container-fluid.list-container{
+        position: relative;
+        height: 65vh;
+        padding-left: 0;
+        padding-right: 0;
+        margin: 3vh 0;
+        z-index: 0;
+    }
+
+    .container-fluid.list-background{
+        display: block;
+        position: absolute;
+        height: 65vh;
+        top: 0;
+        bottom: 0;
+        min-height: 60vh;
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+
+    }
+
+    .container.list-content.right{
+        position: absolute;
+        top: 25vh;
+        right: 0;
+        padding-right: 3vh;
+        padding-left: 20%;
+        font-family: 'Raleway', sans-serif;
+        text-align: right;
+        font-size: 100%;
+        z-index: 3;
+        color: #ffffff;
+    }
+
+    .container.list-content.left{
+        position: absolute;
+        top: 25vh;
+        padding-left: 3vh;
+        padding-right: 20%;
+        font-family: 'Raleway', sans-serif;
+        text-align: left;
+        font-size: 100%;
+        z-index: 3;
+        color: #ffffff;
+    }
+
+
 }
