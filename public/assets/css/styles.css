@@ -315,12 +315,25 @@ img{
 
 /* Bottom left text */
 .bottom-left {
+    text-align:right;
     position: absolute;
     bottom: 5%;
-    left: 35%;
-    width: 95%;
-    max-width: 150px;
+    right: 10%;
+    width: 70%;
+    max-width: 200px;
     padding: 5px;
+}
+
+@media (max-width: 800pt) {
+    .bottom-left {
+        text-align: right;
+        position: absolute;
+        bottom: 5%;
+        right: 30%;
+        width: 100%;
+        max-width: 300px;
+        padding: 5px;
+    }
 }
 
 .title{
@@ -331,12 +344,32 @@ img{
     background-color: rgba(0,0,0,0.4);
 }
 
+@media (max-width: 800pt){
+    .title{
+        color: white;
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.54);
+        font-family: 'Montserrat', Arial, sans-serif;
+        font-size: 25px;
+        background-color: rgba(0,0,0,0.4);
+    }
+}
+
 .subText{
     color: white;
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.54);
     font-family: 'Montserrat', Arial, sans-serif;
     font-size: 10px;
     background-color: rgba(0,0,0,0.4);
+}
+
+@media (max-width: 800pt){
+    .subText{
+        color: white;
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.54);
+        font-family: 'Montserrat', Arial, sans-serif;
+        font-size: 20px;
+        background-color: rgba(0,0,0,0.4);
+    }
 }
 
 .nav-link.my-nav-pills.active{
