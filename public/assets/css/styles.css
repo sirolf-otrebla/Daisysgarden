@@ -465,7 +465,7 @@ a.oi-item-link{
     padding-top: 8vh;
     padding-bottom: 8vh;
     border-top: 1vh solid #29384F;
-    border-bottom: 1vh solid #29384F;
+    /*border-bottom: 1vh solid #29384F;*/
     font-family: 'Raleway', sans-serif;
     font-size: 120%;
     top: 5vh;
