@@ -32,7 +32,6 @@
     top: 0;
     width: 100%;
     background-size: cover;
-    background-image: url("../images/location2.jpg");
     z-index: 1;
     opacity: 0.45;
 }
