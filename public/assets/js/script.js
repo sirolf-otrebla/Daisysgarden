@@ -1,5 +1,6 @@
 
 const wMobile = 600;
+const wNoNewsText = 1096; /* 1st crusade starting year *_* */
 
 var isMobile = {
         Android: function() {
@@ -32,6 +33,12 @@ var isMobile = {
             document.getElementById("map").style.height= "600px";
             document.getElementById("map").style.marginBottom = "2rem";
         }
+        if (isMobile.any() || $(document).width() < wNoNewsText){
+            let news = document.getElementsByClassName("container list-content");
+            news.forEach((a) => {
+                a.update("");
+            });
+        }
     });
 
     $(window).resize(function() {
@@ -42,6 +49,7 @@ var isMobile = {
             document.getElementById("map").style.width = "80%";
             document.getElementById("map").style.height= "600px";
             document.getElementById("map").style.marginBottom = "2rem";
+
         }
         else {
             $('#subnav').removeClass('flex-column');
@@ -49,5 +57,11 @@ var isMobile = {
             document.getElementById("map").style.width = "";
             document.getElementById("map").style.height= "";
             document.getElementById("map").style.marginBottom = "";
+        }
+        if (isMobile.any() || $(document).width() < wNoNewsText){
+            let news = document.getElementsByClassName("container list-content");
+            news.forEach((a) => {
+                a.update("");
+            });
         }
     });

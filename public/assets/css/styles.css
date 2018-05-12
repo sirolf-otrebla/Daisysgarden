@@ -274,6 +274,7 @@ img{
     position: absolute;
     top: 15vh;
     padding-left: 3vh;
+    display: none;
     padding-right: 20%;
     font-family: 'Raleway', sans-serif;
     text-align: left;
@@ -294,6 +295,7 @@ img{
     top: 15vh;
     right: 0;
     padding-right: 3vh;
+    display: none;
     padding-left: 20%;
     font-family: 'Raleway', sans-serif;
     text-align: right;
@@ -608,6 +610,7 @@ section .section-title {
         position: absolute;
         top: 25vh;
         right: 0;
+        display: none;
         padding-right: 3vh;
         padding-left: 20%;
         font-family: 'Raleway', sans-serif;
@@ -621,6 +624,7 @@ section .section-title {
         position: absolute;
         top: 25vh;
         padding-left: 3vh;
+        display: none;
         padding-right: 20%;
         font-family: 'Raleway', sans-serif;
         text-align: left;
