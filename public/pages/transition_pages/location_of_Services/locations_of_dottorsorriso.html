@@ -2,17 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Servizi</title>
+    <title>Location</title>
 
     <link href="https://fonts.googleapis.com/css?family=Raleway:600" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
 
-
     <link rel="stylesheet" type="text/css" href="../../../assets/css/styles.css">
-    <link rel="stylesheet" type="text/css" href="../../../assets/css/contents.css">
-
-    <!-- popper source-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
@@ -21,6 +16,10 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+    <!-- popper source-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+
 
 </head>
 <body>
@@ -48,7 +47,6 @@
             min-height: 4vh;"></span>
         </button>
 
-
         <!-- Navbar links -->
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav" style="padding-left: 5vh">
@@ -59,10 +57,10 @@
                     <a class="nav-link my-nav-link" href="../../people.html">Personale </a>
                 </li>
                 <li class="nav-item my-nav-item">
-                    <a class="nav-link my-nav-link" href="../../all_locations_static.html">Sedi</a>
+                    <a class="nav-link my-nav-link active" href="../../all_locations_static.html">Sedi</a>
                 </li>
                 <li class="nav-item my-nav-item">
-                    <a class="nav-link my-nav-link active" href=../../all_services_static.html>Servizi</a>
+                    <a class="nav-link my-nav-link" href=../../all_services_static.html>Servizi</a>
                 </li>
                 <li class="nav-item my-nav-item">
                     <a class="nav-link my-nav-link" href="../../page_under_construction.html">News </a>
@@ -87,50 +85,47 @@
     <div class="container breadcrumb-transition-container" >
         <ol class="breadcrumb oi" style="border-bottom-width: 1vh ">
             <li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../../../index.html" >Home</a></li>
-            <li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../../all_locations_static.html" >Sedi</a></li>
-            <li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../../single_locations_base/augusta/augusta_intro_static.html" >Augusta</a></li>
-            <li class="breadcrumb-item oi-item active">Servizi di Augusta</li>
+            <li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../../all_services_static.html" >Servizi</a></li>
+            <li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../../single_services_base/service04_static.html" >Dottor Sorriso</a></li>
+            <li class="breadcrumb-item oi-item active">Sedi per Dottor Sorriso</li>
         </ol>
     </div>
     <div class="container home-section">
         <div class="container home-section-title">
-            I NOSTRI SERVIZI A: Augusta
+            Le nostre sedi per: Dottor Sorriso
         </div>
         <div class="container home-section-content">
 
-            <div onclick="location.href='../../Single_services_base/service01_static.html'" style="cursor: pointer" class="container-fluid list-container top">
-                <div class="container list-title left">
-                    Centro Socio Educativo
-                </div>
-                <div class="container list-content left">
-                </div>
-                <div class="container-fluid list-background color">
-                    <div class="container-fluid list-background image" style="background-image: url(../../../assets/images/service01.jpg)">
-                    </div>
-                </div>
-            </div>
-
-            <div onclick="location.href='../../Single_services_base/service03_static.html'" style="cursor: pointer" class="container-fluid list-container">
+            <div class="container-fluid list-container" onclick="location.href='../../single_locations_base/chiari/chiari_intro_static.html'" style="cursor: pointer" >
                 <div class="container list-title right">
-                    Noi con Te
+                    Chiari
                 </div>
                 <div class="container-fluid list-background color">
-                    <div class="container-fluid list-background image" style="background-image: url(../../../assets/images/service03.jpg)">
+                    <div class="container-fluid list-background image" style="background-image: url(../../../assets/images/location2.jpg)">
                     </div>
                 </div>
             </div>
 
-            <div onclick="location.href='../../Single_services_base/service05_static.html'" style="cursor: pointer" class="container-fluid list-container bottom">
-                <div class="container list-title left">
-                    Biblioteca Speciale
+            <div class="container-fluid list-container" onclick="location.href='../../single_locations_base/mozzagrogna/mozzagrogna_intro_static.html'" style="cursor: pointer" >
+                <div class="container list-title right">
+                    Mozzagrogna
                 </div>
                 <div class="container-fluid list-background color">
-                    <div class="container-fluid list-background image" style="background-image: url(../../../assets/images/service05.jpg)">
+                    <div class="container-fluid list-background image" style="background-image: url(../../../assets/images/location4.jpg)">
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid list-container bottom" onclick="location.href='../../single_locations_base/tagliacozzo/tagliacozzo_intro_static.html'" style="cursor: pointer" >
+                <div class="container list-title left">
+                    Tagliacozzo
+                </div>
+                <div class="container-fluid list-background color">
+                    <div class="container-fluid list-background image" style="background-image: url(../../../assets/images/location5.jpg)">
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
 </div>
 
