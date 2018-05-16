@@ -598,9 +598,11 @@ section .section-title {
 #footer ul.social li a,
 #footer ul.quick-links li a{
     color: #29384F;
+    font-size:110%;
 }
 #footer ul.social li a:hover{
     color: #29384F;
+
 }
 #footer ul.quick-links li{
     padding: 3px 0;
