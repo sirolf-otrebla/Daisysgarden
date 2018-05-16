@@ -54,6 +54,31 @@ body{
     .container.list-title.long.left{
         font-size: 230%;
     }
+
+
+    container.list-title.left{
+        position: absolute;
+        top: 2vh;
+        padding-left: 3vh;
+        z-index: 2;
+        font-family: 'Montserrat', Arial, sans-serif;
+        font-size: 260%;
+        text-align: left;
+        align-content: right;
+        color: #ffffff;
+    }
+
+    .container.list-title.right{
+        position: absolute;
+        right: 0;
+        top: 2vh;
+        padding-right: 3vh;
+        z-index: 2;
+        text-align: right;
+        font-family: 'Montserrat', Arial, sans-serif;
+        font-size: 260%;
+        color: #ffffff;
+    }
 }
 img{
     max-width: 95%;
@@ -283,7 +308,7 @@ img{
     padding-left: 3vh;
     z-index: 2;
     font-family: 'Montserrat', Arial, sans-serif;
-    font-size: 260%;
+    font-size: 300%;
     text-align: left;
     align-content: right;
     color: #ffffff;
@@ -297,7 +322,7 @@ img{
     z-index: 2;
     text-align: right;
     font-family: 'Montserrat', Arial, sans-serif;
-    font-size: 260%;
+    font-size: 300%;
     color: #ffffff;
 }
 
