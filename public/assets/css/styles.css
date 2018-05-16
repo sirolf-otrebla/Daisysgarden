@@ -17,6 +17,12 @@ body{
         padding-left: 2vh;
         padding-right: 2vh;
     }
+    .nav-link.my-nav-pills{
+        /*border-radius: 0!important;*/
+        /*background-color: #29384F!important;*/
+        font-size: 120%!important;
+        color: #29384F!important;
+    }
     body {
         font-size: 14pt!important;
         background-color: #C0CFE8;
@@ -29,6 +35,12 @@ body{
         font-size: 160%!important;
         padding-left: 2vh;
         padding-right: 2vh;
+    }
+    .nav-link.my-nav-pills{
+        /*border-radius: 0!important;*/
+        /*background-color: #29384F!important;*/
+        font-size: 140%!important;
+        color: #29384F!important;
     }
     body {
         font-size: 21pt!important;
