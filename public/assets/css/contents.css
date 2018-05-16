@@ -55,8 +55,15 @@
     color: #ffffff;
 }
 
+.container.content-title.long{
+}
 
-.container-fluid.content-body{
+@media only screen and (max-device-width: 600px){
+    .container.content-title.long{
+        font-size: 250%;
+    }
+}
+    .container-fluid.content-body{
     font-family: 'Raleway', sans-serif;
     font-size: 130%;
     text-align: justify;
