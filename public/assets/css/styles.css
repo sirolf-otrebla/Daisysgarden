@@ -305,6 +305,7 @@ img{
 }
 
 .nav-item.my-nav-item{
+    font-size: 120%;
     padding-left: 2vh;
     padding-right: 2vh;
 }
@@ -376,12 +377,14 @@ img{
 
 .nav-link.my-nav-pills.active{
     background-color: #29384F!important;
+    font-size: 120%;
     color: white!important;
 }
 
 .nav-link.my-nav-pills{
     /*border-radius: 0!important;*/
     /*background-color: #29384F!important;*/
+    font-size: 120%;
     color: #29384F!important;
 }
 
