@@ -284,7 +284,7 @@ img{
     padding-left: 3vh;
     z-index: 2;
     font-family: 'Montserrat', Arial, sans-serif;
-    font-size: 290%;
+    font-size: 260%;
     text-align: left;
     align-content: right;
     color: #ffffff;
@@ -298,7 +298,7 @@ img{
     z-index: 2;
     text-align: right;
     font-family: 'Montserrat', Arial, sans-serif;
-    font-size: 290%;
+    font-size: 260%;
     color: #ffffff;
 }
 
@@ -598,7 +598,6 @@ section .section-title {
 #footer ul.social li a,
 #footer ul.quick-links li a{
     color: #29384F;
-    font-size:110%;
 }
 #footer ul.social li a:hover{
     color: #29384F;
