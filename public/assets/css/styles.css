@@ -32,7 +32,7 @@ body{
 @media only screen and (max-device-width: 600px) {
     .nav-link.my-nav-link{
         font-family: 'Raleway', sans-serif;
-        font-size: 160%!important;
+        font-size: 140%!important;
         padding-left: 2vh;
         padding-right: 2vh;
     }
