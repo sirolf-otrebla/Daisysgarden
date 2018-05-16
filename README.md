@@ -1,34 +1,36 @@
-# README
+# Daisy's Garden README
 
-This repository will be updated during our hands on lectures with a
-small app to manage pets. We suggest to use it as a starting point
-(fork) for your project once we finished.
+This repository contains the Hypermedia Application course project developed during the Academic Year 2017/2018.
 
-## What is this repository for?
+## Division of Work:
 
-Once you fork this repo, you can completely modify it at your own will
-to write your project. You will find the instructions to deploy this
-repo directly to your heroku account below.
+Because of the didactical purpose of this project, every team member (Luca Falaschini, Leonardo Febbo, Alberto Floris) partecipated in every activity during the project development.
 
-## How do I get set up to test this locally?
 
--   To run this server locally you should have Nodejs
-    (v7.5.0) installed.
+## Client Side languages used:
+the project is based on CSS3, HTML5 and Javascript.
 
--   To install the dependencies:
+## Template used:
+the footer's code is taken from another web application, but we can not remember where we take it.
 
-        npm install .
 
--   To start the server (see property `scripts` in package.json)
+## External scripts, API and plugins:
+we used:
 
-        npm start
+1. bootstrap (https://getbootstrap.com/)
 
-## How do I deploy this to Heroku
+2. jQuery (https://jquery.com/)
 
-*Do this only if you are the team administrator*.
+3. popper (https://popper.js.org/)
 
-1.  Setup heroku and/or login according to the manual
+4. Google Fonts (https://fonts.google.com/)
 
-2.  just type:
+## Main difficulties faced during the project development:
 
-        git push heroku master
+the most difficult issue to overcame was making the website responsive without breaking containers, titles images and similar elements.
+we all started from zero experience on web design and we are satisfied by our work. 
+
+
+## How to test it: 
+
+simply click on: https://polimi-hyp-2018-team-10508999.herokuapp.com/
