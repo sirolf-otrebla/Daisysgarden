@@ -567,12 +567,13 @@ section .section-title {
 #footer {
     background: transparent;
 }
-#footer h5{
+#footer h2{
     padding-left: 10px;
     border-left: 3px solid #eeeeee;
     padding-bottom: 6px;
     margin-bottom: 20px;
     color: #29384F;
+    font-size: 170%;
 }
 #footer a {
     color: #29384F;
@@ -620,7 +621,7 @@ section .section-title {
 }
 
 @media (max-width:767px) {
-    #footer h5 {
+    #footer h2 {
         padding-left: 0;
         border-left: transparent;
         padding-bottom: 0px;
