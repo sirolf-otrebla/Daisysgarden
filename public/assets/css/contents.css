@@ -15,10 +15,10 @@
 .container.content-title-image{
     display: block;
     position: absolute;
-    height: 30em;
+    height: 20em;
     top: 0;
     bottom: 0;
-    min-height: 30em;
+    min-height: 20em;
     margin-left: 0;
     margin-right: 0;
     width: 100%;
