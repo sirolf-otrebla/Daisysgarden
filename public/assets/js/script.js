@@ -29,8 +29,8 @@ var isMobile = {
         if ( isMobile.any() || $(document).width() < wMobile) {
             $('#subnav').addClass('flex-column');
             $('#map_container').addClass('flex-column').addClass('justify-content-center').addClass('align-items-center');
-            document.getElementById("map").style.width = "80%";
-            document.getElementById("map").style.height= "600px";
+            document.getElementById("map").style.width = "100%";
+            document.getElementById("map").style.height= "1000px";
             document.getElementById("map").style.marginBottom = "2rem";
         }
         if (isMobile.any() || $(document).width() < wNoNewsText){
@@ -46,8 +46,8 @@ var isMobile = {
         if (isMobile.any() || $(document).width() < wMobile) {
             $('#subnav').addClass('flex-column');
             $('#map_container').addClass('flex-column').addClass('justify-content-center').addClass('align-items-center');
-            document.getElementById("map").style.width = "80%";
-            document.getElementById("map").style.height= "600px";
+            document.getElementById("map").style.width = "100%";
+            document.getElementById("map").style.height= "1000px";
             document.getElementById("map").style.marginBottom = "2rem";
 
         }
