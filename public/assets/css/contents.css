@@ -50,7 +50,7 @@
     margin: 0;
     text-align: center;
     font-family: 'Montserrat', Arial, sans-serif;
-    font-size: 350%;
+    font-size: 400%;
     z-index: 10;
     color: #ffffff;
 }
@@ -61,6 +61,16 @@
 @media only screen and (max-device-width: 600px){
     .container.content-title.long{
         font-size: 250%;
+    }
+    .container.content-title{
+        position: absolute;
+        padding-top: 15vh;
+        margin: 0;
+        text-align: center;
+        font-family: 'Montserrat', Arial, sans-serif;
+        font-size: 300%;
+        z-index: 10;
+        color: #ffffff;
     }
 }
     .container-fluid.content-body{
