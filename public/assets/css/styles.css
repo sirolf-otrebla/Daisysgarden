@@ -19,8 +19,16 @@ body{
 
 @media only screen and (max-device-width: 600px) {
     body {
-        font-size: 21pt!important;
+        font-size: 18pt!important;
         background-color: #C0CFE8;
+    }
+
+    .container.list-title.long.right{
+        font-size: 250%;
+    }
+
+    .container.list-title.long.left{
+        font-size: 250%;
     }
 }
 img{
@@ -269,6 +277,16 @@ img{
     font-size: 290%;
     color: #ffffff;
 }
+
+.container.list-title.long.right{
+
+
+}
+
+.container.list-title.long.left{
+
+}
+
 
 .container.list-content.left{
     position: absolute;
