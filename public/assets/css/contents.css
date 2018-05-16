@@ -12,7 +12,7 @@
 
 }
 
-.container-fluid.content-title-image{
+.container.content-title-image{
     display: block;
     position: absolute;
     height: 45vh;
@@ -26,7 +26,7 @@
 }
 
 
-.container-fluid.content-title-image.image{
+.container.content-title-image.image{
     display: block;
     position: relative;
     top: 0;
@@ -36,7 +36,7 @@
     opacity: 0.45;
 }
 
-.container-fluid.content-title-image.color{
+.container.content-title-image.color{
     position: relative;
     top: 0;
     width: 100%;
@@ -47,6 +47,7 @@
 .container.content-title{
     position: absolute;
     padding-top: 15vh;
+    padding-left: 0;
     margin: 0;
     text-align: center;
     font-family: 'Montserrat', Arial, sans-serif;
