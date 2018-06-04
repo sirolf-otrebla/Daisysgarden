@@ -1,10 +1,12 @@
 const express = require("express");
+const sqlLiteDb = require("sqlite3");
 const app = express();
 const bodyParser = require("body-parser");
 const sqlDbFactory = require("knex");
 const process = require("process");
-
 let sqlDb;
+
+process.env.TEST = true;
 
 function initSqlDB() {
   /* Locally we should launch the app with TEST=true to use SQLlite:
@@ -42,6 +44,7 @@ function initDb() {
           table.enum("tag", ["cat", "dog"]);
         })
         .then(() => {
+
           return Promise.all(
             _.map(petsList, p => {
               delete p.id;
@@ -67,24 +70,61 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // /* Register REST entry point */
-app.get("/pets", function(req, res) {
-  let start = parseInt(_.get(req, "query.start", 0));
-  let limit = parseInt(_.get(req, "query.limit", 5));
-  let sortby = _.get(req, "query.sort", "none");
-  let myQuery = sqlDb("pets");
+app.get("/api/people", (req, res) => {
 
-  if (sortby === "age") {
-    myQuery = myQuery.orderBy("born", "asc");
-  } else if (sortby === "-age") {
-    myQuery = myQuery.orderBy("born", "desc");
-  }
-  myQuery
-    .limit(limit)
-    .offset(start)
-    .then(result => {
-      res.send(JSON.stringify(result));
-    });
 });
+
+app.get("/api/people:people_id", (req, res) => {
+  function query() {
+
+  }
+
+
+});
+
+app.get("/api/locations", (req, res) => {
+
+});
+
+app.get("/api/locations:location_id", (req, res) => {
+
+});
+// retrieves locations by service (service_id)
+app.get("/api/locations/services/:service_id", (req, res) => {
+
+});
+
+// retrieves services by location (location_id)
+app.get("/api/services/locations/:location_id", (req, res) => {
+
+});
+
+// retrieves services by people (people_id)
+app.get("/api/services/people/:people_id", (req, res) => {
+
+});
+
+// retrieves people by service (service_id)
+app.get("/api/people/services/:service_id", (req, res) => {
+
+});
+
+app.get("/api/about", (req, res) => {
+
+});
+
+app.get("/api/contact-us", (req, res) => {
+
+});
+
+app.get("/api/services", (req, res) => {
+
+});
+
+app.get("/api/services:service_id", (req, res) => {
+
+});
+
 
 app.delete("/pets/:id", function(req, res) {
   let idn = parseInt(req.params.id);
