@@ -2,17 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Servizi</title>
+    <title>Sedi</title>
 
     <link href="https://fonts.googleapis.com/css?family=Raleway:600,800" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
 
-
     <link rel="stylesheet" type="text/css" href="../assets/css/styles.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/contents.css">
-
-    <!-- popper source-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
@@ -22,9 +17,12 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
+    <!-- popper source-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+
     <script>
         //MUST BE DEFINED, EVEN BLANK
-        var apiCall = "services";
+        var apiCall = "locations";
 
         function init() {
             toOutput += '<div class="container-fluid list-container top">';
@@ -33,14 +31,14 @@
         function format(item) {
 
             if (iterator % 2 == 0){
-                toOutput += '<a href="single_services_base/service_intro?' + item.id + '">';
+                toOutput += '<a href="single_locations_base/location_intro?' + item.id + '">';
                 toOutput += '<div style="cursor: pointer">';
                 toOutput += '<div class="container list-title right">' + item.name + '</div>';
                 toOutput += '<div class="container-fluid list-background color">';
                 toOutput += '<div class="container-fluid list-background image" style="background-image: url(../assets/images/' + item.image + ')"></div>';
                 toOutput += '</div></div></a>';
             } else {
-                toOutput += '<a href="single_services_base/service_intro?' + item.id + '">';
+                toOutput += '<a href="single_locations_base/location_intro?' + item.id + '">';
                 toOutput += '<div style="cursor: pointer">';
                 toOutput += '<div class="container list-title left">' + item.name + '</div>';
                 toOutput += '<div class="container-fluid list-background color">';
@@ -81,7 +79,6 @@
             min-height: 4vh;"></span>
         </button>
 
-
         <!-- Navbar links -->
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav" style="padding-left: 5vh">
@@ -92,10 +89,10 @@
                     <a class="nav-link my-nav-link" href="people.html">Personale </a>
                 </li>
                 <li class="nav-item my-nav-item">
-                    <a class="nav-link my-nav-link" href="all_locations_static.html">Sedi</a>
+                    <a class="nav-link my-nav-link active" href="all_locations_static.html">Sedi</a>
                 </li>
                 <li class="nav-item my-nav-item">
-                    <a class="nav-link my-nav-link active" href=all_services_static.html>Servizi</a>
+                    <a class="nav-link my-nav-link" href=all_services_static.html>Servizi</a>
                 </li>
                 <li class="nav-item my-nav-item">
                     <a class="nav-link my-nav-link" href="page_under_construction.html">News </a>
@@ -120,91 +117,64 @@
     <div class="container breadcrumb-transition-container" >
         <ol class="breadcrumb oi" style="border-bottom-width: 1vh ">
             <li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../index.html" >Home</a></li>
-            <li class="breadcrumb-item oi-item"><a class="oi-item-link" href="#" >Servizi</a></li>
-            <li class="breadcrumb-item oi-item active">Tutte le Sedi</li>
+            <li class="breadcrumb-item oi-item active">Sedi</li>
         </ol>
     </div>
     <div class="container home-section">
         <div class="container home-section-title">
-            I NOSTRI SERVIZI
+            Le nostre sedi
         </div>
-        <div class="container home-section-content">
-            <div class="container-fluid sub-nav" id="sub-nav">
-                <ul class="nav nav-pills nav-justified">
-                    <li class="nav-item dropdown">
-                        <!--<a class="nav-link my-nav-pills dropdown-toggle service-by-location" data-toggle="dropdown"
-                           href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                           -->
-                        <a class="nav-link my-nav-pills dropdown-toggle" data-toggle="dropdown"
-                           href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                            Tutti i servizi</a>
-                        <div id="dropdown" class="dropdown-menu my-nav-pills by-location-dropdown">
-                            <a class="dropdown-item my-nav-pills" href="services_by_locations/services_by_dalmine.html">Dalmine</a>
-                            <a class="dropdown-item my-nav-pills" href="services_by_locations/services_by_chiari.html">Chiari</a>
-                            <a class="dropdown-item my-nav-pills" href="services_by_locations/services_by_augusta.html"> Augusta</a>
-                            <a class="dropdown-item my-nav-pills" href="services_by_locations/services_by_mozzagrogna.html"> Mozza Grogna</a>
-                            <a class="dropdown-item my-nav-pills" href="services_by_locations/services_by_tagliacozzo.html"> Tagliacozzo</a>
-                            <a class="dropdown-item my-nav-pills" href="all_services_static.html"> Tutti i Servizi</a>
-
-                        </div>
-                    </li>
-
-                </ul>
+        <div class="container home-section-content" id="list">
+            <!--ANDRà ELIMINATO UNA VOLTA CHE TUTTO FUNZIONA
+            <div class="container-fluid list-container top" onclick="location.href='single_locations_base/dalmine/dalmine_intro_static.html'" style="cursor: pointer">
+                <div class="container list-title left">
+                    Dalmine
+                </div>
+                <div class="container-fluid list-background color">
+                    <div class="container-fluid list-background image" style="background-image: url(../assets/images/location1.jpg)">
+                    </div>
+                </div>
             </div>
-            <div id="list">
-                <!-- DA CANCELLARE UNA VOLTA CHE TUTTO FUNZIONA
-                <div class="container-fluid list-container top">
-                    <div onclick="location.href='single_services_base/service01_static.html'" style="cursor: pointer">
-                        <div class="container list-title left">
-                            Centro Socio Educativo
-                        </div>
-                        <div class="container-fluid list-background color">
-                            <div class="container-fluid list-background image" style="background-image: url(../assets/images/service01.jpg)">
-                            </div>
-                        </div>
+
+            <div class="container-fluid list-container" onclick="location.href='single_locations_base/chiari/chiari_intro_static.html'" style="cursor: pointer" >
+                <div class="container list-title right">
+                    Chiari
+                </div>
+                <div class="container-fluid list-background color">
+                    <div class="container-fluid list-background image" style="background-image: url(../assets/images/location2.jpg)">
                     </div>
                 </div>
-
-                <div onclick="location.href='single_services_base/service02_static.html'" style="cursor: pointer" class="container-fluid list-container">
-                    <div class="container list-title long right">
-                        Comunicazione per l’autismo
-                    </div>
-                    <div class="container-fluid list-background color">
-                        <div class="container-fluid list-background image" style="background-image: url(../assets/images/service02.jpg)">
-                        </div>
-                    </div>
-                </div>
-
-                <div onclick="location.href='single_services_base/service03_static.html'" style="cursor: pointer" class="container-fluid list-container">
-                    <div class="container list-title left">
-                        Noi con Te
-                    </div>
-                    <div class="container-fluid list-background color">
-                        <div class="container-fluid list-background image" style="background-image: url(../assets/images/service03.jpg)">
-                        </div>
-                    </div>
-                </div>
-
-                <div onclick="location.href='single_services_base/service04_static.html'" style="cursor: pointer" class="container-fluid list-container bottom">
-                    <div class="container list-title right">
-                        Dottor Sorriso
-                    </div>
-                    <div class="container-fluid list-background color">
-                        <div class="container-fluid list-background image" style="background-image: url(../assets/images/service04.jpg)">
-                        </div>
-                    </div>
-                </div>
-
-                <div onclick="location.href='single_services_base/service05_static.html'" style="cursor: pointer" class="container-fluid list-container bottom">
-                    <div class="container list-title left">
-                        Biblioteca Speciale
-                    </div>
-                    <div class="container-fluid list-background color">
-                        <div class="container-fluid list-background image" style="background-image: url(../assets/images/service05.jpg)">
-                        </div>
-                    </div>
-                </div> -->
             </div>
+
+            <div class="container-fluid list-container" onclick="location.href='single_locations_base/augusta/augusta_intro_static.html'" style="cursor: pointer" >
+                <div class="container list-title left">
+                    Augusta
+                </div>
+                <div class="container-fluid list-background color">
+                    <div class="container-fluid list-background image" style="background-image: url(../assets/images/location3.jpg)">
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid list-container" onclick="location.href='single_locations_base/mozzagrogna/mozzagrogna_intro_static.html'" style="cursor: pointer" >
+                <div class="container list-title right">
+                    Mozza Grogna
+                </div>
+                <div class="container-fluid list-background color">
+                    <div class="container-fluid list-background image" style="background-image: url(../assets/images/location4.jpg)">
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid list-container bottom" onclick="location.href='single_locations_base/tagliacozzo/tagliacozzo_intro_static.html'" style="cursor: pointer" >
+                <div class="container list-title left long">
+                    Tagliacozzo
+                </div>
+                <div class="container-fluid list-background color">
+                    <div class="container-fluid list-background image" style="background-image: url(../assets/images/location5.jpg)">
+                    </div>
+                </div>
+            </div>-->
         </div>
     </div>
 </div>
