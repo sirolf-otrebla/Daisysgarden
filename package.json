@@ -5,7 +5,7 @@
   "repository": "https://polimi-hyp-2017-10173412@bitbucket.org/polimi-hyp-2017-10173412/polimi-hyp-2018-project.git",
   "author": "Vittorio Zaccaria <vittorio.zaccaria@polimi.it>",
   "engines": {
-    "node": "7.5.0"
+    "node": "10.1.0"
   },
   "license": "MIT",
   "dependencies": {
@@ -15,9 +15,10 @@
     "lodash": "4.17.4",
     "pg": "6.2.3",
     "python": "0.0.4",
-    "sqlite3": "3.1.8"
+    "sqlite3": "3.1.8",
+    "yarn": "^1.7.0"
   },
   "scripts": {
     "start": "node ./index.js"
-  }
+ nov }
 }
