@@ -11,7 +11,7 @@ function initSqlDB() {
     /* Locally we should launch the app with TEST=true to use SQLlite:
 
          > TEST=true node ./index.js
-  
+
       */
     if (process.env.TEST) {
         sqlDb = sqlDbFactory({
@@ -69,87 +69,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // /* Register REST entry point */
-app.get("/api/people", (req, res) => {
-
-});
-
-app.get("/api/people:people_id", (req, res) => {
-    function query() {
-
-    }
-
-
-});
-
-app.get("/api/locations", (req, res) => {
-
-});
-
-app.get("/api/locations:location_id", (req, res) => {
-
-});
-// retrieves locations by service (service_id)
-app.get("/api/locations/services/:service_id", (req, res) => {
-
-});
-
-// retrieves services by location (location_id)
-app.get("/api/services/locations/:location_id", (req, res) => {
-
-});
-
-// retrieves services by people (people_id)
-app.get("/api/services/people/:people_id", (req, res) => {
-
-});
-
-// retrieves people by service (service_id)
-app.get("/api/people/services/:service_id", (req, res) => {
-
-});
-
-app.get("/api/about", (req, res) => {
-
-});
-
-app.get("/api/contact-us", (req, res) => {
-
-});
-
-app.get("/api/services", (req, res) => {
-
-});
-
-app.get("/api/services:service_id", (req, res) => {
-
-});
-
-
-app.delete("/pets/:id", function(req, res) {
-    let idn = parseInt(req.params.id);
-    sqlDb("pets")
-        .where("id", idn)
-        .del()
-        .then(() => {
-            res.status(200);
-            res.send({ message: "ok" });
-        });
-});
-
-app.post("/pets", function(req, res) {
-    let toappend = {
-        name: req.body.name,
-        tag: req.body.tag,
-        born: req.body.born
-    };
-    sqlDb("pets")
-        .insert(toappend)
-        .then(ids => {
-            let id = ids[0];
-            res.send(_.merge({ id, toappend }));
-        });
-});
-
 // app.use(function(req, res) {
 //   res.status(400);
 //   res.send({ error: "400", title: "404: File Not Found" });
