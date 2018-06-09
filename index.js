@@ -7,56 +7,6 @@ let sqlDb;
 
 process.env.TEST = true;
 
-function initSqlDB() {
-    /* Locally we should launch the app with TEST=true to use SQLlite:
-
-         > TEST=true node ./index.js
-
-      */
-    if (process.env.TEST) {
-        sqlDb = sqlDbFactory({
-            client: "sqlite3",
-            debug: true,
-            connection: {
-                filename: "./petsdb.sqlite"
-            },
-            useNullAsDefault: true
-        });
-    } else {
-        sqlDb = sqlDbFactory({
-            debug: true,
-            client: "pg",
-            connection: process.env.DATABASE_URL,
-            ssl: true
-        });
-    }
-}
-
-function initDb() {
-    return sqlDb.schema.hasTable("pets").then(exists => {
-        if (!exists) {
-            sqlDb.schema
-                .createTable("pets", table => {
-                    table.increments();
-                    table.string("name");
-                    table.integer("born").unsigned();
-                    table.enum("tag", ["cat", "dog"]);
-                })
-                .then(() => {
-
-                    return Promise.all(
-                        _.map(petsList, p => {
-                            delete p.id;
-                            return sqlDb("pets").insert(p);
-                        })
-                    );
-                });
-        } else {
-            return true;
-        }
-    });
-}
-
 const _ = require("lodash");
 
 let serverPort = process.env.PORT || 5000;
@@ -75,9 +25,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // });
 
 app.set("port", serverPort);
-
-initSqlDB();
-initDb();
 
 /* Start the server on port 3000 */
 app.listen(serverPort, function() {
