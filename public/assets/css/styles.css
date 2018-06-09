@@ -386,10 +386,10 @@ img{
 .bottom-left {
     text-align:right;
     position: absolute;
-    bottom: 5%;
+    bottom: 15%;
     right: 10%;
     width: 70%;
-    max-width: 200px;
+    max-width: 1000px;
     padding: 5px;
 }
 
@@ -397,10 +397,10 @@ img{
     .bottom-left {
         text-align: right;
         position: absolute;
-        bottom: 5%;
-        right: 30%;
+        bottom: 20%;
+        right: 10%;
         width: 100%;
-        max-width: 300px;
+        max-width: 1000px;
         padding: 5px;
     }
 }
@@ -409,37 +409,37 @@ img{
     color: white;
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.54);
     font-family: 'Montserrat', Arial, sans-serif;
-    font-size: 15px;
+    font-size: 100%;
     background-color: rgba(0,0,0,0.4);
 }
 
-@media (max-width: 800pt){
+/*@media (max-width: 800pt){
     .title{
         color: white;
         text-shadow: 0 0 5px rgba(0, 0, 0, 0.54);
         font-family: 'Montserrat', Arial, sans-serif;
-        font-size: 25px;
+        font-size: 40px;
         background-color: rgba(0,0,0,0.4);
     }
-}
+}*/
 
 .subText{
     color: white;
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.54);
     font-family: 'Montserrat', Arial, sans-serif;
-    font-size: 10px;
+    font-size: 100%;
     background-color: rgba(0,0,0,0.4);
 }
 
-@media (max-width: 800pt){
+/*@media (max-width: 800pt){
     .subText{
         color: white;
         text-shadow: 0 0 5px rgba(0, 0, 0, 0.54);
         font-family: 'Montserrat', Arial, sans-serif;
-        font-size: 20px;
+        font-size: 40px;
         background-color: rgba(0,0,0,0.4);
     }
-}
+}*/
 
 .nav-link.my-nav-pills.active{
     background-color: #29384F!important;
@@ -708,6 +708,8 @@ section .section-title {
 }
 
 .image-grid{
+    width: 100%;
+    height: auto;
     -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
     filter: grayscale(100%);
     -webkit-transition: all .5s ease-in; /* Safari */
