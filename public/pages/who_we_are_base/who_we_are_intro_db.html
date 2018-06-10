@@ -24,6 +24,15 @@
 
     <script src="../../assets/js/script.js"></script>
 
+    <script>
+        //MUST BE DEFINED, EVEN BLANK
+        var apiCall = "about?page=intro";  //about + window.location.search.substr(1)
+        var toOutput = '';
+        function format(item) {
+            toOutput += '<p>' + item + '</p>';
+        }
+    </script>
+
 
 </head>
 <body>
@@ -53,12 +62,11 @@
 
 
 
-
         <!-- Navbar links -->
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav" style="padding-left: 5vh">
-                <li class="nav-item my-nav-item">
-                    <a class="nav-link my-nav-link active" href="who_we_are_intro_static.html">Chi Siamo</a>
+                <li class="nav-item my-nav-item active">
+                    <a class="nav-link my-nav-link" href="who_we_are_intro_static.html">Chi Siamo</a>
                 </li>
                 <li class="nav-item my-nav-item">
                     <a class="nav-link my-nav-link" href="../people.html">Personale </a>
@@ -94,7 +102,7 @@
         <ol class="breadcrumb oi">
             <li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../../index.html" >Home</a></li>
             <li class="breadcrumb-item oi-item"><a class="oi-item-link" href="who_we_are_intro_static.html">Chi siamo</a></li>
-            <li class="breadcrumb-item oi-item active">Storia</li>
+            <li class="breadcrumb-item oi-item active">Introduzione</li>
         </ol>
         <div class="container content-title">
             CHI SIAMO
@@ -105,43 +113,57 @@
         </div>
     </div>
 
+
     <div class="container page-content" style="border-bottom: 0">
         <div class="container-fluid sub-nav" id="sub-nav">
             <ul id="subnav" class="nav nav-pills nav-justified">
                 <li class="nav-item">
-                    <a class="nav-link my-nav-pills active" href="who_we_are_history_static.html">Storia</a>
+                    <a class="nav-link my-nav-pills " href="who_we_are_history_static.html">Storia</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link my-nav-pills" href="who_we_are_intro_static.html">Introduzione</a>
+                    <a class="nav-link my-nav-pills active" href="who_we_are_intro_static.html">Introduzione</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link my-nav-pills" href="who_we_are_what_we_do_static.html">Cosa Facciamo</a>
                 </li>
             </ul>
         </div>
-        <div class="container-fluid content-body" style="text-align: center;" id="list">
-            <!-- [NEL JSON METTERE UN ELEMENTO PER OGNI <P>] -->
-            <p> cooperativa Daisy's Garden nasce nel 1998 a Tagliacozzo, Chieti; dall'iniziativa di un gruppo di famiglie già impegnate
-            nella tutela dei diritti e della salute di persone affette da disabilità. La cooperativa nasce con lo scopo di fornire
-            supporto alle famiglie di giovanissimi affetti da patologie e disabilità psichiatriche. <br>
-            Nel 2000 la cooperativa apre, grazie all'utilizzo di fondi della Regione Abruzzo, un secondo centro a Mozza Grogna, in provincia
-            dell'Aquila. <br>
-            Grazie all'iniziativa di alcuni volontari, nel 2002 viene aperto il terzo centro ad Augusta, in provincia di Siracusa,
-                cui seguiranno nel 2006 e nel 2008 gli ultimi due centri di Chiari e Dalmine, in Lombardia.</p>
+        <div class="container-fluid content-body" style="text-align: center" id="list">
+            <!--DA ELIMINARE QUANDO FUNZIONA  [NEL JSON METTERE UN ELEMENTO PER OGNI <P>]
+            <p>La cooperativa Daisy's Garden
+                è un’associazione Onlus nata nell’ottobre 1998 a Tagliacozzo dall’iniziativa di un gruppo di genitori di bambini con disabilità e di operatori.
+                Ad oggi opera tramite 5 sedi in 3 regioni differenti: Due Centri in Lombardia, un centro in Sicilia e due centri in Abruzzo.
+                Da allora lavora per costruire opportunità di benessere per il bambino con disabilità, offrire un sostegno competente ai suoi genitori e promuovere una cultura più attenta ai diritti del bambino con disabilità.<br />
+                <strong><br />
+                    L’associazione si propone di:</strong><br />
+                <strong>•</strong> sostenere la famiglia del bambino con disabilità promuovendo tutte
+                quelle attività che la aiutino ad accogliere il proprio figlio, partecipando
+                in modo attivo alla sua crescita e alla sua educazione;<br /><br />
+                <strong>•</strong> promuovere e tutelare il benessere del bambino con disabilità con ogni mezzo
+                idoneo a garantirne una vita piena, in condizioni che garantiscano la sua dignità,
+                favoriscano la sua autonomia e agevolino una sua attiva partecipazione
+                alla vita della comunità (Statuto, art. 2).</p>
+            <p><strong>L’abilità è una associazione onlus con personalità giuridica.<br />
+                È iscritta ai seguenti registri:</strong></p>
+            <p><strong>Anagrafe unica delle onlus</strong>, settore attività 1) assistenza sociale e socio-sanitaria (9 marzo 1999)</p>
+            <p><strong>Registro anagrafico delle associazioni, </strong>foglio 18, prog. 121, settore di intervento socio-assistenziale (determinazione dirigenziale n. 6/B del 9 gennaio 2001).</p>
+            <p>Fa parte della <strong>Consulta Regionale per le persone con disabilità</strong> delle regioni Abruzzo, Sicilia e Lombardia.</p>
+            <p> Ha ricevuto la <strong>civica benemerenza del Comune di Augusta</strong> il 7 dicembre 2003.</p>-->
         </div>
     </div>
+
 </div>
 
 
 
-<section id="footer" class="footer" >
+<section id="footer" class="footer">
     <div class="container">
         <div class="row text-center text-xs-center text-sm-center text-md-center text-lg-center text-xl-center">
             <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3">
                 <h2>About us</h2>
                 <ul class="list-unstyled quick-links">
                     <li><a href="../../index.html"><i class="fa fa-angle-double-right"></i>Home</a></li>
-                    <li><a href="who_we_are_intro_static.html"><i class="fa fa-angle-double-right"></i>Chi Siamo</a></li>
+                    <li><a href="../who_we_are_base/who_we_are_intro_static.html"><i class="fa fa-angle-double-right"></i>Chi Siamo</a></li>
                     <li><a href="../people.html"><i class="fa fa-angle-double-right"></i>Personale</a></li>
                     <li><a href="../contact_us.html"><i class="fa fa-angle-double-right"></i>Contattaci</a></li>
                 </ul>
