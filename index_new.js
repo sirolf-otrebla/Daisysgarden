@@ -78,8 +78,21 @@ var queries = {
                 .then(results => {
                     res.json(results);
                 })
-        }
+        },
+        byService : (serviceID, callback) => {
 
+            knex
+                .select("personale.id", "personale.nome", "personale.immagine")
+                .from("sedi")
+                .join("lavora", {"personale.id" : "id_personale"})
+                .join("servizi", {"id_servizio" : "servizi.id"})
+                .where({
+                    "id_servizio" : serviceID
+                })
+                .then(results => {
+                    callback(results);
+                });
+        }
     },
     services : {
         all : (res) => {
@@ -115,19 +128,19 @@ var queries = {
                 })
 
         },
-        when_useful : (id, res) => {
+        when_useful : (id, callback) => {
             knex
                 .select("id", "nome", "quando_utile", "immagine")
                 .from("servizi")
                 .where({
-                    id : id
+                    id: id
                 })
                 .then(results => {
-                    res.json(results);
-                })
-
-        },
-        how_to_access : (id, res) => {
+                    callback(results)
+                });
+        }
+        ,
+        how_to_access : (id, callback) => {
             knex
                 .select("id", "nome", "come_accedere", "immagine")
                 .from("servizi")
@@ -135,23 +148,52 @@ var queries = {
                     id : id
                 })
                 .then(results => {
-                    res.json(results);
+                    callback(results);
                 })
+        },
+
+        byLocation : (locationID, res) => {
+
+            knex
+                .select("servizi.id", "servizi.nome", "servizi.immagine")
+                .from("servizi")
+                .join("tenuto", {"servizi.id" : "id_servizio"})
+                .join("sedi", {"id_sede" : "sedi.id"})
+                .where({
+                    "id_sede" : locationID
+                })
+                .then(results => {
+                    callback(results);
+                });
+        },
+
+        byPeople : (peopleID, callback) =>{
+            knex
+                .select("servizi.id", "servizi.nome", "servizi.immagine")
+                .from("servizi")
+                .join("lavora", {"servizi.id" : "id_servizio"})
+                .join("personale", {"id_personale" : "personale.id"})
+                .where({
+                    "id_personale" : peopleID
+                })
+                .then(results => {
+                    callback(results);
+                });
         }
 
     },
     locations : {
-        all : (res) => {
+        all : (callback) => {
             knex
                 .select("id", "nome", "immagine")
                 .from("sedi")
                 .orderBy("nome")
                 .then(results => {
-                    res.json(results);
+                    callback(results);
                 });
 
         },
-        desc : (id, res) => {
+        desc : (id, callback) => {
             knex
                 .select("id", "nome", "descrizione", "immagine")
                 .from("sedi")
@@ -159,12 +201,12 @@ var queries = {
                     id : id
                 })
                 .then(results => {
-                    res.json(results);
-                })
+                    callback(results);
+                });
 
         },
 
-        map : (id, res) => {
+        map : (id, callback) => {
             knex
                 .select("id", "nome", "indirizzo", "orari", "immagine")
                 .from("sedi")
@@ -172,11 +214,11 @@ var queries = {
                     id : id
                 })
                 .then(results => {
-                    res.json(results);
+                    callback(results);
                 })
         },
 
-        contacts : (id, res) => {
+        contacts : (id, callback) => {
             knex
                 .select("sedi.id", "sedi.nome", "sedi.email", "sedi.immagine")
                 .from("sedi")
@@ -187,10 +229,82 @@ var queries = {
 
                 })
                 .then(results => {
-                    res.json(results);
+                    callback(results);
+                });
+
+        },
+        byService : (serviceID, res) => {
+            knex
+                .select("sedi.id", "sedi.nome", "sedi.immagine")
+                .from("sedi")
+                .join("tenuto", {"sedi.id" : "id_sede"})
+                .join("servizi", {"id_servizio" : "servizi.id"})
+                .where({
+                    "servizi.id" : serviceID
                 })
+                .then(results => {
+                    callback(results);
+                });
+        },
+    },
+
+    contacts : {
+
+        general : (callback) =>{
+            knex
+                .select("*")
+                .from("contatti")
+                .whereRaw("contatti.versione > all")
+                .then(callback)
+        },
+
+        locations : (callback) => {
+            knex
+            .select("sedi.nome", "sedi.email", "sedi.immagine")
+            .from("sedi")
+            .join("responsabile", {"id" : "id_sede"})
+            .join("personale", {"id_manager" : "personale.id"})
+            .then(results => {
+                callback(results);
+            });
 
         }
+
+    },
+
+    about : {
+        history : (callback) => {
+            knex
+                .select("chi_siamo.versione", "chi_siamo.storia")
+                .from("chi_siamo")
+                .whereRaw("versione > all")
+                .then((results) => {
+                    callback(results)
+                });
+        },
+
+        introduction : (callback) => {
+            knex
+                .select("chi_siamo.versione", "chi_siamo.introduzione")
+                .from("chi_siamo")
+                .whereRaw("versione > all")
+                .then((results) => {
+                    callback(results)
+                });
+
+        },
+
+        whatWeDo : (callback) => {
+            knex
+                .select("chi_siamo.versione", "chi_siamo.cosa_facciamo")
+                .from("chi_siamo")
+                .whereRaw("versione > all")
+                .then((results) => {
+                    callback(results)
+                });
+
+        }
+
     }
 };
 
@@ -207,20 +321,23 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // /* Register REST entry point */
 app.get("/api/people", (req, res) => {
-
+    queries.people.all((results) => {
+        res.json(results);
+    })
 });
 
 app.get("/api/people:people_id", (req, res) => {
-    function query() {
-
-    }
-
-
+    queries.people.by_id(req.params, (results) => {
+        res.json(results)
+    })
 });
+
 // retrieves location list, as a list of json objects
 // containing location name, ID and image
 app.get("/api/locations", (req, res) => {
-
+    queries.locations.all((results) => {
+        res.json(results);
+    })
 });
 
 // retrieves informations about a specific location. it is possible
@@ -232,6 +349,10 @@ app.get("/api/locations", (req, res) => {
 // will be sent back to the client
 app.get("/api/locations:location_id", (req, res) => {
 
+    if(queries.locations[req.query.page])
+        queries.locations[req.query.page](req.params, (results) => {
+            res.json(results);
+        });
 });
 
 
@@ -243,6 +364,9 @@ app.get("/api/locations:location_id", (req, res) => {
 // infos are returned as json object containing id, images and names of the
 // required services
 app.get("/api/services/locations/:location_id", (req, res) => {
+        queries.services.byLocation(req.params, (results) => {
+            res.json(results);
+        });
 
 });
 
@@ -255,32 +379,47 @@ app.get("/api/services/locations/:location_id", (req, res) => {
 // infos are returned as json object containing id, images and names of the
 // required services
 app.get("/api/people/services/:service_id", (req, res) => {
-
+    queries.people.byService(req.params, (results) => {
+        res.json(results);
+    })
 });
 
 // retrieves services by location (location_id)
 app.get("/api/locations/services/:service_id", (req, res) => {
+    queries.locations.byService(req.params, (results) => {
+        res.json(results);
+    })
 
 });
 
 // retrieves people by service (service_id)
 app.get("/api/services/people/:people_id", (req, res) => {
-
+    queries.services.byPeople(req.params, (results) => {
+        res.json(results);
+    })
 });
 
 // retrieves informations which are needed to display in the 'about' page
 app.get("/api/about", (req, res) => {
-
+    if(queries.about[req.query.page])
+        queries.about[req.query.page](req.params, (results) => {
+            res.json(results);
+        });
 });
 
 // retrieves informations which are needed to display in the 'contact us' page
 app.get("/api/contact-us", (req, res) => {
+    queries.contacts.general((results) => {
+        res.json(results);
+    })
 
 });
 // retrieves service list, as a list of json objects
 // containing service name, ID and image
 app.get("/api/services", (req, res) => {
-
+    queries.services.all((results) => {
+        res.json(results);
+    })
 });
 
 
@@ -292,7 +431,10 @@ app.get("/api/services", (req, res) => {
 // in this way only informations which are relevant for the selected page
 // will be sent back to the client
 app.get("/api/services:service_id", (req, res) => {
-
+    if(queries.services[req.query.page])
+        queries.services[req.query.page](req.params, (results) => {
+            res.json(results);
+        });
 });
 
 
