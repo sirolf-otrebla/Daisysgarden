@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Centro Socio Educativo</title>
+    <title>Daisy's Garden - Servizi</title>
 
     <link href="https://fonts.googleapis.com/css?family=Raleway:600,800" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
@@ -23,6 +23,22 @@
 
     <script src="../../assets/js/script.js"></script>
 
+
+    <script>
+        //MUST BE DEFINED, EVEN BLANK
+        var apiCall = "services/" + item.id + "?page=intro";
+        var toOutput = '';
+
+        function format(item) {
+            $('#breadcrumb').html('<ol class="breadcrumb oi" ><li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../../index.html" >Home</a></li><li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../all_services_db.html">Servizi</a></li><li class="breadcrumb-item oi-item"><a class="oi-item-link" href="service_intro_db.html?' + item.id + '">' + item.name + '</a></li><li class="breadcrumb-item oi-item active">Presentazione</li></ol>');
+            $('#serviceTitle').html('<div class="container content-title">' + item.name + '</div>')
+            $('#serviceImage').html('<div class="container content-title-image color"><div class="container content-title-image image" style="background-image: url(../../assets/images/' + item.image + ')"></div></div>')
+            $('#buttons').html('<a class="btn btn-outline-primary btn-large link-button" href="../transition_pages/location_of_services/locations_of_service.html?' + item.id +'">Le Nostre Sedi</a><a class="btn btn-outline-primary btn-large link-button" href="../transition_pages/people_of_services/people_of_service.html?' + item.id + '">I nostri collaboratori</a>')
+
+            toOutput += item.description;
+
+        }
+    </script>
 
 
 </head>
@@ -88,27 +104,31 @@
 
 <div class="container-fluid c-page">
     <div class="container" >
-        <div>
-            <ol class="breadcrumb oi">
+        <div id="breadcrumb">
+            <!--
+            <ol class="breadcrumb oi" >
                 <li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../../index.html" >Home</a></li>
                 <li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../all_services_static.html">Servizi</a></li>
                 <li class="breadcrumb-item oi-item"><a class="oi-item-link" href="service01_static.html">Centro Socio Educativo</a></li>
                 <li class="breadcrumb-item oi-item active">Presentazione</li>
+
             </ol>
+            -->
         </div>
 
-        <div>
-            <div class="container content-title">
-                Centro Socio Educativo
-            </div>
+
+        <div id="serviceTitle">
+            <!--
+            <div class="container content-title">Centro Socio Educativo</div>
+            -->
         </div>
 
-        <div>
-            <div class="container content-title-image color ">
-                <div class="container content-title-image image" style="background-image: url(../../assets/images/service01.jpg)">
-                </div>
-            </div>
+        <div id="serviceImage">
+            <!--
+            <div class="container content-title-image color"><div class="container content-title-image image" style="background-image: url(../../assets/images/service01.jpg)"></div></div>
+            -->
         </div>
+
 
     </div>
     <div class="container page-content">
@@ -128,7 +148,8 @@
                 </li>
             </ul>
         </div>
-        <div class="container-fluid content-body">
+        <div class="container-fluid content-body" id="list">
+            <!-- DA CANCELLARE QUANDO FUNZIONA [TUTTO QUESTO MALLOPPO VA IN DESCRIPTION SANO SANO
             La persona viene coinvolta nella sua globalità, attraverso interventi socio educativi e socio animativi
             mirati a potenziare aree specifiche quali autonomie personali, socializzazione, mantenimento di competenze
             ed abilità pregresse, al fine di costruire un progetto di vita adeguato alle risorse di ciascuno.<br><br>
@@ -161,12 +182,12 @@
                 <li>Uscite culturali sul territorio;</li>
                 <li>Laboratorio di socio-acquisti.</li>
             </ul>
+            -->
         </div>
     </div>
-    <div class="d-flex flex-row justify-content-around" style="margin-top: 7vh">
-        <a class="btn btn-outline-primary btn-large link-button" href='../transition_pages/location_of_services/locations_of_cse.html'>Le Nostre Sedi</a>
-        <a class="btn btn-outline-primary btn-large link-button" href='../transition_pages/people_of_services/people_of_cse.html'>I nostri collaboratori</a>
-
+    <div class="d-flex flex-row justify-content-around" style="margin-top: 7vh" id="buttons">
+        <!-- DA ELIMINARE QUANDO FUNZIONA
+        <a class="btn btn-outline-primary btn-large link-button" href="../transition_pages/location_of_services/locations_of_cse.html">Le Nostre Sedi</a><a class="btn btn-outline-primary btn-large link-button" href="../transition_pages/people_of_services/people_of_cse.html">I nostri collaboratori</a>        -->
     </div>
 
 </div>
@@ -234,5 +255,10 @@
         </div>
     </div>
 </section>
+
+
+<!-- Main -->
+<script src="../../assets/js/main.js"></script>
+
 </body>
 </html>
