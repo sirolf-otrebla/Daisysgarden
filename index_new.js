@@ -1,20 +1,21 @@
 const express = require("express");
+const fs = require("fs");
 const app = express();
 const bodyParser = require("body-parser");
 sqlDbFactory = require("knex");
-const knex = require(" knex");
 const process = require("process");
-let sqlDb;
+const sqlite = require("sqlite3n");
+let knex = sqlDbFactory;
 
 process.env.TEST = true;
-function initSqlDB() {
+function defineSQLenv() {
     /* Locally we should launch the app with TEST=true to use SQLlite:
 
          > TEST=true node ./index.js
 
       */
     if (process.env.TEST) {
-        sqlDb = sqlDbFactory({
+        knex = sqlDbFactory({
             client: "sqlite3",
             debug: true,
             connection: {
@@ -23,7 +24,7 @@ function initSqlDB() {
             useNullAsDefault: true
         });
     } else {
-        sqlDb = sqlDbFactory({
+        knex = sqlDbFactory({
             debug: true,
             client: "pg",
             connection: process.env.DATABASE_URL,
@@ -32,29 +33,57 @@ function initSqlDB() {
     }
 }
 
-function initDb() {
-    return sqlDb.schema.hasTable("pets").then(exists => {
-        if (!exists) {
-            sqlDb.schema
-                .createTable("pets", table => {
-                    table.increments();
-                    table.string("name");
-                    table.integer("born").unsigned();
-                    table.enum("tag", ["cat", "dog"]);
-                })
-                .then(() => {
+function populateDb() {
 
-                    return Promise.all(
-                        _.map(petsList, p => {
-                            delete p.id;
-                            return sqlDb("pets").insert(p);
-                        })
-                    );
+    let ddl = fs.readFileSync("./db/ddl.sql").toString();
+    knex.schema.raw(ddl);
+    let about = require("./db/about.json");
+    let contacts = require("./db/contacts");
+    let locations = require("./db/locations");
+    let locations_Services = require("./db/locations_Services");
+    let people = require("./db/people");
+    let People_Services = require("./db/People_Services");
+    let services = require("./db/services");
+    let manager = require("./db/manager");
+    knex.select("doctors.*").from("doctors").catch(err => {
+        knex.raw(ddl).catch(err => {
+            console.log("ERRORE NEL DDL");
+            console.log(err);
+        }).then(() => {
+            knex("Sedi").insert(locations).catch(err => {
+                console.log(err);
+            }).then(() => {
+                knex("Personale").insert(people).catch(err => {
+                    console.log(err);
+                }).then(() => {
+                    knex("servizi").insert(services).catch(err => {
+                        console.log(err);
+                    }).then(() => {
+                        knex("Tenuto").insert(locations_Services).catch(err => {
+                            console.log(err)
+                                .then(() => {
+                                    knex("Lavora").insert(People_Services).catch(err => {
+                                        console.log(err);
+                                    }).then(() => {
+                                            knex("Chi_Siamo").insert(about).catch(err => {
+                                                console.log(err);
+                                            }).then(() => {
+                                                knex("Contattaci").insert(contacts).catch(err => {
+                                                    console.log(err);
+                                                }).then(() => {
+                                                    knex("Responsabile").insert(manager).catch(err => {
+                                                        console.log(err);
+                                                    })
+                                                });
+                                            });
+                                        });
+                                    });
+                                })
+                        });
+                    });
                 });
-        } else {
-            return true;
-        }
-    });
+            });
+        });
 }
 
 var queries = {
@@ -311,11 +340,7 @@ var queries = {
 const _ = require("lodash");
 
 let serverPort = process.env.PORT || 5000;
-
-let petsList = require("./petstoredata.json");
-
 app.use(express.static(__dirname + "/public"));
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -437,32 +462,6 @@ app.get("/api/services:service_id", (req, res) => {
         });
 });
 
-
-app.delete("/pets/:id", function(req, res) {
-    let idn = parseInt(req.params.id);
-    sqlDb("pets")
-        .where("id", idn)
-        .del()
-        .then(() => {
-            res.status(200);
-            res.send({ message: "ok" });
-        });
-});
-
-app.post("/pets", function(req, res) {
-    let toappend = {
-        name: req.body.name,
-        tag: req.body.tag,
-        born: req.body.born
-    };
-    sqlDb("pets")
-        .insert(toappend)
-        .then(ids => {
-            let id = ids[0];
-            res.send(_.merge({ id, toappend }));
-        });
-});
-
 // app.use(function(req, res) {
 //   res.status(400);
 //   res.send({ error: "400", title: "404: File Not Found" });
@@ -470,8 +469,8 @@ app.post("/pets", function(req, res) {
 
 app.set("port", serverPort);
 
-initSqlDB();
-initDb();
+defineSQLenv();
+populateDb();
 
 /* Start the server on port 3000 */
 app.listen(serverPort, function() {
