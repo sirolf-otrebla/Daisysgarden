@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Centro Socio Educativo</title>
+
+    <title>Bruno Biondo</title>
 
     <link href="https://fonts.googleapis.com/css?family=Raleway:600,800" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
@@ -15,43 +16,48 @@
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-
     <!-- popper source-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 
-    <script src="../../assets/js/script.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
+
+
+    <!-- RESPONSABILE NEL CASO LO SIA VA MESSO NEL JSON TUTTA LA STRINGA
+    <span>Responsabile <a href="../single_locations_base/dalmine/dalmine_intro_static.html">"Dalmine"</a></span><br>
+    -->
 
     <script>
         //MUST BE DEFINED, EVEN BLANK
-        var apiCall = "services/" + item.id + "?page=calendar";
+        var apiCall = "people/" + item.id;
         var toOutput = '';
-
-        function init() {
-            toOutput += '<div class="d-flex flex-column">';
-        }
 
         function format(item) {
             $('#breadcrumb').html('<ol class="breadcrumb oi" ><li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../../index.html" >Home</a></li><li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../all_services_db.html">Servizi</a></li><li class="breadcrumb-item oi-item"><a class="oi-item-link" href="service_intro_db.html?' + item.id + '">' + item.name + '</a></li><li class="breadcrumb-item oi-item active">Calendario</li></ol>');
-            $('#serviceTitle').html('<div class="container content-title">' + item.name + '</div>')
-            $('#serviceImage').html('<div class="container content-title-image color"><div class="container content-title-image image" style="background-image: url(../../assets/images/' + item.image + ')"></div></div>')
-            $('#buttons').html('<a class="btn btn-outline-primary btn-large link-button" href="../transition_pages/location_of_services/locations_of_service.html?' + item.id +'">Le Nostre Sedi</a><a class="btn btn-outline-primary btn-large link-button" href="../transition_pages/people_of_services/people_of_service.html?' + item.id + '">I nostri collaboratori</a>')
 
-            //DURANTE SETTIMANA
-            toOutput += '<div class="d-flex flex-column" style="margin-bottom: 2vh; margin-top: 2vh">';
-            toOutput += '<div class="container contact-type"> durante la settimana: </div>';
-            toOutput += '<div class="container">' + item.week + '</div>'; //testo dinamico
+
+            toOutput += '<div class="container home-section-title">' + item.name + item.surname + '</div>';
+            toOutput += '<div class="container single-person-section-content">';
+            toOutput += '<div class="row">';
+            toOutput += '<div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5">';
+            toOutput += '<img src="../../assets/images/' + item.image + '" class=" img-fluid rounded-circle mx-auto d-block gap-bottom " />';
             toOutput += '</div>';
-            //WEEKEND
-            toOutput += '<div class="d-flex flex-column" style="margin-bottom: 2vh; margin-top: 2vh">';
-            toOutput += '<div class="container contact-type"> weekend: </div>'; //testo tel
-            toOutput += '<div class="container">' + item.weekend + '</div>'; //testo dinamico
+            toOutput += '<div class=" col-12 col-sm-12 col-md-12 col-lg-7 col-xl-7 contacts-single-person gap-bottom">';
+            toOutput += '<span>' + item.mansione + '</span><br>';
+            toOutput += '<span>Email: <a href="mailto:' + item.mail + '">' + item.mail + '</a></span><br>';
+            toOutput += '<span>N. Telefono: <a href="tel:' + item.tel + '">' + item.tel + '</a></span>';
+            toOutput += '</div></div>';
+            toOutput += '<div class="row">';
+            toOutput += '<div class=" col-12  story-single-person">' + item.description + '</div>';
+            toOutput += '</div>';
+            toOutput += '<div class="d-flex flex-row justify-content-around" style="margin-top: 7vh">';
+            toOutput += '<a class="button-single-person" href="../transition_pages/services_of_people/services_of_single_person.html?' + item.id + '">Servizi di cui si occupa</a>';
             toOutput += '</div>';
 
         }
     </script>
+
 
 </head>
 <body>
@@ -66,7 +72,8 @@
         <a class="navbar-brand" style="font-size: 130%;" href="../../index.html" ><img src="../../assets/images/logo.png" style="
         padding-left: 2vh;
         padding-right: 2vh;
-        max-height: 4vh">Daisy's garden</a>
+        max-height: 4vh"
+        >Daisy's garden</a>
 
         <!-- Toggler/collapsibe Button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" style="
@@ -86,13 +93,13 @@
                     <a class="nav-link my-nav-link" href="../who_we_are_base/who_we_are_intro_static.html">Chi Siamo</a>
                 </li>
                 <li class="nav-item my-nav-item">
-                    <a class="nav-link my-nav-link" href="../people.html">Personale </a>
+                    <a class="nav-link my-nav-link active" href="../people.html">Personale </a>
                 </li>
                 <li class="nav-item my-nav-item">
                     <a class="nav-link my-nav-link" href="../all_locations_static.html">Sedi</a>
                 </li>
                 <li class="nav-item my-nav-item">
-                    <a class="nav-link my-nav-link active" href="../all_services_static.html">Servizi</a>
+                    <a class="nav-link my-nav-link" href=../all_services_static.html>Servizi</a>
                 </li>
                 <li class="nav-item my-nav-item">
                     <a class="nav-link my-nav-link" href="../page_under_construction.html">News </a>
@@ -113,87 +120,47 @@
         </div>
     </nav>
 </div>
-
-<div class="container-fluid c-page">
-    <div class="container" >
-        <div id="breadcrumb">
-            <!--
-            <ol class="breadcrumb oi" >
-                <li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../../index.html" >Home</a></li>
-                <li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../all_services_static.html">Servizi</a></li>
-                <li class="breadcrumb-item oi-item"><a class="oi-item-link" href="service01_static.html">Centro Socio Educativo</a></li>
-                <li class="breadcrumb-item oi-item active">Presentazione</li>
-
-            </ol>
-            -->
-        </div>
-
-
-        <div id="serviceTitle">
-            <!--
-            <div class="container content-title">Centro Socio Educativo</div>
-            -->
-        </div>
-
-        <div id="serviceImage">
-            <!--
-            <div class="container content-title-image color"><div class="container content-title-image image" style="background-image: url(../../assets/images/service01.jpg)"></div></div>
-            -->
-        </div>
+<div class="container-fluid nc-page ">
+    <div class="container" id="breadcrumb" >
+        <!--
+        <ol class="breadcrumb oi">
+            <li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../../index.html" >Home</a></li>
+            <li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../people.html">Collaboratori</a></li>
+            <li class="breadcrumb-item oi-item active">' + item.name + item.surname '</li>
+        </ol>
+        -->
     </div>
-    <div class="container page-content">
-        <div class="container-fluid sub-nav" id="sub-nav">
-            <ul id="subnav" class="nav nav-pills nav-justified">
-                <li class="nav-item">
-                    <a class="nav-link my-nav-pills" href="service01_static.html">Introduzione</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link my-nav-pills active" href="service01_calendar.html">Calendario</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link my-nav-pills" href="service01_why.html">Quando è utile</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link my-nav-pills" href="service01_how.html">Come accedere</a>
-                </li>
-            </ul>
-        </div>
-        <div class="container-fluid content-contacts" id="list">
-            <!-- CANCELLARE QUANDO FUNZIONA
-            <div class="d-flex flex-column">
+    <div class="container home-section" id="list">
+        <!-- CANCELLARE QUANDO FINITO
+        <div class="container home-section-title">' + item.name + item.surname + '</div>
+        <div class="container single-person-section-content">
 
-                <div class="d-flex flex-column" style="margin-bottom: 2vh; margin-top: 2vh">
-                    <div class="container contact-type">
-                        durante la settimana:
-                    </div>
-                    <div class="container">
-                        Da lunedì a venerdì: 8:30 - 15.30
-                    </div>
-
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5">
+                    <img src="../../assets/images/' + item.image + '" class=" img-fluid rounded-circle mx-auto d-block gap-bottom " />
                 </div>
-                <div class="d-flex flex-column" style="margin-bottom: 2vh; margin-top: 2vh">
-                    <div class="container contact-type">
-                        weekend:
-                    </div>
-                    <div class="container">
-                        chiuso
-                    </div>
+                <div class=" col-12 col-sm-12 col-md-12 col-lg-7 col-xl-7 contacts-single-person gap-bottom">
+                    <span>' + item.mansione + '</span><br>
+                    <span>Email: <a href="mailto:' + item.mail + '">' + item.mail + '</a></span><br>
+                    <span>N. Telefono: <a href="tel:' + item.tel + '">' + item.tel + '</a></span>
                 </div>
             </div>
-            -->
+            <div class="row">
+                <div class=" col-12  story-single-person">' + item.description + '</div>
+            </div>
+            <div class="d-flex flex-row justify-content-around" style="margin-top: 7vh">
+                <a class="button-single-person" href="../transition_pages/services_of_people/services_of_single_person.html?' + item.id + '">Servizi di cui si occupa</a>
 
+            </div>
         </div>
+        -->
     </div>
-    <div class="d-flex flex-row justify-content-around" style="margin-top: 7vh" id="buttons">
-        <!-- DA ELIMINARE QUANDO FUNZIONA
-        <a class="btn btn-outline-primary btn-large link-button" href="../transition_pages/location_of_services/locations_of_cse.html">Le Nostre Sedi</a><a class="btn btn-outline-primary btn-large link-button" href="../transition_pages/people_of_services/people_of_cse.html">I nostri collaboratori</a>        -->
-    </div>
-
 </div>
+<br>
 
 
 
-<section id="footer" class="footer">
+<section id="footer" class="footer" >
     <div class="container">
         <div class="row text-center text-xs-center text-sm-center text-md-center text-lg-center text-xl-center">
             <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3">
@@ -227,22 +194,22 @@
             <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3">
                 <h2><a href="../all_services_static.html">Servizi</a></h2>
                 <ul class="list-unstyled quick-links">
-                    <li><a href="service01_static.html"><i class="fa fa-angle-double-right"></i>Centro Socio Educativo</a></li>
-                    <li><a href="service02_static.html"><i class="fa fa-angle-double-right"></i>Comunicazione per l’autismo</a></li>
-                    <li><a href="service03_static.html"><i class="fa fa-angle-double-right"></i>Noi Con Te</a></li>
-                    <li><a href="service04_static.html"><i class="fa fa-angle-double-right"></i>Dottor Sorriso</a></li>
-                    <li><a href="service05_static.html"><i class="fa fa-angle-double-right"></i>Biblioteca Speciale</a></li>
+                    <li><a href="../single_services_base/service01_static.html"><i class="fa fa-angle-double-right"></i>Centro Socio Educativo</a></li>
+                    <li><a href="../single_services_base/service02_static.html"><i class="fa fa-angle-double-right"></i>Comunicazione per l’autismo</a></li>
+                    <li><a href="../single_services_base/service03_static.html"><i class="fa fa-angle-double-right"></i>Noi Con Te</a></li>
+                    <li><a href="../single_services_base/service04_static.html"><i class="fa fa-angle-double-right"></i>Dottor Sorriso</a></li>
+                    <li><a href="../single_services_base/service05_static.html"><i class="fa fa-angle-double-right"></i>Biblioteca Speciale</a></li>
                 </ul>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
                 <ul class="list-unstyled list-inline social text-center">
-                    <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-facebook"></i></a></li>
-                    <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-twitter"></i></a></li>
-                    <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-instagram"></i></a></li>
-                    <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-google-plus"></i></a></li>
-                    <li class="list-inline-item"><a href="javascript:void();" target="_blank"><i class="fa fa-envelope"></i></a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fa fa-instagram"></i></a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    <li class="list-inline-item"><a href="#" target="_blank"><i class="fa fa-envelope"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -257,7 +224,6 @@
 
 <!-- Main -->
 <script src="../../assets/js/main.js"></script>
-
 
 </body>
 </html>
