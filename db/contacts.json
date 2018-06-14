@@ -1,0 +1,50 @@
+[
+  {
+    "responsabile": "Responsabile rapporti con l'esterno",
+    "nome":"Dott. Mario Rossi",
+    "indirizzo":"Piazza Duca d'aosta, 11, 20135 Milano (MI)",
+    "first_email":"mario.rossi@dgarden.it",
+    "second_email":"",
+    "telefono":"800 800 123"
+  },
+  {
+    "responsabile": "Dalmine",
+    "nome":"Bruno Biondo",
+    "indirizzo":"Piazza Libertà, Dalmine (BG)",
+    "first_email":"bruno.biondo@dgarden.it",
+    "second_email":"segreteria.dalmine@dgarden.it",
+    "telefono":"800 800 123"
+  },
+  {
+    "responsabile": "Augusta",
+    "nome":"Franco Forte",
+    "indirizzo":"Via Giuseppe di Vittorio, Augusta (SR)",
+    "first_email":"franco.forte@dgarden.it",
+    "second_email":"segreteria.augusta@dgarden.it",
+    "telefono":"800 800 123"
+  },
+  {
+    "responsabile": "Chiari",
+    "nome":"Smeralda Costa",
+    "indirizzo":"Corso Marcantonio, Mozza Grogna (CH)",
+    "first_email":"smeralda.costa@dgarden.it",
+    "second_email":"segreteria.chiari@dgarden.it",
+    "telefono":"800 800 123"
+  },
+  {
+    "responsabile": "Mozza Grogna",
+    "nome":"Bianca Scheda",
+    "indirizzo":"Corso Marcantonio, Mozza Grogna (CH)",
+    "first_email":"bianca.scheda@dgarden.it",
+    "second_email":"segreteria.mozzagrogna@dgarden.it",
+    "telefono":"800 800 123"
+  },
+  {
+    "responsabile": "Tagliacozzo",
+    "nome":"Marina Stella",
+    "indirizzo":"Piazza Duca degli Abruzzi, Tagliacozzo (AQ)",
+    "first_email":"marina.stella@dgarden.it",
+    "second_email":"segreteria.tagliacozzo@dgarden.it",
+    "telefono":"800 800 123"
+  }
+]
