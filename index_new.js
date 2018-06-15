@@ -240,7 +240,7 @@ var queries = {
                     id : id
                 })
                 .then(results => {
-                    res.json(results);
+                    res(results);
                 })
         },
         calendar : (id, res) => {
@@ -251,7 +251,7 @@ var queries = {
                     id : id
                 })
                 .then(results => {
-                    res.json(results);
+                    res(results);
                 })
 
         },
