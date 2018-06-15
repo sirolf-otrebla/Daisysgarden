@@ -192,7 +192,7 @@ var queries = {
                 .from("personale")
                 .orderBy("cognome", "nome")
                 .then(results => {
-                    res.json(results);
+                    res(results);
                 });
         },
         by_id : (id, res) => {
@@ -203,7 +203,7 @@ var queries = {
                     id : id
                 })
                 .then(results => {
-                    res.json(results);
+                    res(results);
                 })
         },
         byService : (serviceID, callback) => {
@@ -228,7 +228,7 @@ var queries = {
                 .from("servizi")
                 .orderBy("nome")
                 .then(results => {
-                    res.json(results);
+                    res(results);
                 });
 
         },
