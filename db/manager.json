@@ -1,4 +1,22 @@
-{
-  "id_sede" : 1,
-  "id_manager" : 1
-}
+[
+  {
+    "id_sede": 1,
+    "id_manager": 7
+  },
+  {
+    "id_sede": 2,
+    "id_manager": 2
+  },
+  {
+    "id_sede": 3,
+    "id_manager": 1
+  },
+  {
+    "id_sede": 4,
+    "id_manager": 11
+  },
+  {
+    "id_sede": 5,
+    "id_manager": 12
+  }
+]

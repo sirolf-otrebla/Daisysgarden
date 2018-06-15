@@ -1,0 +1,134 @@
+[
+  {
+    "id_personale": 1,
+    "id_servizio": 1
+  },
+  {
+    "id_personale": 3,
+    "id_servizio": 1
+  },
+  {
+    "id_personale": 4,
+    "id_servizio": 1
+  },
+  {
+    "id_personale": 5,
+    "id_servizio": 1
+  },
+  {
+    "id_personale": 6,
+    "id_servizio": 1
+  },
+  {
+    "id_personale": 7,
+    "id_servizio": 1
+  },
+  {
+    "id_personale": 12,
+    "id_servizio": 1
+  },
+  {
+    "id_personale": 1,
+    "id_servizio": 2
+  },
+  {
+    "id_personale": 2,
+    "id_servizio": 2
+  },
+  {
+    "id_personale": 4,
+    "id_servizio": 2
+  },
+  {
+    "id_personale": 5,
+    "id_servizio": 2
+  },
+  {
+    "id_personale": 6,
+    "id_servizio": 2
+  },
+  {
+    "id_personale": 8,
+    "id_servizio": 2
+  },
+  {
+    "id_personale": 11,
+    "id_servizio": 2
+  },
+  {
+    "id_personale": 1,
+    "id_servizio": 3
+  },
+  {
+    "id_personale": 4,
+    "id_servizio": 3
+  },
+  {
+    "id_personale": 5,
+    "id_servizio": 3
+  },
+  {
+    "id_personale": 6,
+    "id_servizio": 3
+  },
+  {
+    "id_personale": 7,
+    "id_servizio": 3
+  },
+  {
+    "id_personale": 9,
+    "id_servizio": 3
+  },
+  {
+    "id_personale": 12,
+    "id_servizio": 3
+  },
+  {
+    "id_personale": 2,
+    "id_servizio": 4
+  },
+  {
+    "id_personale": 4,
+    "id_servizio": 4
+  },
+  {
+    "id_personale": 5,
+    "id_servizio": 4
+  },
+  {
+    "id_personale": 6,
+    "id_servizio": 4
+  },
+  {
+    "id_personale": 11,
+    "id_servizio": 4
+  },
+  {
+    "id_personale": 12,
+    "id_servizio": 4
+  },
+  {
+    "id_personale": 4,
+    "id_servizio": 5
+  },
+  {
+    "id_personale": 5,
+    "id_servizio": 5
+  },
+  {
+    "id_personale": 6,
+    "id_servizio": 5
+  },
+  {
+    "id_personale": 7,
+    "id_servizio": 5
+  },
+  {
+    "id_personale": 10,
+    "id_servizio": 5
+  },
+  {
+    "id_personale": 11,
+    "id_servizio": 5
+  }
+]

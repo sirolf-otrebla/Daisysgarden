@@ -56,11 +56,7 @@ function buildSchema(callback) {
             " giorni varchar(255),\n" +
             " telefono varchar(255),\n" +
             " indirizzo varchar(255),\n" +
-            " first_email varchar(255),\n" +
-            " second_email varchar(255),\n" +
-            " responsabile varchar(255),\n" +
-            " lat varchar(255),\n" +
-            " long varchar(255),\n" +
+            " email varchar(255),\n" +
             " PRIMARY KEY(id)\n" +
             ");").catch(err => {
             console.log("ERRORE NEL DDL");
@@ -97,8 +93,7 @@ function buildSchema(callback) {
                         " nome varchar(255),\n" +
                         " indirizzo varchar(255),\n" +
                         " telefono varchar(255),\n" +
-                        " first_email varchar(255),\n" +
-                        " second_email varchar(255),\n" +
+                        " email varchar(255),\n" +
                         " PRIMARY KEY(versione)\n" +
                         ");").catch(err => {
                         console.log("ERRORE NEL DDL");
@@ -146,11 +141,11 @@ let populateDb = function () {
         ddl = fs.readFileSync("./db/ddl_pg.sql").toString();
     }
     let about = require("./db/about");
-    let contacts = require("./db/location_contacts");
+    let contacts = require("./db/contacts");
     let locations = require("./db/locations");
     let locations_Services = require("./db/locations_Services");
     let people = require("./db/people");
-    let People_Services = require("./db/People_Services");
+    let People_Services = require("./db/people_services");
     let services = require("./db/services");
     let manager = require("./db/manager");
     knex("Sedi").insert(locations).catch(err => {

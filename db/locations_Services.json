@@ -1,7 +1,62 @@
 [
-
-{
-  "id_sede" : 1,
-  "id_servizio" : 1
-}
+  {
+    "id_sede": 1,
+    "id_servizio": 1
+  },
+  {
+    "id_sede": 1,
+    "id_servizio": 3
+  },
+  {
+    "id_sede": 1,
+    "id_servizio": 5
+  },
+  {
+    "id_sede": 2,
+    "id_servizio": 2
+  },
+  {
+    "id_sede": 2,
+    "id_servizio": 4
+  },
+  {
+    "id_sede": 3,
+    "id_servizio": 1
+  },
+  {
+    "id_sede": 3,
+    "id_servizio": 2
+  },
+  {
+    "id_sede": 3,
+    "id_servizio": 3
+  },
+  {
+    "id_sede": 4,
+    "id_servizio": 2
+  },
+  {
+    "id_sede": 4,
+    "id_servizio": 4
+  },
+  {
+    "id_sede": 4,
+    "id_servizio": 5
+  },
+  {
+    "id_sede": 5,
+    "id_servizio": 1
+  },
+  {
+    "id_sede": 5,
+    "id_servizio": 3
+  },
+  {
+    "id_sede": 5,
+    "id_servizio": 4
+  },
+  {
+    "id_sede": 5,
+    "id_servizio": 5
+  }
 ]

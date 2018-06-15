@@ -8,11 +8,7 @@
     "giorni":"Lun-Ven",
     "telefono":"800 800 123",
     "indirizzo":"Via Giuseppe di Vittorio, Augusta (SR)",
-    "first_email":"franco.forte@dgarden.it",
-    "second_email":"segreteria.augusta@dgarden.it",
-    "responsabile":"Franco Forte",
-    "lat":"37.2490889",
-    "long":"15.2233656"
+    "email":"segreteria.augusta@dgarden.it"
   },
   {
     "id" : 2,
@@ -23,11 +19,7 @@
     "giorni":"Lun-Ven",
     "telefono":"800 800 123",
     "indirizzo":"Piazza Martiri della Libertà, Chiari (BS)",
-    "first_email":"smeralda.costa@dgarden.it",
-    "second_email":"segreteria.chiari@dgarden.it",
-    "responsabile":"Smeralda Costa",
-    "lat":"45.5382",
-    "long":"9.9308"
+    "email":"segreteria.chiari@dgarden.it"
   },
   {
     "id" : 3,
@@ -38,11 +30,7 @@
     "giorni":"Lun-Ven",
     "telefono":"800 800 123",
     "indirizzo":"Piazza Libertà, Dalmine (BG)",
-    "first_email":"bruno.biondo@dgarden.it",
-    "second_email":"segreteria.dalmine@dgarden.it",
-    "responsabile":"Bruno Biondo",
-    "lat":"45.6477",
-    "long":"9.6011"
+    "email":"segreteria.dalmine@dgarden.it"
   },
   {
     "id" : 4,
@@ -53,11 +41,7 @@
     "giorni":"Lun-Ven",
     "telefono":"800 800 123",
     "indirizzo":"Corso Marcantonio, Mozza Grogna (CH)",
-    "first_email":"bianca.scheda@dgarden.it",
-    "second_email":"segreteria.mozzagrogna@dgarden.it",
-    "responsabile":"Bianca Scheda",
-    "lat":"42.2120",
-    "long":"14.4447"
+    "email":"segreteria.mozzagrogna@dgarden.it"
   },
   {
     "id" : 5,
@@ -68,10 +52,6 @@
     "giorni":"Lun-Ven",
     "telefono":"800 800 123",
     "indirizzo":"Piazza Duca degli Abruzzi, Tagliacozzo (AQ)",
-    "first_email":"marina.stella@dgarden.it",
-    "second_email":"segreteria.tagliacozzo@dgarden.it",
-    "responsabile":"Marina Stella",
-    "lat":"42.0682",
-    "long":"13.2546"
+    "email":"segreteria.tagliacozzo@dgarden.it"
   }
 ]
