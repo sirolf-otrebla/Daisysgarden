@@ -197,7 +197,7 @@ var queries = {
                 .from("personale")
                 .orderBy("cognome", "nome")
                 .then(results => {
-                    res.json(results);
+                    res(results);
                 });
         },
         by_id : (id, res) => {
@@ -205,10 +205,10 @@ var queries = {
                 .select("id", "nome", "mansione", "descrizione", "immagine","email", "telefono")
                 .from("personale")
                 .where({
-                    id : id
+                    "id" : id
                 })
                 .then(results => {
-                    res.json(results);
+                    res(results);
                 })
         },
         byService : (serviceID, callback) => {
@@ -454,8 +454,8 @@ app.get("/api/people", (req, res) => {
     })
 });
 
-app.get("/api/people:people_id", (req, res) => {
-    queries.people.by_id(req.params, (results) => {
+app.get("/api/people/:people_id", (req, res) => {
+    queries.people.by_id(parseInt(req.params.people_id), (results) => {
         res.json(results)
     })
 });
@@ -475,10 +475,10 @@ app.get("/api/locations", (req, res) => {
 //
 // in this way only informations which are relevant for the selected page
 // will be sent back to the client
-app.get("/api/locations:location_id", (req, res) => {
+app.get("/api/locations/:location_id", (req, res) => {
 
     if(queries.locations[req.query.page])
-        queries.locations[req.query.page](req.params, (results) => {
+        queries.locations[req.query.page](parseInt(req.params.location_id), (results) => {
             res.json(results);
         });
 });
@@ -492,7 +492,7 @@ app.get("/api/locations:location_id", (req, res) => {
 // infos are returned as json object containing id, images and names of the
 // required services
 app.get("/api/services/locations/:location_id", (req, res) => {
-        queries.services.byLocation(req.params, (results) => {
+        queries.services.byLocation(req.params.location_id, (results) => {
             res.json(results);
         });
 
@@ -507,14 +507,14 @@ app.get("/api/services/locations/:location_id", (req, res) => {
 // infos are returned as json object containing id, images and names of the
 // required services
 app.get("/api/people/services/:service_id", (req, res) => {
-    queries.people.byService(req.params, (results) => {
+    queries.people.byService(parseInt(req.params.service_id), (results) => {
         res.json(results);
     })
 });
 
 // retrieves services by location (location_id)
 app.get("/api/locations/services/:service_id", (req, res) => {
-    queries.locations.byService(req.params, (results) => {
+    queries.locations.byService(parseInt(req.params.service_id), (results) => {
         res.json(results);
     })
 
@@ -522,7 +522,7 @@ app.get("/api/locations/services/:service_id", (req, res) => {
 
 // retrieves people by service (service_id)
 app.get("/api/services/people/:people_id", (req, res) => {
-    queries.services.byPeople(req.params, (results) => {
+    queries.services.byPeople(parseInt(req.params.people_id), (results) => {
         res.json(results);
     })
 });
@@ -558,7 +558,7 @@ app.get("/api/services", (req, res) => {
 //
 // in this way only informations which are relevant for the selected page
 // will be sent back to the client
-app.get("/api/services:service_id", (req, res) => {
+app.get("/api/services/:service_id", (req, res) => {
     if(queries.services[req.query.page])
         queries.services[req.query.page](req.params, (results) => {
             res.json(results);
