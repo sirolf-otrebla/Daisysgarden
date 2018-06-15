@@ -4,7 +4,6 @@ const app = express();
 const bodyParser = require("body-parser");
 sqlDbFactory = require("knex");
 const process = require("process");
-const sqlite = require("sqlite3n");
 let knex = sqlDbFactory;
 
 process.env.TEST = true;
@@ -19,7 +18,7 @@ function defineSQLenv() {
             client: "sqlite3",
             debug: true,
             connection: {
-                filename: "./petsdb.sqlite"
+                filename: "./db/local.sqlite"
             },
             useNullAsDefault: true
         });
@@ -37,7 +36,7 @@ function populateDb() {
 
     let ddl = fs.readFileSync("./db/ddl.sql").toString();
     knex.schema.raw(ddl);
-    let about = require("./db/about.json");
+    let about = require("./db/about");
     let contacts = require("./db/contacts");
     let locations = require("./db/locations");
     let locations_Services = require("./db/locations_Services");
