@@ -29,12 +29,8 @@
         }
 
         function format(item) {
-            //toOutput += '<div class="row form-group">';
-            //toOutput += '<a href="../doctors/dottore.html?' + item.id + '">';
             toOutput += '<a href="single_person/single_person_db.html?' +item.id + '" class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3" style="padding-bottom: 5vh">';
             toOutput += '<img class="image-grid" src="../assets/images/people/' + item.image + '">';
-            //toOutput += '<div class="row cards card-small">';
-            //toOutput += '<div class="col-sm-3 col-xs-2"><img src="../../assets/img/' + item.image + '" width="40px"></div>';
             toOutput += '<div class="bottom-left"><span class="title">' + item.name + ' ' + item.surname + '</span><br><span class="subText">' + item.mansione + '</span></div>';
             toOutput += '</a>';
             if (iterator % 4 == 0) {
@@ -230,8 +226,8 @@
                     <h2>About us</h2>
                     <ul class="list-unstyled quick-links">
                         <li><a href="../index.html"><i class="fa fa-angle-double-right"></i>Home</a></li>
-                        <li><a href="who_we_are_base/who_we_are_intro_static.html"><i class="fa fa-angle-double-right"></i>Chi Siamo</a></li>
-                        <li><a href="people.html"><i class="fa fa-angle-double-right"></i>Personale</a></li>
+                        <li><a href="who_we_are_base/who_we_are_intro_db.html"><i class="fa fa-angle-double-right"></i>Chi Siamo</a></li>
+                        <li><a href="people_db.html"><i class="fa fa-angle-double-right"></i>Personale</a></li>
                         <li><a href="contact_us.html"><i class="fa fa-angle-double-right"></i>Contattaci</a></li>
                     </ul>
                 </div>
@@ -245,23 +241,23 @@
                     </ul>
                 </div>
                 <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3">
-                    <h2><a href="all_locations_static.html">Location</a></h2>
+                    <h2><a href="all_locations_db.html">Location</a></h2>
                     <ul class="list-unstyled quick-links">
-                        <li><a href="single_locations_base/dalmine/dalmine_intro_static.html"><i class="fa fa-angle-double-right"></i>Dalmine</a></li>
-                        <li><a href="single_locations_base/chiari/chiari_intro_static.html"><i class="fa fa-angle-double-right"></i>Chiari</a></li>
-                        <li><a href="single_locations_base/augusta/augusta_intro_static.html"><i class="fa fa-angle-double-right"></i>Augusta</a></li>
-                        <li><a href="single_locations_base/mozzagrogna/mozzagrogna_intro_static.html"><i class="fa fa-angle-double-right"></i>Mozza Grogna</a></li>
-                        <li><a href="single_locations_base/tagliacozzo/tagliacozzo_intro_static.html"><i class="fa fa-angle-double-right"></i>Tagliacozzo</a></li>
+                        <li><a href="single_locations_base/single_location_intro_db.html?1"><i class="fa fa-angle-double-right"></i>Dalmine</a></li>
+                        <li><a href="single_locations_base/single_location_intro_db.html?2"><i class="fa fa-angle-double-right"></i>Chiari</a></li>
+                        <li><a href="single_locations_base/single_location_intro_db.html?3"><i class="fa fa-angle-double-right"></i>Augusta</a></li>
+                        <li><a href="single_locations_base/single_location_intro_db.html?4"><i class="fa fa-angle-double-right"></i>Mozza Grogna</a></li>
+                        <li><a href="single_locations_base/single_location_intro_db.html?5"><i class="fa fa-angle-double-right"></i>Tagliacozzo</a></li>
                     </ul>
                 </div>
                 <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3">
-                    <h2><a href="all_services_static.html">Servizi</a></h2>
+                    <h2><a href="all_services_db.html">Servizi</a></h2>
                     <ul class="list-unstyled quick-links">
-                        <li><a href="single_services_base/service01_static.html"><i class="fa fa-angle-double-right"></i>Centro Socio Educativo</a></li>
-                        <li><a href="single_services_base/service02_static.html"><i class="fa fa-angle-double-right"></i>Comunicazione per l’autismo</a></li>
-                        <li><a href="single_services_base/service03_static.html"><i class="fa fa-angle-double-right"></i>Noi Con Te</a></li>
-                        <li><a href="single_services_base/service04_static.html"><i class="fa fa-angle-double-right"></i>Dottor Sorriso</a></li>
-                        <li><a href="single_services_base/service05_static.html"><i class="fa fa-angle-double-right"></i>Biblioteca Speciale</a></li>
+                        <li><a href="single_services_base/service_intro_db.html?1"><i class="fa fa-angle-double-right"></i>Centro Socio Educativo</a></li>
+                        <li><a href="single_services_base/service_intro_db.html?2"><i class="fa fa-angle-double-right"></i>Comunicazione per l’autismo</a></li>
+                        <li><a href="single_services_base/service_intro_db.html?3"><i class="fa fa-angle-double-right"></i>Noi Con Te</a></li>
+                        <li><a href="single_services_base/service_intro_db.html?4"><i class="fa fa-angle-double-right"></i>Dottor Sorriso</a></li>
+                        <li><a href="single_services_base/service_intro_db.html?5"><i class="fa fa-angle-double-right"></i>Biblioteca Speciale</a></li>
                     </ul>
                 </div>
             </div>
@@ -286,7 +282,7 @@
     </section>
 
     <!-- Main -->
-    <script src="../../assets/js/main.js"></script>
+    <script src="../assets/js/main.js"></script>
 
 
 
