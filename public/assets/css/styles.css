@@ -484,6 +484,12 @@ a.oi-item-link{
     position: relative;
     padding-left: 5vh;
     vertical-align: middle;
+    font-size: 120%;
+}
+
+.skin{
+    width: 5%;
+    height: auto;
 }
 
 #map{
