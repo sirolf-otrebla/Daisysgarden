@@ -1,5 +1,6 @@
 [
   {
+    "id" : 1,
     "nome": "Bruno",
     "cognome": "Biondo",
     "immagine":"bruno_biondo.jpg",
@@ -9,6 +10,7 @@
     "mansione": "Responsabile 'Dalmine'"
   },
   {
+    "id" : 2,
     "nome": "Smeralda",
     "cognome": "Costa",
     "immagine":"smeralda_costa.jpg",
@@ -18,6 +20,7 @@
     "mansione": "Responsabile 'Chiari'"
   },
   {
+    "id" : 3,
     "nome": "Felice",
     "cognome": "Cupo",
     "immagine":"felice_cupo.jpg",
@@ -27,6 +30,7 @@
     "mansione": "Volontario"
   },
   {
+    "id" : 4,
     "nome": "Luca",
     "cognome": "Falaschini",
     "immagine":"luca_falaschini.jpg",
@@ -36,6 +40,7 @@
     "mansione" : "Fondatore"
   },
   {
+    "id" : 5,
     "nome" : "Alberto",
     "cognome" : "Floris",
     "immagine":"alberto_floris.jpg",
@@ -45,6 +50,7 @@
     "mansione" : "Fondatore"
   },
   {
+    "id" : 6,
     "nome": "Leonardo",
     "cognome":"Febbo",
     "immagine":"leonardo_febbo.jpg",
@@ -54,6 +60,7 @@
     "mansione" :"Fondatore"
   },
   {
+    "id" : 7,
     "nome": "Franco",
     "cognome":"Forte",
     "immagine":"franco_forte.jpg",
@@ -63,6 +70,7 @@
     "mansione" : "Responsabile 'Augusta'"
   },
   {
+    "id" : 8,
     "nome": "Guido",
     "cognome":"Labarca",
     "immagine":"guido_labarca.jpg",
@@ -72,6 +80,7 @@
     "mansione" : "Volontario"
   },
   {
+    "id" : 9,
     "nome":"Dario",
     "cognome":"Lampa",
     "immagine":"dario_lampa.jpg",
@@ -81,6 +90,7 @@
     "mansione" :"Volontario"
   },
   {
+    "id" : 10,
     "nome":"Giorgia",
     "cognome":"Marcucci",
     "immagine":"giorgia_marcucci.jpg",
@@ -90,6 +100,7 @@
     "mansione" :"Volontario"
   },
   {
+    "id" : 11,
     "nome":"Bianca",
     "cognome":"Scheda",
     "immagine":"bianca_scheda.jpg",
@@ -99,6 +110,7 @@
     "mansione" :"Responsabile 'Mozza Grogna'"
   },
   {
+    "id" : 12,
     "nome":"Marina",
     "cognome":"Stella",
     "immagine":"marina_stella.jpg",

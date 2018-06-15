@@ -8,7 +8,7 @@ CREATE TABLE Personale(
  telefono varchar(255),
  mansione varchar(255),
  PRIMARY KEY(id)
- )
+ );
 CREATE TABLE Sedi(
  id int,
  nome varchar(255),
