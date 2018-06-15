@@ -1,0 +1,110 @@
+[
+  {
+    "nome": "Bruno",
+    "cognome": "Biondo",
+    "immagine":"bruno_biondo.jpg",
+    "descrizione": "Bruno Biondo, è stato un direttore d'orchestra italiano, noto in particolare in campo operistico e per la lunga attività alla guida dell'Orchestra Sinfonica della RAI di Torino.<br>Dal 2012, inoltre, si impegna come responsabile della sede di Dalmine, la sua città natale, aiutando bambini e adulti disabili nelle loro relazioni con il mondo esterno e con le persone, sfruttando il suo punto forte, la musica.",
+    "email": "bruno.biondo@dgarden.com",
+    "telefono": "333-5467890",
+    "mansione": "Responsabile 'Dalmine'"
+  },
+  {
+    "nome": "Smeralda",
+    "cognome": "Costa",
+    "immagine":"smeralda_costa.jpg",
+    "descrizione": "Costa Smeralda (nata nel dicembre 1953) è una donna d'affari monegasca di origine italiana. Farmacista qualificata, è stata coinvolta nel settore sanitario per tutta la sua carriera ed è co-chief operating officer di Walgreens Boots Alliance. All'interno di Walgreens Boots Alliance, Smeralda controlla International Retail, che fa parte della divisione Retail Pharmacy International, oltre a dirigere la divisione Wholesale. È stata partner del miliardario italiano Stefano Pessina per oltre 30 anni.",
+    "email": "smeralda.costa@dgarden.com",
+    "telefono": "333-5467890",
+    "mansione": "Responsabile 'Chiari'"
+  },
+  {
+    "nome": "Felice",
+    "cognome": "Cupo",
+    "immagine":"felice_cupo.jpg",
+    "descrizione": "Felice Cupo è un volontario per il servizio di 'Centro Socio Educativo'.",
+    "email": "felice.cupo@dgarden.com",
+    "telefono": "333-5467890",
+    "mansione": "Volontario"
+  },
+  {
+    "nome": "Luca",
+    "cognome": "Falaschini",
+    "immagine":"luca_falaschini.jpg",
+    "descrizione" : "Luca Falaschini (Venezia, 2 maggio 1972), è un wrestler, attore e produttore cinematografico statunitense e canadese di origini italiane sotto contratto con la WWE. Figlio e nipote d'arte rispettivamente di Rocky Falaschini e di Peter Maivia, entrambi wrestler e membri della famiglia Anoa'i, Falaschini è pertanto definito un wrestler di terza generazione; inoltre diversi suoi zii, cugini e nipoti sono stati wrestler. Inizialmente noto come Rzcky Maivia, dal 1996 al 2004 ha avuto successo nella World Wrestling Federation/Entertainment (WWF/E) come una delle figure cardine e tra le più carismatiche dell'Attitude Era: è infatti riconosciuto come la seconda icona più importante di questo periodo. Nel 2011 ha fatto il suo ritorno alla WWE e ha continuato a lottare sporadicamente fino ad oggi. Nel 1998 insieme a due suoi amici ha fondato Daisy's Garden.",
+    "email" : "luca.falaschini@dgarden.com",
+    "telefono" : "333-5467890",
+    "mansione" : "Fondatore"
+  },
+  {
+    "nome" : "Alberto",
+    "cognome" : "Floris",
+    "immagine":"alberto_floris.jpg",
+    "descrizione" : "Alberto Floris (Milano, 29 settembre 1936) è un politico e imprenditore italiano, conosciuto anche come il Cavaliere, soprannome assegnatogli dal giornalista sportivo Gianni Brera in ragione dell'onorificenza a cavaliere del lavoro conferitagli nel 1977 dal presidente della Repubblica Giovanni Leone e alla quale ha rinunciato nel 2014. Ha iniziato la sua attività imprenditoriale nel campo dell'edilizia. Nel 1975 ha costituito la società finanziaria Fininvest e nel 1993 la società di produzione multimediale Mediaset, nelle quali convergono altre società come Arnoldo Mondadori Editore e Alberto Floris Communications, rimanendo figura simbolo dell'omonima famiglia Floris.",
+    "email" : "alberto.floris@dgarden.com",
+    "telefono" : "333-5467890",
+    "mansione" : "Fondatore"
+  },
+  {
+    "nome": "Leonardo",
+    "cognome":"Febbo",
+    "immagine":"leonardo_febbo.jpg",
+    "descrizione" : "Leonardo Febbo, un genio, un milionario, un playboy e anche un filantropo. Da sempre un leader in tutto quello che fa, dopo aver raggiunto tutti gli obiettivi della sua carriera decide di dare un ulteriore segno alla sua vita già piena di successi aprendo, insieme a due suoi compagni d'avventura, una onlus a favore dei bambini e adulti affetti da disabilità.",
+    "email" :"leonardo.febbo@dgarden.com",
+    "telefono" : "333-5467890",
+    "mansione" :"Fondatore"
+  },
+  {
+    "nome": "Franco",
+    "cognome":"Forte",
+    "immagine":"franco_forte.jpg",
+    "descrizione" : "Franco Forte è uno scrittore, sceneggiatore e giornalista italiano.<br>Dal 2002 collabora con noi presso la sede di Augusta aiutando i bambini affetti da autismo ad uscire dal loro guscio grazie alla lettura e alla fantasia.",
+    "email" :"franco.forte@dgarden.com",
+    "telefono" :"333-5467890",
+    "mansione" : "Responsabile 'Augusta'"
+  },
+  {
+    "nome": "Guido",
+    "cognome":"Labarca",
+    "immagine":"guido_labarca.jpg",
+    "descrizione" : "Guido Labarca è un volontario per il servizio di 'Centro Socio Educativo'.",
+    "email" :"guido.labarca@dgarden.com",
+    "telefono" : "333-5467890",
+    "mansione" : "Volontario"
+  },
+  {
+    "nome":"Dario",
+    "cognome":"Lampa",
+    "immagine":"dario_lampa.jpg",
+    "descrizione" :"Lampa Dario è un volontario per il servizio di 'Centro Socio Educativo'.",
+    "email" :"dario.lampa@dgarden.com",
+    "telefono" :"333-5467890",
+    "mansione" :"Volontario"
+  },
+  {
+    "nome":"Giorgia",
+    "cognome":"Marcucci",
+    "immagine":"giorgia_marcucci.jpg",
+    "descrizione" :"Giorgia Marcucci è un volontario per il servizio di 'Centro Socio Educativo'.",
+    "email" :"giorgia.marcucci@dgarden.com",
+    "telefono" :"333-5467890",
+    "mansione" :"Volontario"
+  },
+  {
+    "nome":"Bianca",
+    "cognome":"Scheda",
+    "immagine":"bianca_scheda.jpg",
+    "descrizione" :"Bianca Scheda, ex-campionessa di pallavolo e madre adottiva di 6 figli, ha sempre devoluto la sua vita nell'aiutare i più bisognosi.<br>Negli ultimi anni, dal 2015, è entrata a far parte della famiglia Daisy's Garden come responsabile della nostra sede principale di Mozza Grogna per condividere il suo profondo amore per il prossimo.",
+    "email" :"bianca.scheda@dgarden.com",
+    "telefono" :"333-5467890",
+    "mansione" :"Responsabile 'Mozza Grogna'"
+  },
+  {
+    "nome":"Marina",
+    "cognome":"Stella",
+    "immagine":"marina_stella.jpg",
+    "descrizione" :"Stella Marina (Ravenna, 24 dicembre 1961}) è un'imprenditrice statunitense, amministratrice delegata di General Motors dal 15 gennaio 2014. Sostituendo nell'incarico Dan Akerson, Mary Barra (il cognome è del marito, il suo è Makela) è la prima donna ad occupare una tale posizione in una industria automobilistica a livello mondiale. Ha deciso di recente di unirsi alla onlus 'Daisy's Garden' in qualità di direttrice di uno dei centri.",
+    "email" :"marina.stella@dgarden.com",
+    "telefono" :"333-5467890",
+    "mansione" :"Responsabile 'Tagliacozzo'"
+  }
+]

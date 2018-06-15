@@ -1,0 +1,72 @@
+[
+  {
+    "nome":"Augusta",
+    "immagine":"",
+    "descrizione":"L'architettura moderna richiede, a volte, di essere introversa, di ritirarsi. Questo è il caso della residenza ideata dagli architetti tedeschi Ganter&Panter che protegge la privacy dei suoi occupanti. Il cemento grezzo rafforza questo sensazione di protezione, come una fortezza quasi inaccessibile con volumi architettonici semplici e chiusi. Tuttavia, nonostante la freddezza della struttura, l'abbondante vegetazione dà un po' di giovialità e calore allo spazio esterno.",
+    "orari":"09:00-18:00",
+    "giorni":"Lun-Ven",
+    "telefono":"800 800 123",
+    "indirizzo":"Via Giuseppe di Vittorio, Augusta (SR)",
+    "first_email":"franco.forte@dgarden.it",
+    "second_email":"segreteria.augusta@dgarden.it",
+    "responsabile":"Franco Forte",
+    "lat":"37.2490889",
+    "long":"15.2233656"
+  },
+  {
+    "nome":"Chiari",
+    "immagine":"",
+    "descrizione":"Le Corbusier ha affermato: ’L'architettura è il gioco sapiente, corretto e magnifico dei volumi sotto la luce’. E di certo non ha sbagliato! Gli interni moderni hanno forme semplici e materiali idonei alla struttura, con progetti che sono ideati per catturare quanta più luce possibile. L'illuminazione naturale si avvantaggia con le moltissime vetrate e numerosi lucernari posizionati strategicamente nelle costruzioni. Questa meravigliosa struttura in foto fa un ottimo uso della luce del sole che ne illumina i volumi architettonici interni.",
+    "orari":"09:00-18:00",
+    "giorni":"Lun-Ven",
+    "telefono":"800 800 123",
+    "indirizzo":"Piazza Martiri della Libertà, Chiari (BS)",
+    "first_email":"smeralda.costa@dgarden.it",
+    "second_email":"segreteria.chiari@dgarden.it",
+    "responsabile":"Smeralda Costa",
+    "lat":"45.5382",
+    "long":"9.9308"
+  },
+  {
+    "nome":"Dalmine",
+    "immagine":"",
+    "descrizione":"Il nuovo centro di Dalmine è stato inaugurato nel 2013. Esso fa parte integrante della rete di Daisy's Garden; il suo principale bacino d’utenza è rappresentato dai quartieri della zona sud-ovest di Bergamo e dai comuni limitrofi, fino alla periferia di Milano. Vengono svolte tutte le discipline mediche di base oltre a molte specialistiche e ad attività d’alta specializzazione per le quali la struttura è diventata punto di riferimento regionale; possiede inoltre tecnologie sanitarie e servizi all'avanguardia. La mole d’attività e di prestazioni è considerevole, in riferimento alle sue dimensioni strutturali e organizzative.",
+    "orari":"09:00-18:00",
+    "giorni":"Lun-Ven",
+    "telefono":"800 800 123",
+    "indirizzo":"Piazza Libertà, Dalmine (BG)",
+    "first_email":"bruno.biondo@dgarden.it",
+    "second_email":"segreteria.dalmine@dgarden.it",
+    "responsabile":"Bruno Biondo",
+    "lat":"45.6477",
+    "long":"9.6011"
+  },
+  {
+    "nome":"Mozza Grogna",
+    "immagine":"",
+    "descrizione":"La sede di Mozza Grogna è stata la prima per la nostra onlus. Ristrutturata da un vecchio capannone, rappresenta per noi un punto di riferimento e di coraggio da poter condividere con tutti i nostri collaboratori e pazienti.",
+    "orari":"09:00-18:00",
+    "giorni":"Lun-Ven",
+    "telefono":"800 800 123",
+    "indirizzo":"Corso Marcantonio, Mozza Grogna (CH)",
+    "first_email":"bianca.scheda@dgarden.it",
+    "second_email":"segreteria.mozzagrogna@dgarden.it",
+    "responsabile":"Bianca Scheda",
+    "lat":"42.2120",
+    "long":"14.4447"
+  },
+  {
+    "nome":"Tagliacozzo",
+    "immagine":"",
+    "descrizione":"La sede di Tagliacozzo è la più moderna dei nostri edifici. Finanziato da un generoso collaboratore è un moderno e tecnologico edificio privo di barriere architettoniche e, trovandosi immerso nel verde, garantisce un ambiente naturale, felice e tranquillo per tutti i nostri pazienti che potranno così seguire con serenità tutti i servizi.",
+    "orari":"09:00-18:00",
+    "giorni":"Lun-Ven",
+    "telefono":"800 800 123",
+    "indirizzo":"Piazza Duca degli Abruzzi, Tagliacozzo (AQ)",
+    "first_email":"marina.stella@dgarden.it",
+    "second_email":"segreteria.tagliacozzo@dgarden.it",
+    "responsabile":"Marina Stella",
+    "lat":"42.0682",
+    "long":"13.2546"
+  }
+]

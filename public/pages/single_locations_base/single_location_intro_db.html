@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Daisy's Garden - Servizi</title>
+    <title>Augusta</title>
 
     <link href="https://fonts.googleapis.com/css?family=Raleway:600,800" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
@@ -23,24 +23,23 @@
 
     <script src="../../assets/js/script.js"></script>
 
-
     <script>
         //MUST BE DEFINED, EVEN BLANK
-        var apiCall = "services/" + item.id + "?page=when_useful";
+        var apiCall = "locations/" + item.id + "?page=contacts";
         var toOutput = '';
 
         function format(item) {
-            $('#breadcrumb').html('<ol class="breadcrumb oi" ><li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../../index.html" >Home</a></li><li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../all_services_db.html">Servizi</a></li><li class="breadcrumb-item oi-item"><a class="oi-item-link" href="service_intro_db.html?' + item.id + '">' + item.name + '</a></li><li class="breadcrumb-item oi-item active">Quando è utile</li></ol>');
+            $('#breadcrumb').html('<ol class="breadcrumb oi" ><li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../../index.html" >Home</a></li><li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../all_locations_db.html">Sedi</a></li><li class="breadcrumb-item oi-item"><a class="oi-item-link" href="single_location_intro_db.html?' + item.id + '">' + item.name + '</a></li><li class="breadcrumb-item oi-item active">Presentazione</li></ol>')
             $('#serviceTitle').html('<div class="container content-title">' + item.name + '</div>')
             $('#serviceImage').html('<div class="container content-title-image color"><div class="container content-title-image image" style="background-image: url(../../assets/images/' + item.image + ')"></div></div>')
-            $('#buttons').html('<a class="btn btn-outline-primary btn-large link-button" href="../transition_pages/location_of_services/locations_of_service.html?' + item.id +'">Le Nostre Sedi</a><a class="btn btn-outline-primary btn-large link-button" href="../transition_pages/people_of_services/people_of_service.html?' + item.id + '">I nostri collaboratori</a>')
-            $('#subnav').html('<li class="nav-item"><a class="nav-link my-nav-pills" href="service_intro_db.html?\' + item.id + \'">Introduzione</a></li><li class="nav-item"><a class="nav-link my-nav-pills" href="service_calendar_db.html?\' + item.id + \'">Calendario</a></li><li class="nav-item"><a class="nav-link my-nav-pills active" href="service_when_useful_db.html?\' + item.id + \'">Quando è utile</a></li><li class="nav-item"><a class="nav-link my-nav-pills" href="service_how_to_access_db.html?\' + item.id + \'">Come accedere</a></li>')
-
+            $('#buttons').html('<a class="btn btn-outline-primary btn-large link-button" href="../transition_pages/services_of_location_db.html?' + item.id + '">I Nostri Servizi</a>')
+            $('#subnav').html('<li class="nav-item"><a class="nav-link my-nav-pills active" href="single_location_intro_db.html?' + item.id + '">Presentazione</a></li><li class="nav-item"><a class="nav-link my-nav-pills" href="single_location_map_db.html?' + item.id + '">Mappa</a></li><li class="nav-item"><a class="nav-link my-nav-pills" href="single_location_contacts_db.html?' + item.id + '">Contatti</a></li>')
 
             toOutput += item.description;
 
         }
     </script>
+
 
 </head>
 <body>
@@ -55,7 +54,8 @@
         <a class="navbar-brand" style="font-size: 130%;" href="../../index.html" ><img src="../../assets/images/logo.png" style="
         padding-left: 2vh;
         padding-right: 2vh;
-        max-height: 4vh">Daisy's garden</a>
+        max-height: 4vh"
+        >Daisy's garden</a>
 
         <!-- Toggler/collapsibe Button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" style="
@@ -67,7 +67,6 @@
             min-height: 4vh;"></span>
         </button>
 
-
         <!-- Navbar links -->
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav" style="padding-left: 5vh">
@@ -78,10 +77,10 @@
                     <a class="nav-link my-nav-link" href="../people.html">Personale </a>
                 </li>
                 <li class="nav-item my-nav-item">
-                    <a class="nav-link my-nav-link" href="../all_locations_static.html">Sedi</a>
+                    <a class="nav-link my-nav-link active" href="../all_locations_static.html">Sedi</a>
                 </li>
                 <li class="nav-item my-nav-item">
-                    <a class="nav-link my-nav-link active" href="../all_services_static.html">Servizi</a>
+                    <a class="nav-link my-nav-link" href=../all_services_static.html>Servizi</a>
                 </li>
                 <li class="nav-item my-nav-item">
                     <a class="nav-link my-nav-link" href="../page_under_construction.html">News </a>
@@ -107,60 +106,48 @@
     <div class="container" >
         <div id="breadcrumb">
             <!--
-            <ol class="breadcrumb oi" >
-                <li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../../index.html" >Home</a></li>
-                <li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../all_services_static.html">Servizi</a></li>
-                <li class="breadcrumb-item oi-item"><a class="oi-item-link" href="service01_static.html">Centro Socio Educativo</a></li>
-                <li class="breadcrumb-item oi-item active">Quando è utile</li>
+            <ol class="breadcrumb oi" ><li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../../index.html" >Home</a></li><li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../all_locations_db.html">Sedi</a></li><li class="breadcrumb-item oi-item"><a class="oi-item-link" href="single_location_intro_db.html?' + item.id + '">' + item.name + '</a></li><li class="breadcrumb-item oi-item active">Presentazione</li></ol>
 
-            </ol>
             -->
         </div>
 
 
         <div id="serviceTitle">
             <!--
-            <div class="container content-title">Centro Socio Educativo</div>
+            <div class="container content-title">' + item.name + '</div>
             -->
         </div>
 
         <div id="serviceImage">
             <!--
-            <div class="container content-title-image color"><div class="container content-title-image image" style="background-image: url(../../assets/images/service01.jpg)"></div></div>
+            <div class="container content-title-image color"><div class="container content-title-image image" style="background-image: url(../../assets/images/' + item.image + ')"></div></div>
             -->
         </div>
-
-
     </div>
     <div class="container page-content">
         <div class="container-fluid sub-nav" id="sub-nav">
             <ul id="subnav" class="nav nav-pills nav-justified">
                 <!--
-                <li class="nav-item">
-                    <a class="nav-link my-nav-pills" href="service01_static.html">Introduzione</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link my-nav-pills" href="service01_calendar.html">Calendario</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link my-nav-pills active" href="service01_why.html">Quando è utile</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link my-nav-pills" href="service01_how.html">Come accedere</a>
-                </li>
+                <li class="nav-item"><a class="nav-link my-nav-pills active" href="single_location_intro_db.html?' + item.id + '">Presentazione</a></li><li class="nav-item"><a class="nav-link my-nav-pills" href="single_location_map_db.html?' + item.id + '">Mappa</a></li><li class="nav-item"><a class="nav-link my-nav-pills" href="single_location_contacts_db.html?' + item.id + '">Contatti</a></li>
+
                 -->
             </ul>
         </div>
         <div class="container-fluid content-body" id="list">
-            <!-- DA ELIMINARE QUANDO FUNZIONA [TUTTO QUESTO IN DESCRIPTION]
-            Il programma si rivolge a persone disabili intellettive e psico-relazionali di età compresa
-            tra i 16 e i 65 anni, con invalidità civile certificata, che necessitano di servizi a media protezione.
+            <!--
+            L'architettura moderna richiede, a volte, di essere introversa, di ritirarsi.
+            Questo è il caso della residenza ideata dagli architetti tedeschi Ganter&Panter che protegge
+            la privacy dei suoi occupanti. Il cemento grezzo rafforza questo sensazione di protezione,
+            come una fortezza quasi inaccessibile con volumi architettonici semplici e chiusi.
+            Tuttavia, nonostante la freddezza della struttura, l'abbondante vegetazione dà un po' di
+            giovialità e calore allo spazio esterno.
             -->
         </div>
     </div>
     <div class="d-flex flex-row justify-content-around" style="margin-top: 7vh" id="buttons">
-        <!-- DA ELIMINARE QUANDO FUNZIONA
-        <a class="btn btn-outline-primary btn-large link-button" href="../transition_pages/location_of_services/locations_of_cse.html">Le Nostre Sedi</a><a class="btn btn-outline-primary btn-large link-button" href="../transition_pages/people_of_services/people_of_cse.html">I nostri collaboratori</a>        -->
+        <!--
+        <a class="btn btn-outline-primary btn-large link-button" href="../transition_pages/services_of_single_location.html?' + item.id + '">I Nostri Servizi</a>
+        -->
     </div>
 
 </div>
@@ -174,8 +161,8 @@
                 <h2>About us</h2>
                 <ul class="list-unstyled quick-links">
                     <li><a href="../../index.html"><i class="fa fa-angle-double-right"></i>Home</a></li>
-                    <li><a href="../who_we_are_base/who_we_are_intro_static.html"><i class="fa fa-angle-double-right"></i>Chi Siamo</a></li>
-                    <li><a href="../people.html"><i class="fa fa-angle-double-right"></i>Personale</a></li>
+                    <li><a href="../who_we_are_base/who_we_are_intro_db.html"><i class="fa fa-angle-double-right"></i>Chi Siamo</a></li>
+                    <li><a href="../people_db.html"><i class="fa fa-angle-double-right"></i>Personale</a></li>
                     <li><a href="../contact_us.html"><i class="fa fa-angle-double-right"></i>Contattaci</a></li>
                 </ul>
             </div>
@@ -189,23 +176,23 @@
                 </ul>
             </div>
             <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3">
-                <h2><a href="../all_locations_static.html">Location</a></h2>
+                <h2><a href="../all_locations_db.html">Location</a></h2>
                 <ul class="list-unstyled quick-links">
-                    <li><a href="../single_locations_base/dalmine/dalmine_intro_static.html"><i class="fa fa-angle-double-right"></i>Dalmine</a></li>
-                    <li><a href="../single_locations_base/chiari/chiari_intro_static.html"><i class="fa fa-angle-double-right"></i>Chiari</a></li>
-                    <li><a href="../single_locations_base/augusta/augusta_intro_static.html"><i class="fa fa-angle-double-right"></i>Augusta</a></li>
-                    <li><a href="../single_locations_base/mozzagrogna/mozzagrogna_intro_static.html"><i class="fa fa-angle-double-right"></i>Mozza Grogna</a></li>
-                    <li><a href="../single_locations_base/tagliacozzo/tagliacozzo_intro_static.html"><i class="fa fa-angle-double-right"></i>Tagliacozzo</a></li>
+                    <li><a href="single_location_intro_db.html?1"><i class="fa fa-angle-double-right"></i>Dalmine</a></li>
+                    <li><a href="single_location_intro_db.html?2"><i class="fa fa-angle-double-right"></i>Chiari</a></li>
+                    <li><a href="single_location_intro_db.html?3"><i class="fa fa-angle-double-right"></i>Augusta</a></li>
+                    <li><a href="single_location_intro_db.html?4"><i class="fa fa-angle-double-right"></i>Mozza Grogna</a></li>
+                    <li><a href="single_location_intro_db.html?5"><i class="fa fa-angle-double-right"></i>Tagliacozzo</a></li>
                 </ul>
             </div>
             <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3">
-                <h2><a href="../all_services_static.html">Servizi</a></h2>
+                <h2><a href="../all_services_db.html">Servizi</a></h2>
                 <ul class="list-unstyled quick-links">
-                    <li><a href="service01_static.html"><i class="fa fa-angle-double-right"></i>Centro Socio Educativo</a></li>
-                    <li><a href="service02_static.html"><i class="fa fa-angle-double-right"></i>Comunicazione per l’autismo</a></li>
-                    <li><a href="service03_static.html"><i class="fa fa-angle-double-right"></i>Noi Con Te</a></li>
-                    <li><a href="service04_static.html"><i class="fa fa-angle-double-right"></i>Dottor Sorriso</a></li>
-                    <li><a href="service05_static.html"><i class="fa fa-angle-double-right"></i>Biblioteca Speciale</a></li>
+                    <li><a href="../single_services_base/service_intro_db.html?1"><i class="fa fa-angle-double-right"></i>Centro Socio Educativo</a></li>
+                    <li><a href="../single_services_base/service_intro_db.html?2"><i class="fa fa-angle-double-right"></i>Comunicazione per l’autismo</a></li>
+                    <li><a href="../single_services_base/service_intro_db.html?3"><i class="fa fa-angle-double-right"></i>Noi Con Te</a></li>
+                    <li><a href="../single_services_base/service_intro_db.html?4"><i class="fa fa-angle-double-right"></i>Dottor Sorriso</a></li>
+                    <li><a href="../single_services_base/service_intro_db.html?5"><i class="fa fa-angle-double-right"></i>Biblioteca Speciale</a></li>
                 </ul>
             </div>
         </div>
