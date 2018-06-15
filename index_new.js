@@ -4,7 +4,6 @@ const app = express();
 const bodyParser = require("body-parser");
 sqlDbFactory = require("knex");
 const process = require("process");
-const sqlite = require("sqlite3n");
 let knex = sqlDbFactory;
 
 process.env.TEST = true;
@@ -19,7 +18,7 @@ function defineSQLenv() {
             client: "sqlite3",
             debug: true,
             connection: {
-                filename: "./petsdb.sqlite"
+                filename: "./db/local.sqlite"
             },
             useNullAsDefault: true
         });
@@ -33,58 +32,162 @@ function defineSQLenv() {
     }
 }
 
-function populateDb() {
+function buildSchema(callback) {
+    knex.schema.raw("CREATE TABLE Personale(\n" +
+        " id int,\n" +
+        " cognome varchar(255),\n" +
+        " nome varchar(255),\n" +
+        " immagine varchar(255),\n" +
+        " descrizione TEXT,\n" +
+        " email varchar(255),\n" +
+        " telefono varchar(255),\n" +
+        " mansione varchar(255),\n" +
+        " PRIMARY KEY(id)\n" +
+        " );").catch(err => {
+        console.log("ERRORE NEL DDL");
+        console.log(err);
+    }).then(() => {
+        knex.schema.raw("CREATE TABLE Sedi(\n" +
+            " id int,\n" +
+            " nome varchar(255),\n" +
+            " immagine varchar(255),\n" +
+            " descrizione TEXT,\n" +
+            " orari varchar(255),\n" +
+            " giorni varchar(255),\n" +
+            " telefono varchar(255),\n" +
+            " indirizzo varchar(255),\n" +
+            " first_email varchar(255),\n" +
+            " second_email varchar(255),\n" +
+            " responsabile varchar(255),\n" +
+            " lat varchar(255),\n" +
+            " long varchar(255),\n" +
+            " PRIMARY KEY(id)\n" +
+            ");").catch(err => {
+            console.log("ERRORE NEL DDL");
+            console.log(err);
+        }).then(() => {
+            knex.schema.raw("CREATE TABLE Servizi(\n" +
+                " id int4,\n" +
+                " nome varchar(255), \n" +
+                " immagine varchar(255),\n" +
+                " intro TEXT,\n" +
+                " quando_utile TEXT,\n" +
+                " telefono varchar(255),\n" +
+                " email varchar(255),\n" +
+                " giorni varchar(255),\n" +
+                " orari varchar(255),\n" +
+                " PRIMARY KEY(id)\n" +
+                ");").catch(err => {
+                console.log("ERRORE NEL DDL");
+                console.log(err);
+            }).then(() => {
+                knex.schema.raw("CREATE TABLE Chi_Siamo(\n" +
+                    " versione int4,\n" +
+                    " storia TEXT,\n" +
+                    " cosa_facciamo TEXT,\n" +
+                    " introduzione TEXT,\n" +
+                    " PRIMARY KEY(versione)\n" +
+                    ");").catch(err => {
+                    console.log("ERRORE NEL DDL");
+                    console.log(err);
+                }).then(() => {
+                    knex.schema.raw("CREATE TABLE Contattaci(\n" +
+                        " versione int4,\n" +
+                        " responsabile varchar(255),\n" +
+                        " nome varchar(255),\n" +
+                        " indirizzo varchar(255),\n" +
+                        " telefono varchar(255),\n" +
+                        " first_email varchar(255),\n" +
+                        " second_email varchar(255),\n" +
+                        " PRIMARY KEY(versione)\n" +
+                        ");").catch(err => {
+                        console.log("ERRORE NEL DDL");
+                        console.log(err);
+                    }).then(() => {
+                        knex.schema.raw("CREATE TABLE Tenuto(\n" +
+                            " id_sede int REFERENCES Sedi(id),\n" +
+                            " id_servizio int REFERENCES Servizi(id)\n" +
+                            ");").catch(err => {
+                            console.log("ERRORE NEL DDL");
+                            console.log(err);
+                        }).then(() => {
+                            knex.schema.raw("CREATE TABLE Lavora(\n" +
+                                " id_personale int REFERENCES Personale(id),\n" +
+                                " id_servizio int REFERENCES Servizi(id)\n" +
+                                " );").catch(err => {
+                                console.log("ERRORE NEL DDL");
+                                console.log(err);
+                            }).then(() => {
+                                knex.schema.raw("CREATE TABLE Responsabile(\n" +
+                                    " id_manager int REFERENCES Personale(id),\n" +
+                                    " id_sede int REFERENCES Servizi(id)\n" +
+                                    " );").catch(err => {
+                                    console.log("ERRORE NEL DDL");
+                                    console.log(err);
+                                }).then(() => {
+                                    console.log("TUTTO BENE \n \n");
+                                    callback();
+                                }
+                                );
+                            });
+                        });
+                    });
+                });
+            });
+        });
+    });
+}
+let populateDb = function () {
 
-    let ddl = fs.readFileSync("./db/ddl.sql").toString();
-    knex.schema.raw(ddl);
-    let about = require("./db/about.json");
-    let contacts = require("./db/contacts");
+    let ddl;
+    if (process.env.TEST = true){
+        ddl = fs.readFileSync("./db/ddl_lite.sql").toString();
+    } else {
+        ddl = fs.readFileSync("./db/ddl_pg.sql").toString();
+    }
+    let about = require("./db/about");
+    let contacts = require("./db/location_contacts");
     let locations = require("./db/locations");
     let locations_Services = require("./db/locations_Services");
     let people = require("./db/people");
     let People_Services = require("./db/People_Services");
     let services = require("./db/services");
     let manager = require("./db/manager");
-    knex.select("doctors.*").from("doctors").catch(err => {
-        knex.raw(ddl).catch(err => {
-            console.log("ERRORE NEL DDL");
-            console.log(err);
+    knex("Sedi").insert(locations).catch(err => {
+        console.log(err);
         }).then(() => {
-            knex("Sedi").insert(locations).catch(err => {
+            knex("Personale").insert(people).catch(err => {
                 console.log(err);
             }).then(() => {
-                knex("Personale").insert(people).catch(err => {
+                knex("servizi").insert(services).catch(err => {
                     console.log(err);
                 }).then(() => {
-                    knex("servizi").insert(services).catch(err => {
-                        console.log(err);
+                    knex("Tenuto").insert(locations_Services).catch(err => {
+                        console.log(err)
                     }).then(() => {
-                        knex("Tenuto").insert(locations_Services).catch(err => {
-                            console.log(err)
-                                .then(() => {
-                                    knex("Lavora").insert(People_Services).catch(err => {
+                        knex("Lavora").insert(People_Services).catch(err => {
+                            console.log(err);
+                        }).then(() => {
+                            knex("Chi_Siamo").insert(about).catch(err => {
+                                console.log(err);
+                            }).then(() => {
+                                knex("Contattaci").insert(contacts).catch(err => {
+                                    console.log(err);
+                                }).then(() => {
+                                    knex("Responsabile").insert(manager).catch(err => {
                                         console.log(err);
-                                    }).then(() => {
-                                            knex("Chi_Siamo").insert(about).catch(err => {
-                                                console.log(err);
-                                            }).then(() => {
-                                                knex("Contattaci").insert(contacts).catch(err => {
-                                                    console.log(err);
-                                                }).then(() => {
-                                                    knex("Responsabile").insert(manager).catch(err => {
-                                                        console.log(err);
-                                                    })
-                                                });
-                                            });
-                                        });
-                                    });
-                                })
+                                        })
+                                });
+                            });
                         });
                     });
-                });
+
+                })
             });
+
         });
 }
+
 
 var queries = {
     people : {
@@ -470,7 +573,7 @@ app.get("/api/services:service_id", (req, res) => {
 app.set("port", serverPort);
 
 defineSQLenv();
-populateDb();
+buildSchema(populateDb);
 
 /* Start the server on port 3000 */
 app.listen(serverPort, function() {

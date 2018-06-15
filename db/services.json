@@ -1,5 +1,6 @@
 [
   {
+    "id" : 1,
     "nome":"Centro Socio Educativo",
     "immagine":"",
     "intro":"La persona viene coinvolta nella sua globalità, attraverso interventi socio educativi e socio animativi mirati a potenziare aree specifiche quali autonomie personali, socializzazione, mantenimento di competenze ed abilità pregresse, al fine di costruire un progetto di vita adeguato alle risorse di ciascuno.<br><br>Il Centro è rivolto ad adolescenti ed adulti che, supportati dalle figure educative di riferimento, hanno la possibilità di diventare protagonisti del proprio percorso attraverso attività, laboratori ed uscite sul territorio in cui è prioritario il “fare esperienza”, con il fine comune di approfondire la conoscenza di sé, dell’altro e delle proprie potenzialità. Molto spazio viene dato allo sviluppo delle capacità creative, attraverso un metodo di lavoro mirato alla costruzione di un linguaggio condiviso in grado di dare risalto alle differenze individuali e soggettive.<br><br>Il percorso formativo all’interno del C.S.E. offre inoltre l’opportunità, ove possibile, di accedere ad esperienze occupazionali e/o socializzanti esterne al servizio, in linea con le proprie attitudini.Attività e laboratori.<br><br><p style=\"color:orangered\">In sede:</p><ul><li>Laboratorio d’arte;</li><li>Laboratorio di artigianato;</li><li>Laboratorio di musicoterapia;</li><li>Laboratorio di danza creativa;</li><li>Laboratorio di poesia;</li><li>Gruppo di supporto psico-educativo;</li><li>Attività di potenziamento cognitivo.</li></ul><p style=\"color:orangered\">Sul territorio:</p><ul><li>Visita e mantenimento dell’orto;</li><li>Uscite culturali sul territorio;</li><li>Laboratorio di socio-acquisti.</li></ul>",
@@ -10,6 +11,7 @@
     "orari":"8:30-15:30"
   },
   {
+    "id" : 2,
     "nome":"Comunicazione <br> per l’autismo",
     "immagine":"",
     "intro":"Il servizio prevede attività orientate allo sviluppo della comunicazione e delle abilità sociali e contempla il coinvolgimento della famiglia e  dei principali partner comunicativi dei bambini, in particolare educatori ed insegnanti.<br><br>Un uso sistematico di simboli e immagini, come supporto visivo, oltre a facilitare e permettere l’espressione, migliora la comprensione di ciò che viene loro detto, consente di capire l’organizzazione di una attività, di una routine, di un compito, diminuendo la sorpresa e i problemi di comportamento.<br><br>La partecipazione al Programma viene decisa al termine del percorso di valutazione.",
@@ -20,6 +22,7 @@
     "orari":"09:00-18:00"
   },
   {
+    "id" : 3,
     "nome":"Noi con Te",
     "immagine":"",
     "intro":"Noi con Te è un progetto di sostegno alla persona affetta da disabilità motoria o psicologicae alla sua famiglia. Il servizio offre ai propri fruitori uno spazio privilegiato con un operatore in un rapporto 1:1, per supportare sia le abilità relazionali e sociali della persona sia le sue autonomie, con l’obiettivo di sostenere la nascita di una reale motivazione verso un nuovo progetto di vita che possa risultare soddisfacente.<br><br>L’intervento individualizzato, spesso, è lo strumento “ponte” che permette alla persona di avvicinarsi a momenti e contesti socializzanti, nei quali sperimentare anche attività formative ed occupazionali.<br><br><a style=\"color:orangered\">Per le famiglie</a>, inoltre, il sito offre delle sessioni di gruppo, o degli incontri privati durante la settimana, con uno psicologo, per aiutare le persone con un disabile nel nucleo famigliare ad affrontare al meglio le difficoltà fisiche e psicologiche che ne derivano.",
@@ -30,6 +33,7 @@
     "orari":"08:30-15:30"
   },
   {
+    "id" : 4,
     "nome":"Dottor Sorriso",
     "immagine":"",
     "intro":"Il progetto si ispira all'omonimo servizio che regala sorrisi ai bambini durante il loro ricovero in ospedale.<br><br>Con questo progetto, invece, noi vogliamo regalare un sorriso a quei bambini affetti da disabilità motorie dalla nascita o in seguito ad un incidente, e aiutarli a superare le difficoltà che tutto ciò comporta.<br><br>La <a style=\"color:orangered\">clownterapia</a> è un’attività professionale che integra le cure tradizionali, contribuendo a ricostruire, attraverso il sorriso, le difese del bambino di fronte al trauma della disabilità.<br><br>L’intervento dei <a style=\"color:orangered\">Dottor Sorriso</a> produce effetti positivi su tutte le persone coinvolte nel processo terapeutico:<br><ul><li>distrae e diverte i bambini, aiutandoli ad affrontare con maggiore leggerezza il contesto della disabilità;</li><li>allevia la preoccupazione e il senso di impotenza dei genitori di fronte alla disabilità dei propri figli.</li></ul>",
@@ -40,6 +44,7 @@
     "orari":"08:30-15:30"
   },
   {
+    "id" : 5,
     "nome":"Biblioteca Speciale",
     "immagine":"",
     "intro":"Il Centro Daisy's Garden è dotato di una Biblioteca Speciale rivolta ai bambini con difficoltà motorie e della comunicazione. Lo spazio, attivo dal 2007 grazie ad un contributo dell’associazione \"Insieme per i bambini\", nasce per garantire anche ai bambini con disabilità il diritto alla lettura.<br><br>La biblioteca contiene soprattutto libri per la fascia 0-10 anni, pensati e modificati da personale specializzato per garantire massima accessibilità da parte del bambino, della sua famiglia, scuola e associazioni.<br><br>Si tratta sia di libri già presenti in commercio e selezionati con particolari criteri, sia di libri in formati \"alternativi\" (es. libri tradotti in simboli, libri su supporto digitale, scatole-libro con props).",
