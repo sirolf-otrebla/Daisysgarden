@@ -26,11 +26,11 @@
         //MUST BE DEFINED, EVEN BLANK
         var apiCall = "services";
 
-        function init() {
-            toOutput += '<div class="container-fluid list-container top">';
-        }
+
 
         function format(item) {
+
+            toOutput += '<div class="container-fluid list-container top">';
 
             if (iterator % 2 == 0){
                 toOutput += '<a href="single_services_base/service_intro_db.html?' + item.id + '">';
@@ -48,9 +48,9 @@
                 toOutput += '</div></div></a>';
             }
 
-            if (iterator % 1 == 0) {
-                toOutput += '</div><div class="container-fluid list-container top">';
-            }
+
+            toOutput += '</div>';
+
             iterator++;
         }
     </script>
