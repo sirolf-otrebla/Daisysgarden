@@ -27,6 +27,7 @@
     <script>
         //MUST BE DEFINED, EVEN BLANK
         var apiCall = "about?page=whatWeDo";  //about + window.location.search.substr(1)
+        let specialPage=false;
         var toOutput = '';
         function format(item) {
             toOutput += '<p>' + item.description + '</p>';

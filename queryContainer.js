@@ -3,7 +3,7 @@ exports.queries = {
     people : {
         all : (knex, res) => {
             knex
-                .select("id", "nome as name", "cognome as surname", "mansione")
+                .select("id", "nome as name", "cognome as surname", "mansione", "immagine as image")
                 .from("personale")
                 .orderBy("cognome", "nome")
                 .then(results => {
@@ -12,7 +12,7 @@ exports.queries = {
         },
         by_id : (knex, id, res) => {
             knex
-                .select("id", "nome", "mansione", "descrizione", "immagine","email", "telefono")
+                .select("id", "nome as name", "cognome as surname", "mansione", "descrizione as description", "immagine as image","email as mail", "telefono as tel")
                 .from("personale")
                 .where({
                     "id" : id
@@ -137,7 +137,7 @@ exports.queries = {
         },
         desc : (knex, argid, callback) => {
             knex
-                .select("id", "nome", "descrizione", "immagine")
+                .select("id", "nome as name", "descrizione as description", "immagine as image")
                 .from("sedi")
                 .where({
                     "id" : argid
