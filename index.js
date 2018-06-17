@@ -144,7 +144,7 @@ app.get("/api/services/people/:people_id", (req, res) => {
 // retrieves informations which are needed to display in the 'about' page
 app.get("/api/about", (req, res) => {
     if(queries.about[req.query.page])
-        queries.about[req.query.page](knex, req.params, (results) => {
+        queries.about[req.query.page](knex, (results) => {
             res.json(results);
         });
 });
