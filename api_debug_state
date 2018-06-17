@@ -18,6 +18,8 @@ http://localhost:5000/api/services/1?page=calendar              funziona
 
 http://localhost:5000/api/services/1?page=when_useful           funziona
 
+http://localhost:5000/api/services/1?page=how_to_access 		funziona
+
 http://localhost:5000/api/services/people/1                     funziona
 
 http://localhost:5000/api/services/locations/1                  funziona
@@ -26,8 +28,10 @@ http://localhost:5000/api/people/services/1                     funziona
 
 http://localhost:5000/api/locations/services/1                  funziona
 
-http://localhost:5000/api/about                                 NON FUNZIONA
+http://localhost:5000/api/about?page=introduction               funziona
+
+http://localhost:5000/api/about?page=whatWeDo                   funziona
+
+http://localhost:5000/api/about?page=history                    funziona
 
 http://localhost:5000/api/contact-us                            funziona
-
-http://localhost:5000/api/services/1?page=how_to_access 		NON FUNZIONA

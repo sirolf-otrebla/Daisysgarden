@@ -18,7 +18,7 @@ function defineSQLenv(callback) {
          > TEST=false node ./index_old.js
 
       */
-    if (process.env.TEST) {
+    /*if (process.env.TEST) {
         knex = sqlDbFactory({
             client: "sqlite3",
             debug: true,
@@ -28,7 +28,7 @@ function defineSQLenv(callback) {
             useNullAsDefault: true
         });
         console.log("sqlite");
-    } else {
+    } else {*/
         knex = sqlDbFactory({
             client: 'pg',
             connection: {
@@ -49,7 +49,7 @@ function defineSQLenv(callback) {
             ssl: true*/
             });
         console.log("postgre");
-    }
+    //}
     callback();
 }
 
