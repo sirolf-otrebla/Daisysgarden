@@ -25,7 +25,7 @@
 
     <script>
         //MUST BE DEFINED, EVEN BLANK
-        var apiCall = "services/locations/" + item.id;
+        var apiCall = "services/locations/" + window.location.search.substr(1);
 
         function init() {
             toOutput += '<div class="container-fluid list-container top">';
