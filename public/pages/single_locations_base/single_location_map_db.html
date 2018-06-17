@@ -28,6 +28,8 @@
         //MUST BE DEFINED, EVEN BLANK
         var apiCall = "locations/" + item.id + "?page=map";
         var toOutput = '';
+        var lat;
+        var lng;
 
         function format(item) {
             $('#breadcrumb').html('<ol class="breadcrumb oi" ><li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../../index.html" >Home</a></li><li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../all_locations_db.html">Sedi</a></li><li class="breadcrumb-item oi-item"><a class="oi-item-link" href="single_location_intro_db.html?' + item.id + '">' + item.name + '</a></li><li class="breadcrumb-item oi-item active">Mappa</li></ol>')
@@ -40,6 +42,9 @@
             toOutput += '<br/><p><img src="../../assets/images/location.svg" class="skin" >' + item.address + '</p>';
             toOutput += '<br><p><img src="../../assets/images/calendar.svg" class="skin">' + item.calendar + '</p>';
             toOutput += '<br><p><img src="../../assets/images/clock.svg" class="skin">' + item.orari + '</p>';
+
+            lat= item.lat;
+            lng= item.lng;
 
         }
     </script>
@@ -94,7 +99,7 @@
                     <a class="nav-link my-nav-link" href="../page_under_construction.html">Eventi </a>
                 </li>
                 <li class="nav-item my-nav-item">
-                    <a class="nav-link my-nav-link" href="../contact_us.html">Contattaci </a>
+                    <a class="nav-link my-nav-link" href="../contact_us_db.html">Contattaci </a>
                 </li>
                 <li class="nav-item my-nav-item">
                     <a class="nav-link my-nav-link" href="../page_under_construction.html">Sostienici </a>
@@ -143,7 +148,7 @@
             </div>
             <script>
                 function initMap() {
-                    var uluru = {lat: 37.2490889, lng: 15.2233656};
+                    var uluru = {lat, lng};
                     var map = new google.maps.Map(document.getElementById('map'), {
                         zoom: 15,
                         center: uluru
@@ -186,7 +191,7 @@
                     <li><a href="../../index.html"><i class="fa fa-angle-double-right"></i>Home</a></li>
                     <li><a href="../who_we_are_base/who_we_are_intro_db.html"><i class="fa fa-angle-double-right"></i>Chi Siamo</a></li>
                     <li><a href="../people_db.html"><i class="fa fa-angle-double-right"></i>Personale</a></li>
-                    <li><a href="../contact_us.html"><i class="fa fa-angle-double-right"></i>Contattaci</a></li>
+                    <li><a href="../contact_us_db.html"><i class="fa fa-angle-double-right"></i>Contattaci</a></li>
                 </ul>
             </div>
             <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3">

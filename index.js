@@ -9,12 +9,12 @@ let knex;
 let sqlDbFactory = require("knex");
 let dbManagement = require("./dbManagement");
 let queries = queryContainer.queries;
-process.env.TEST = true;
+process.env.TEST = false;
 
 function defineSQLenv(callback) {
     /* Locally we should launch the app with TEST=true to use SQLlite:
 
-         > TEST=true node ./index_old.js
+         > TEST=false node ./index_old.js
 
       */
     if (process.env.TEST) {
@@ -26,6 +26,7 @@ function defineSQLenv(callback) {
             },
             useNullAsDefault: true
         });
+        console.log("sqlite");
     } else {
         knex = sqlDbFactory({
             debug: true,
@@ -33,6 +34,7 @@ function defineSQLenv(callback) {
             connection: process.env.DATABASE_URL,
             ssl: true
         });
+        console.log("postgre");
     }
     callback();
 }
@@ -40,9 +42,6 @@ function defineSQLenv(callback) {
 defineSQLenv(() =>{
     dbManagement.buildSchema(knex, dbManagement.populateDb);
 });
-if (process.env.TEST){
-   // process.env.PORT = 63342;
-}
 
 let serverPort = process.env.PORT || 5000;
 app.use(express.static(__dirname + "/public"));
@@ -132,7 +131,7 @@ app.get("/api/services/people/:people_id", (req, res) => {
 // retrieves informations which are needed to display in the 'about' page
 app.get("/api/about", (req, res) => {
     if(queries.about[req.query.page])
-        queries.about[req.query.page](knex, (results) => {
+        queries.about[req.query.page](knex, req.params, (results) => {
             res.json(results);
         });
 });

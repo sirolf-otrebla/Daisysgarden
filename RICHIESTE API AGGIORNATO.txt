@@ -1,0 +1,27 @@
+api/people  id, name, surname, mansione
+api/contact-us nome_sede, indirizzo, responsabile(nome e cognome, ma nel caso li divido in due), first_email(quella del responsabile), second_email(quella della segreteria della sede,si può anche togliere), telefono (della sede)
+api/services id, name, image
+api/locations id, name, image
+api/about?page=whatWeDo è la descrizione chedeve tornarmi così come è, ho inserito solo "item"
+api/about?page=introduction stessa di prima
+api/about?page=history stessa cosa di prima
+api/services/people/<id> nome_personale, id_personale, id(servizi), name(servizi), image(servizi)
+api/services/locations/<id> nome_sede, id_sede, id(servizi), name(servizi), image(servizi)
+api/people/services/<id> nome_servizio, id_servizio, id(persone), name(persone), surname(persone), mansione(persone)
+api/locations/services/<id> nome_servizio, id_servizio, id(sedi), name(sedi), image(sedi)
+api/services/<id>?page=when_useful id, name, image, description
+
+
+api/services/<id>?page=intro stesso di sopra
+api/services/<id>?page=how_to_access id, name, image, tel, mail
+api/services/<id>?page=calendar id, name, image, week, weekend
+api/people/<id> id, name, surname, image, mail, tel, description
+api/locations/<id>?page=map id, name, image, address, calendar, orari, lat lng
+api/locations/<id>?page=intro id, name, image, decription
+api/locations/<id>?page=contacts id, name, image, manager_id, manager_name, managare_mail, tel
+
+
+
+
+
+
