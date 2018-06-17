@@ -8,7 +8,9 @@
     "giorni":"Lun-Ven",
     "telefono":"800 800 123",
     "indirizzo":"Via Giuseppe di Vittorio, Augusta (SR)",
-    "email":"segreteria.augusta@dgarden.it"
+    "email":"segreteria.augusta@dgarden.it",
+    "lat" : "37.2490889",
+    "lng" : "15.2233656"
   },
   {
     "id" : 2,
@@ -19,7 +21,9 @@
     "giorni":"Lun-Ven",
     "telefono":"800 800 123",
     "indirizzo":"Piazza Martiri della Libertà, Chiari (BS)",
-    "email":"segreteria.chiari@dgarden.it"
+    "email":"segreteria.chiari@dgarden.it",
+    "lat" : "45.5382",
+    "lng" : "9.9308"
   },
   {
     "id" : 3,
@@ -30,7 +34,9 @@
     "giorni":"Lun-Ven",
     "telefono":"800 800 123",
     "indirizzo":"Piazza Libertà, Dalmine (BG)",
-    "email":"segreteria.dalmine@dgarden.it"
+    "email":"segreteria.dalmine@dgarden.it",
+    "lat" : "45.6477",
+    "lng" : "9.6011"
   },
   {
     "id" : 4,
@@ -41,7 +47,9 @@
     "giorni":"Lun-Ven",
     "telefono":"800 800 123",
     "indirizzo":"Corso Marcantonio, Mozza Grogna (CH)",
-    "email":"segreteria.mozzagrogna@dgarden.it"
+    "email":"segreteria.mozzagrogna@dgarden.it",
+    "lat" : "42.2120",
+    "lng" : "14.4447"
   },
   {
     "id" : 5,
@@ -52,6 +60,8 @@
     "giorni":"Lun-Ven",
     "telefono":"800 800 123",
     "indirizzo":"Piazza Duca degli Abruzzi, Tagliacozzo (AQ)",
-    "email":"segreteria.tagliacozzo@dgarden.it"
+    "email":"segreteria.tagliacozzo@dgarden.it",
+    "lat" : "42.0682",
+    "lng" : "13.2546"
   }
 ]

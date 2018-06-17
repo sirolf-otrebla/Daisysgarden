@@ -27,6 +27,8 @@ exports.buildSchema = function(knex ,callback) {
             " telefono varchar(255),\n" +
             " indirizzo varchar(255),\n" +
             " email varchar(255),\n" +
+            " lat varchar(255) ,\n" +
+            " lng varchar(255) ,\n" +
             " PRIMARY KEY(id)\n" +
             ");").catch(err => {
             console.log("ERRORE NEL DDL");
