@@ -22,7 +22,7 @@
 
     <script>
         //MUST BE DEFINED, EVEN BLANK
-        var apiCall = "people/services/" + item.id;
+        var apiCall = "people/services/" + window.location.search.substr(1);
 
         function init() {
             toOutput += '<div class="row form-group">';

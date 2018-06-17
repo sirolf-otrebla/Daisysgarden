@@ -24,7 +24,7 @@ exports.queries = {
         byService : (knex, serviceID, callback) => {
 
             knex
-                .distinct("personale.id", "personale.nome", "personale.immagine")
+                .distinct("servizi.id as id_servizio", "servizi.nome as nome_servizio", "personale.id as id", "personale.nome as name", "personale.cognome as surname", "personale.immagine as image", "personale.mansione as mansione")
                 .from("personale")
                 .join("lavora", {"personale.id" : "id_personale"})
                 .join("servizi", {"id_servizio" : "servizi.id"})
