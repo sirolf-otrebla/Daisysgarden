@@ -25,7 +25,7 @@ exports.queries = {
 
             knex
                 .distinct("personale.id", "personale.nome", "personale.immagine")
-                .from("Personale")
+                .from("personale")
                 .join("lavora", {"personale.id" : "id_personale"})
                 .join("servizi", {"id_servizio" : "servizi.id"})
                 .where({
@@ -52,7 +52,7 @@ exports.queries = {
                 .select("id as serviceId", "nome as serviceName", "intro as serviceIntro", "immagine as serviceImage")
                 .from("servizi")
                 .where({
-                    "serviceId" : argid
+                    "id" : argid
                 })
                 .then(results => {
                     res(results);
@@ -97,7 +97,7 @@ exports.queries = {
         byLocation : (knex, locationID, callback) => {
 
             knex
-                .select("servizi.id", "servizi.nome", "servizi.immagine")
+                .distinct("servizi.id", "servizi.nome", "servizi.immagine")
                 .from("servizi")
                 .join("tenuto", {"servizi.id" : "id_servizio"})
                 .join("sedi", {"id_sede" : "sedi.id"})
@@ -111,7 +111,7 @@ exports.queries = {
 
         byPeople : (knex, peopleID, callback) =>{
             knex
-                .select("servizi.id", "servizi.nome", "servizi.immagine")
+                .distinct("servizi.id", "servizi.nome", "servizi.immagine")
                 .from("servizi")
                 .join("lavora", {"servizi.id" : "id_servizio"})
                 .join("personale", {"id_personale" : "personale.id"})

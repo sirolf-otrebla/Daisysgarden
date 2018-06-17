@@ -14,7 +14,7 @@ http://localhost:5000/api/services                              funziona
 
 http://localhost:5000/api/services/1?page=intro                 funziona
 
-http://localhost:5000/api/services/1?page=calendar              contenuti
+http://localhost:5000/api/services/1?page=calendar              contenuti IN MODIFICA
 
 http://localhost:5000/api/services/1?page=when_useful           contenuti
 
@@ -26,6 +26,6 @@ http://localhost:5000/api/people/services/1                     funziona
 
 http://localhost:5000/api/locations/services/1                  funziona
 
-http://localhost:5000/api/about                                 funziona
+http://localhost:5000/api/about                                 NON FUNZIONA
 
-http://localhost:5000/api/contact-us                            non funziona (Unhandled rejection Error: SQLITE_ERROR: near "all": syntax error)
+http://localhost:5000/api/contact-us                            funziona
