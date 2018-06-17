@@ -107,12 +107,6 @@ exports.buildSchema = function(knex ,callback) {
 }
 exports.populateDb = function (knex) {
 
-    let ddl;
-    if (process.env.TEST = true){
-        ddl = fs.readFileSync("./db/ddl_lite.sql").toString();
-    } else {
-        ddl = fs.readFileSync("./db/ddl_pg.sql").toString();
-    }
     let about = require("./db/about");
     let contacts = require("./db/contacts");
     let locations = require("./db/locations");

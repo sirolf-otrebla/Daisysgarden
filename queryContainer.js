@@ -84,7 +84,7 @@ exports.queries = {
         ,
         how_to_access : (knex, argid, callback) => {
             knex
-                .select("id", "nome as name", "come_accedere as description", "immagine as image", "servizi.email as mail", "servizi.telefono as tel")
+                .select("id", "nome as name", "immagine as image", "servizi.email as mail", "servizi.telefono as tel")
                 .from("servizi")
                 .where({
                     "id" : argid
