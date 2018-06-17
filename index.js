@@ -139,10 +139,17 @@ app.get("/api/about", (req, res) => {
 // retrieves informations which are needed to display in the 'contact us' page
 app.get("/api/contact-us", (req, res) => {
     queries.contacts.general(knex, (results) => {
-        res.json(results);
+        let tobeSentBack = {
+            general : results,
+        };
+        queries.contacts.locations(knex, (results) => {
+            tobeSentBack.locations = results;
+            res.json(results);
+        });
     })
 
 });
+
 // retrieves service list, as a list of json objects
 // containing service name, ID and image
 app.get("/api/services", (req, res) => {
