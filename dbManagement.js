@@ -14,7 +14,7 @@ exports.buildSchema = function(knex ,callback) {
         " mansione varchar(255),\n" +
         " PRIMARY KEY(id)\n" +
         " );").catch(err => {
-        console.log("ERRORE NEL DDL");
+        console.log("ERRORE NEL DDL at Personale");
         console.log(err);
     }).then(() => {
         knex.schema.raw("CREATE TABLE Sedi(\n" +
@@ -31,7 +31,7 @@ exports.buildSchema = function(knex ,callback) {
             " lng varchar(255) ,\n" +
             " PRIMARY KEY(id)\n" +
             ");").catch(err => {
-            console.log("ERRORE NEL DDL");
+            console.log("ERRORE NEL DDL at Sedi");
             console.log(err);
         }).then(() => {
             knex.schema.raw("CREATE TABLE Servizi(\n" +
@@ -46,7 +46,7 @@ exports.buildSchema = function(knex ,callback) {
                 " orari varchar(255),\n" +
                 " PRIMARY KEY(id)\n" +
                 ");").catch(err => {
-                console.log("ERRORE NEL DDL");
+                console.log("ERRORE NEL DDL at Servizi");
                 console.log(err);
             }).then(() => {
                 knex.schema.raw("CREATE TABLE Chi_Siamo(\n" +
@@ -56,7 +56,7 @@ exports.buildSchema = function(knex ,callback) {
                     " introduzione TEXT,\n" +
                     " PRIMARY KEY(versione)\n" +
                     ");").catch(err => {
-                    console.log("ERRORE NEL DDL");
+                    console.log("ERRORE NEL DDL at Chi_Siamo");
                     console.log(err);
                 }).then(() => {
                     knex.schema.raw("CREATE TABLE Contattaci(\n" +
@@ -68,28 +68,28 @@ exports.buildSchema = function(knex ,callback) {
                         " email varchar(255),\n" +
                         " PRIMARY KEY(versione)\n" +
                         ");").catch(err => {
-                        console.log("ERRORE NEL DDL");
+                        console.log("ERRORE NEL DDL at Contattaci");
                         console.log(err);
                     }).then(() => {
                         knex.schema.raw("CREATE TABLE Tenuto(\n" +
                             " id_sede int REFERENCES Sedi(id),\n" +
                             " id_servizio int REFERENCES Servizi(id)\n" +
                             ");").catch(err => {
-                            console.log("ERRORE NEL DDL");
+                            console.log("ERRORE NEL DDL at Tenuto");
                             console.log(err);
                         }).then(() => {
                             knex.schema.raw("CREATE TABLE Lavora(\n" +
                                 " id_personale int REFERENCES Personale(id),\n" +
                                 " id_servizio int REFERENCES Servizi(id)\n" +
                                 " );").catch(err => {
-                                console.log("ERRORE NEL DDL");
+                                console.log("ERRORE NEL DDL at Lavora");
                                 console.log(err);
                             }).then(() => {
                                 knex.schema.raw("CREATE TABLE Responsabile(\n" +
                                     " id_manager int REFERENCES Personale(id),\n" +
                                     " id_sede int REFERENCES Servizi(id)\n" +
                                     " );").catch(err => {
-                                    console.log("ERRORE NEL DDL");
+                                    console.log("ERRORE NEL DDL at Responsabile");
                                     console.log(err);
                                 }).then(() => {
                                         console.log("TUTTO BENE \n \n");
