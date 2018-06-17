@@ -27,11 +27,33 @@
         var apiCall = "contact-us";
 
         function init() {
+            toOutput += '<div class="container home-section-title">I nostri contatti</div>';
+            toOutput += '<div class="container home-section-content">';
+            toOutput += '<div class="d-flex flex-column">';
+            toOutput += '<div class="d-flex flex-column" style="margin-bottom: 2vh; margin-top: 2vh">';
+            toOutput += '<div class="container contact-type">' + item.general.responsabile + '</div>';
+            toOutput += '<div class="container">' + item.general.nome + '</div>';
+            toOutput += '</div>';
+            toOutput += '<div class="d-flex flex-column" style="margin-bottom: 2vh; margin-top: 2vh">';
+            toOutput += '<div class="container contact-type">Indirizzo sede legale:</div>';
+            toOutput += '<div class="container ">' + item.general.indirizzo + '</div>';
+            toOutput += '</div>';
+            toOutput += '<div class="d-flex flex-column" style="margin-bottom: 2vh; margin-top: 2vh">';
+            toOutput += '<div class="container contact-type">e-mail:</div>';
+            toOutput += '<div class="container"><a href="mailto:' + item.general.email + '">' + item.general.email + '</a></div>';
+            toOutput += '</div>';
+            toOutput += '<div class="d-flex flex-column" style="margin-bottom: 2vh; margin-top: 2vh">';
+            toOutput += '<div class="container contact-type">recapito telefonico:</div>';
+            toOutput += '<div class="container"><a href="tel:' + item.general.telefono + '">' + item.general.telefono + '</a></div>';
+            toOutput += '</div></div></div>';
+            toOutput += '<div class="container home-section-title">Contatti Sedi</div>';
+            toOutput += '<div class="container home-section-content">';//2
+            toOutput += '<div class="d-flex flex-column" >'; //1
             toOutput += '<div class="d-flex flex-column" style="margin-bottom: 2vh; margin-top: 2vh">';
         }
 
-        function format(item) {
 
+        function format(item) {
 
             toOutput += '<div class="container contact-type">' + item.nome_sede + ':</div>';
             toOutput += '<div class="container">' + item.indirizzo + '<br><a>Responsabile: ' + item.responsabile + '</a> <br><a href="mailto:' + item.first_email + '">' + item.first_email + '</a> <br><a href="mailto:' + item.second_email + '">' + item.second_email + '</a> <br><a href="' + item.telefono + '">' + item.telefono + '</a></div>';
@@ -39,8 +61,11 @@
             if (iterator % 1 == 0) {
                 toOutput += '</div><div class="d-flex flex-column" style="margin-bottom: 2vh; margin-top: 2vh">';
             }
+
             iterator++;
         }
+        toOutput += '</div></div>'; //1 e 2
+
     </script>
 
 </head>
@@ -111,53 +136,33 @@
             <li class="breadcrumb-item oi-item"><a class="oi-item-link" href="#" >Contattaci</a></li>
         </ol>
     </div>
-    <div class="container home-section">
-        <div class="container home-section-title">
-            I nostri contatti
-        </div>
+    <div class="container home-section" id="list">
+        <div class="container home-section-title">I nostri contatti</div>
         <div class="container home-section-content">
             <div class="d-flex flex-column">
                 <div class="d-flex flex-column" style="margin-bottom: 2vh; margin-top: 2vh">
-                    <div class="container contact-type">
-                        Responsabile rapporti con l'esterno:
-                    </div>
-                    <div class="container">
-                        Dott. Mario Rossi
-                    </div>
+                    <div class="container contact-type">' + item.general.responsabile + '</div>
+                    <div class="container">' + item.general.nome + '</div>
                 </div>
                 <div class="d-flex flex-column" style="margin-bottom: 2vh; margin-top: 2vh">
-                    <div class="container contact-type">
-                        Indirizzo sede legale:
-                    </div>
-                    <div class="container ">
-                        Piazza Duca d'aosta, 11, 20135 Milano (MI)
-                    </div>
+                    <div class="container contact-type">Indirizzo sede legale:</div>
+                    <div class="container ">' + item.general.indirizzo + '</div>
 
                 </div>
                 <div class="d-flex flex-column" style="margin-bottom: 2vh; margin-top: 2vh">
-                    <div class="container contact-type">
-                        e-mail:
-                    </div>
-                    <div class="container">
-                        <a href="mailto:mario.rossi@dgarden.it">mario.rossi@dgarden.it</a>
-                    </div>
+                    <div class="container contact-type">e-mail:</div>
+                    <div class="container"><a href="mailto:' + item.general.mail + '">' + item.general.email + '</a></div>
 
                 </div>
                 <div class="d-flex flex-column" style="margin-bottom: 2vh; margin-top: 2vh">
-                    <div class="container contact-type">
-                        recapito telefonico:
-                    </div>
-                    <div class="container">
-                        <a href="tel:800800123">800 800 123</a>
-                    </div>
+                    <div class="container contact-type">recapito telefonico:</div>
+                    <div class="container"><a href="tel:' + item.general.tel + '">' + item.general.telefono + '</a></div>
                 </div>
             </div>
         </div>
-        <div class="container home-section-title">
-            Contatti Sedi
-        </div>
+        <div class="container home-section-title">Contatti Sedi</div>
         <div class="container home-section-content">
-            <div class="d-flex flex-column" id="list">
+            <div class="d-flex flex-column" >
                 <!--
                 <div class="d-flex flex-column" style="margin-bottom: 2vh; margin-top: 2vh">
                     <div class="container contact-type">dalmine:</div>
