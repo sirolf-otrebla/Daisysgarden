@@ -9,7 +9,7 @@ let knex;
 let sqlDbFactory = require("knex");
 let dbManagement = require("./dbManagement");
 let queries = queryContainer.queries;
-process.env.TEST = false;
+process.env.TEST = true;
 
 function defineSQLenv(callback) {
     /* Locally we should launch the app with TEST=true to use SQLlite:
@@ -17,7 +17,7 @@ function defineSQLenv(callback) {
          > TEST=false node ./index_old.js
 
       */
-    /*if (process.env.TEST) {
+    if (process.env.TEST) {
         knex = sqlDbFactory({
             client: "sqlite3",
             debug: true,
@@ -27,7 +27,7 @@ function defineSQLenv(callback) {
             useNullAsDefault: true
         });
         console.log("sqlite");
-    } else {*/
+    } else {
         knex = sqlDbFactory({
             client: 'pg',
             connection: {
@@ -46,9 +46,9 @@ function defineSQLenv(callback) {
             client: "pg",
             connection: (process.env.DATABASE_URL || "postgres://rgkjhqjtzhvwnl:257c70c47b1ee548403c64350f0225d17cc2c448fd1ea6d21a5f050cf88f9bf2@ec2-54-217-208-52.eu-west-1.compute.amazonaws.com:5432/d9a5bn3kr4f5vm"),
             ssl: true*/
-        });
+            });
         console.log("postgre");
-    //}
+    }
     callback();
 }
 

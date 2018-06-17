@@ -3,93 +3,35 @@ const process = require("process");
 const _ = require("lodash");
 
 exports.buildSchema = function(knex ,callback) {
-    knex.schema.raw("CREATE TABLE personale(\n" +
-        " id int,\n" +
-        " cognome varchar(255),\n" +
-        " nome varchar(255),\n" +
-        " immagine varchar(255),\n" +
-        " descrizione TEXT,\n" +
-        " email varchar(255),\n" +
-        " telefono varchar(255),\n" +
-        " mansione varchar(255),\n" +
-        " PRIMARY KEY(id)\n" +
-        " );").catch(err => {
+    knex.schema.raw(fs.readFileSync("./db/schema/people.sql").toString()).catch(err => {
         console.log("ERRORE NEL DDL at personale");
         console.log(err);
     }).then(() => {
-        knex.schema.raw("CREATE TABLE sedi(\n" +
-            " id int,\n" +
-            " nome varchar(255),\n" +
-            " immagine varchar(255),\n" +
-            " descrizione TEXT,\n" +
-            " orari varchar(255),\n" +
-            " giorni varchar(255),\n" +
-            " telefono varchar(255),\n" +
-            " indirizzo varchar(255),\n" +
-            " email varchar(255),\n" +
-            " lat varchar(255) ,\n" +
-            " lng varchar(255) ,\n" +
-            " PRIMARY KEY(id)\n" +
-            ");").catch(err => {
+        knex.schema.raw(fs.readFileSync("./db/schema/locations.sql").toString()).catch(err => {
             console.log("ERRORE NEL DDL at sedi");
             console.log(err);
         }).then(() => {
-            knex.schema.raw("CREATE TABLE servizi(\n" +
-                " id int4,\n" +
-                " nome varchar(255), \n" +
-                " immagine varchar(255),\n" +
-                " intro TEXT,\n" +
-                " quando_utile TEXT,\n" +
-                " telefono varchar(255),\n" +
-                " email varchar(255),\n" +
-                " week varchar(255),\n" +
-                " weekend varchar(255),\n" +
-                " orari varchar(255),\n" +
-                " PRIMARY KEY(id)\n" +
-                ");").catch(err => {
+            knex.schema.raw(fs.readFileSync("./db/schema/services.sql").toString()).catch(err => {
                 console.log("ERRORE NEL DDL at servizi");
                 console.log(err);
             }).then(() => {
-                knex.schema.raw("CREATE TABLE chi_siamo(\n" +
-                    " versione int4,\n" +
-                    " storia TEXT,\n" +
-                    " cosa_facciamo TEXT,\n" +
-                    " introduzione TEXT,\n" +
-                    " PRIMARY KEY(versione)\n" +
-                    ");").catch(err => {
+                knex.schema.raw(fs.readFileSync("./db/schema/about.sql").toString()).catch(err => {
                     console.log("ERRORE NEL DDL at chi_siamo");
                     console.log(err);
                 }).then(() => {
-                    knex.schema.raw("CREATE TABLE contattaci(\n" +
-                        " versione int4,\n" +
-                        " responsabile varchar(255),\n" +
-                        " nome varchar(255),\n" +
-                        " indirizzo varchar(255),\n" +
-                        " telefono varchar(255),\n" +
-                        " email varchar(255),\n" +
-                        " PRIMARY KEY(versione)\n" +
-                        ");").catch(err => {
+                    knex.schema.raw(fs.readFileSync("./db/schema/contacts.sql").toString()).catch(err => {
                         console.log("ERRORE NEL DDL at contattaci");
                         console.log(err);
                     }).then(() => {
-                        knex.schema.raw("CREATE TABLE tenuto(\n" +
-                            " id_sede int REFERENCES sedi(id),\n" +
-                            " id_servizio int REFERENCES servizi(id)\n" +
-                            ");").catch(err => {
+                        knex.schema.raw(fs.readFileSync("./db/schema/locations_Services.sql").toString()).catch(err => {
                             console.log("ERRORE NEL DDL at tenuto");
                             console.log(err);
                         }).then(() => {
-                            knex.schema.raw("CREATE TABLE lavora(\n" +
-                                " id_personale int REFERENCES personale(id),\n" +
-                                " id_servizio int REFERENCES servizi(id)\n" +
-                                " );").catch(err => {
+                            knex.schema.raw(fs.readFileSync("./db/schema/people_services.sql").toString()).catch(err => {
                                 console.log("ERRORE NEL DDL at lavora");
                                 console.log(err);
                             }).then(() => {
-                                knex.schema.raw("CREATE TABLE responsabile(\n" +
-                                    " id_manager int REFERENCES personale(id),\n" +
-                                    " id_sede int REFERENCES servizi(id)\n" +
-                                    " );").catch(err => {
+                                knex.schema.raw(fs.readFileSync("./db/schema/manager.sql").toString()).catch(err => {
                                     console.log("ERRORE NEL DDL at responsabile");
                                     console.log(err);
                                 }).then(() => {
@@ -107,12 +49,6 @@ exports.buildSchema = function(knex ,callback) {
 }
 exports.populateDb = function (knex) {
 
-    let ddl;
-    if (process.env.TEST = true){
-        ddl = fs.readFileSync("./db/ddl_lite.sql").toString();
-    } else {
-        ddl = fs.readFileSync("./db/ddl_pg.sql").toString();
-    }
     let about = require("./db/about");
     let contacts = require("./db/contacts");
     let locations = require("./db/locations");
