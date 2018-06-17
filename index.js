@@ -9,8 +9,8 @@ let knex;
 let sqlDbFactory = require("knex");
 let dbManagement = require("./dbManagement");
 let queries = queryContainer.queries;
-const TEST = false;
-const SETUP = false;
+const TEST = true;
+const SETUP = true;
 
 function defineSQLenv(callback) {
     /* Locally we should launch the app with TEST=true to use SQLlite:
