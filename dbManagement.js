@@ -42,7 +42,8 @@ exports.buildSchema = function(knex ,callback) {
                 " quando_utile TEXT,\n" +
                 " telefono varchar(255),\n" +
                 " email varchar(255),\n" +
-                " giorni varchar(255),\n" +
+                " week varchar(255),\n" +
+                " weekend varchar(255),\n" +
                 " orari varchar(255),\n" +
                 " PRIMARY KEY(id)\n" +
                 ");").catch(err => {
