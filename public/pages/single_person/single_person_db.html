@@ -31,6 +31,7 @@
     <script>
         //MUST BE DEFINED, EVEN BLANK
         var apiCall = "people/" + window.location.search.substr(1);
+        let specialPage=false;
         var toOutput = '';
 
         function format(item) {
@@ -54,7 +55,7 @@
             toOutput += '<div class=" col-12  story-single-person">' + item.description + '</div>';
             toOutput += '</div>';
             toOutput += '<div class="d-flex flex-row justify-content-around" style="margin-top: 7vh">';
-            toOutput += '<a class="btn btn-outline-primary btn-large link-button" href="../transition_pages/services_of_people/services_of_single_person.html?' + item.id + '">Servizi di cui si occupa</a>';
+            toOutput += '<a class="btn btn-outline-primary btn-large link-button" href="../transition_pages/services_of_single_person.html?' + item.id + '">Servizi di cui si occupa</a>';
             toOutput += '</div>';
 
         }
