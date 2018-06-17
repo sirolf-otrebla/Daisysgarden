@@ -215,11 +215,11 @@ exports.queries = {
                 "sedi.id as id",
                 "sedi.nome as nome_sede",
                 "sedi.indirizzo as indirizzo",
-                "sedi.email as second_mail ",
+                "sedi.email as second_email ",
                 "sedi.telefono as telefono",
                 "personale.nome as responsabile_nome",
                 "personale.cognome  as responsabile_cognome",
-                "personale.email as first_mail")
+                "personale.email as first_email")
                 .from("sedi")
                 .join("responsabile", {"sedi.id" : "id_sede"})
                 .join("personale", {"id_manager" : "personale.id"})
