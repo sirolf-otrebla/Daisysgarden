@@ -157,7 +157,7 @@ app.get("/api/contact-us", (req, res) => {
         };
         queries.contacts.locations(knex, (results) => {
             tobeSentBack.locations = results;
-            res.json(results);
+            res.json(tobeSentBack);
         });
     })
 
