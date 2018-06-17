@@ -40,6 +40,9 @@ function defineSQLenv(callback) {
 defineSQLenv(() =>{
     dbManagement.buildSchema(knex, dbManagement.populateDb);
 });
+if (process.env.TEST){
+   // process.env.PORT = 63342;
+}
 
 let serverPort = process.env.PORT || 5000;
 app.use(express.static(__dirname + "/public"));

@@ -28,7 +28,7 @@ function show(what, callback) {
 
     //console.log(what);
 
-    fetch("/api/" + what)
+    fetch("http://localhost:5000/api/" + what)
         .then(function (response) {
             return response.json();
         })
