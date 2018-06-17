@@ -39,10 +39,13 @@ function show(what, callback) {
         })
         .then(function (data) {
             //toOutput += '<div class="row form-group">';
-
-            data.map(format);
-
-            toOutput += '</div>';
-            $("#list").append(toOutput);
+            if (specialPage){
+                specialResponseHandling(data);
+            }
+            else {
+                data.map(format);
+                toOutput += '</div>';
+                $("#list").append(toOutput);
+            }
         });
 }
