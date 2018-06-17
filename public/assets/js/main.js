@@ -26,7 +26,7 @@ function show(what, callback) {
     var level2 = levels[1];
     var parameters = window.location.search.substr(1);
     var test= false;
-    var source= 'api/'
+    var source= '../api/'
 
     //console.log(what);
 
