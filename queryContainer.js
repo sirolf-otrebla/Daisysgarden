@@ -39,7 +39,7 @@ exports.queries = {
     services : {
         all : (knex, res) => {
             knex
-                .select("id", "nome", "immagine")
+                .select("id", "nome as name", "immagine as image")
                 .from("servizi")
                 .orderBy("nome")
                 .then(results => {
@@ -127,7 +127,7 @@ exports.queries = {
     locations : {
         all : (knex, callback) => {
             knex
-                .select("id", "nome", "immagine")
+                .select("id", "nome as name", "immagine as image")
                 .from("sedi")
                 .orderBy("nome")
                 .then(results => {
@@ -201,7 +201,7 @@ exports.queries = {
         general : (knex, callback) =>{
             knex
                 .select("*")
-                .from("contatti")
+                .from("contattaci")
                 .orderBy("versione", "desc")
                 .limit(1)
                 .then(callback)

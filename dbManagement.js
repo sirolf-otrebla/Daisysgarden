@@ -3,7 +3,7 @@ const process = require("process");
 const _ = require("lodash");
 
 exports.buildSchema = function(knex ,callback) {
-    knex.schema.raw("CREATE TABLE Personale(\n" +
+    knex.schema.raw("CREATE TABLE personale(\n" +
         " id int,\n" +
         " cognome varchar(255),\n" +
         " nome varchar(255),\n" +
@@ -17,7 +17,7 @@ exports.buildSchema = function(knex ,callback) {
         console.log("ERRORE NEL DDL at Personale");
         console.log(err);
     }).then(() => {
-        knex.schema.raw("CREATE TABLE Sedi(\n" +
+        knex.schema.raw("CREATE TABLE sedi(\n" +
             " id int,\n" +
             " nome varchar(255),\n" +
             " immagine varchar(255),\n" +
@@ -34,7 +34,7 @@ exports.buildSchema = function(knex ,callback) {
             console.log("ERRORE NEL DDL at Sedi");
             console.log(err);
         }).then(() => {
-            knex.schema.raw("CREATE TABLE Servizi(\n" +
+            knex.schema.raw("CREATE TABLE servizi(\n" +
                 " id int4,\n" +
                 " nome varchar(255), \n" +
                 " immagine varchar(255),\n" +
@@ -49,7 +49,7 @@ exports.buildSchema = function(knex ,callback) {
                 console.log("ERRORE NEL DDL at Servizi");
                 console.log(err);
             }).then(() => {
-                knex.schema.raw("CREATE TABLE Chi_Siamo(\n" +
+                knex.schema.raw("CREATE TABLE chi_siamo(\n" +
                     " versione int4,\n" +
                     " storia TEXT,\n" +
                     " cosa_facciamo TEXT,\n" +
@@ -59,7 +59,7 @@ exports.buildSchema = function(knex ,callback) {
                     console.log("ERRORE NEL DDL at Chi_Siamo");
                     console.log(err);
                 }).then(() => {
-                    knex.schema.raw("CREATE TABLE Contattaci(\n" +
+                    knex.schema.raw("CREATE TABLE contattaci(\n" +
                         " versione int4,\n" +
                         " responsabile varchar(255),\n" +
                         " nome varchar(255),\n" +
@@ -71,23 +71,23 @@ exports.buildSchema = function(knex ,callback) {
                         console.log("ERRORE NEL DDL at Contattaci");
                         console.log(err);
                     }).then(() => {
-                        knex.schema.raw("CREATE TABLE Tenuto(\n" +
-                            " id_sede int REFERENCES Sedi(id),\n" +
-                            " id_servizio int REFERENCES Servizi(id)\n" +
+                        knex.schema.raw("CREATE TABLE tenuto(\n" +
+                            " id_sede int REFERENCES sedi(id),\n" +
+                            " id_servizio int REFERENCES servizi(id)\n" +
                             ");").catch(err => {
                             console.log("ERRORE NEL DDL at Tenuto");
                             console.log(err);
                         }).then(() => {
-                            knex.schema.raw("CREATE TABLE Lavora(\n" +
-                                " id_personale int REFERENCES Personale(id),\n" +
-                                " id_servizio int REFERENCES Servizi(id)\n" +
+                            knex.schema.raw("CREATE TABLE lavora(\n" +
+                                " id_personale int REFERENCES personale(id),\n" +
+                                " id_servizio int REFERENCES servizi(id)\n" +
                                 " );").catch(err => {
                                 console.log("ERRORE NEL DDL at Lavora");
                                 console.log(err);
                             }).then(() => {
-                                knex.schema.raw("CREATE TABLE Responsabile(\n" +
-                                    " id_manager int REFERENCES Personale(id),\n" +
-                                    " id_sede int REFERENCES Servizi(id)\n" +
+                                knex.schema.raw("CREATE TABLE responsabile(\n" +
+                                    " id_manager int REFERENCES personale(id),\n" +
+                                    " id_sede int REFERENCES servizi(id)\n" +
                                     " );").catch(err => {
                                     console.log("ERRORE NEL DDL at Responsabile");
                                     console.log(err);
@@ -120,28 +120,28 @@ exports.populateDb = function (knex) {
     let People_Services = require("./db/people_services");
     let services = require("./db/services");
     let manager = require("./db/manager");
-    knex("Sedi").insert(locations).catch(err => {
+    knex("sedi").insert(locations).catch(err => {
         console.log(err);
     }).then(() => {
-        knex("Personale").insert(people).catch(err => {
+        knex("personale").insert(people).catch(err => {
             console.log(err);
         }).then(() => {
             knex("servizi").insert(services).catch(err => {
                 console.log(err);
             }).then(() => {
-                knex("Tenuto").insert(locations_Services).catch(err => {
+                knex("tenuto").insert(locations_Services).catch(err => {
                     console.log(err)
                 }).then(() => {
-                    knex("Lavora").insert(People_Services).catch(err => {
+                    knex("lavora").insert(People_Services).catch(err => {
                         console.log(err);
                     }).then(() => {
-                        knex("Chi_Siamo").insert(about).catch(err => {
+                        knex("chi_siamo").insert(about).catch(err => {
                             console.log(err);
                         }).then(() => {
-                            knex("Contattaci").insert(contacts).catch(err => {
+                            knex("contattaci").insert(contacts).catch(err => {
                                 console.log(err);
                             }).then(() => {
-                                knex("Responsabile").insert(manager).catch(err => {
+                                knex("responsabile").insert(manager).catch(err => {
                                     console.log(err);
                                 })
                             });
