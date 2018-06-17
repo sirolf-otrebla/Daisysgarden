@@ -25,10 +25,11 @@
 
     <script>
         //MUST BE DEFINED, EVEN BLANK
-        var apiCall = "locations/" + item.id + "?page=contacts";
+        var apiCall = "locations/" + window.location.search.substr(1) + "?page=contacts";
         var toOutput = '';
 
         function format(item) {
+            document.title = item.name;
             $('#breadcrumb').html('<ol class="breadcrumb oi" ><li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../../index.html" >Home</a></li><li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../all_locations_db.html">Sedi</a></li><li class="breadcrumb-item oi-item"><a class="oi-item-link" href="single_location_intro_db.html?' + item.id + '">' + item.name + '</a></li><li class="breadcrumb-item oi-item active">Contatti</li></ol>')
             $('#serviceTitle').html('<div class="container content-title">' + item.name + '</div>')
             $('#serviceImage').html('<div class="container content-title-image color"><div class="container content-title-image image" style="background-image: url(../../assets/images/' + item.image + ')"></div></div>')
@@ -38,7 +39,7 @@
             toOutput += '<div class="d-flex flex-column" >';
             toOutput += '<div class="d-flex flex-column" style="margin-bottom: 2vh; margin-top: 2vh">';
             toOutput += '<div class="container contact-type">Responsabile rapporti con l\'esterno:</div>';
-            toOutput += '<div class="container"><a href="../single_person/single_person_db.html?' + item.manager_id + '">' + item.manager_name + '</a></div>';
+            toOutput += '<div class="container"><a href="../single_person/single_person_db.html?' + item.manager_id + '">' + item.manager_name + ' ' + item.manager_surname + '</a></div>';
             toOutput += '</div>';
             toOutput += '<div class="d-flex flex-column" style="margin-bottom: 2vh; margin-top: 2vh">';
             toOutput += '<div class="container contact-type">e-mail:</div>';

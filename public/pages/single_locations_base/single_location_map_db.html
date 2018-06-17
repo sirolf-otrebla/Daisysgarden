@@ -26,12 +26,14 @@
 
     <script>
         //MUST BE DEFINED, EVEN BLANK
-        var apiCall = "locations/" + item.id + "?page=map";
+        var apiCall = "locations/" + window.location.search.substr(1) + "?page=map";
         var toOutput = '';
         var lat;
         var lng;
 
         function format(item) {
+            console.log(item);
+            document.title = item.name;
             $('#breadcrumb').html('<ol class="breadcrumb oi" ><li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../../index.html" >Home</a></li><li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../all_locations_db.html">Sedi</a></li><li class="breadcrumb-item oi-item"><a class="oi-item-link" href="single_location_intro_db.html?' + item.id + '">' + item.name + '</a></li><li class="breadcrumb-item oi-item active">Mappa</li></ol>')
             $('#serviceTitle').html('<div class="container content-title">' + item.name + '</div>')
             $('#serviceImage').html('<div class="container content-title-image color"><div class="container content-title-image image" style="background-image: url(../../assets/images/' + item.image + ')"></div></div>')
@@ -43,11 +45,18 @@
             toOutput += '<br><p><img src="../../assets/images/calendar.svg" class="skin">' + item.calendar + '</p>';
             toOutput += '<br><p><img src="../../assets/images/clock.svg" class="skin">' + item.orari + '</p>';
 
-            lat= item.lat;
-            lng= item.lng;
+            lat= Number(item.lat);
+            lng= Number(item.lng);
 
+            map.setCenter(new google.maps.LatLng( lat, lng ) );
+            marker = new google.maps.Marker({
+                position: {lat: lat, lng: lng},
+                map: map,
+                title: "Sede"
+            });
         }
     </script>
+
 
 
 </head>
@@ -147,13 +156,15 @@
             <div id="map" class="p2">
             </div>
             <script>
+                var map;
+                var marker;
                 function initMap() {
-                    var uluru = {lat, lng};
-                    var map = new google.maps.Map(document.getElementById('map'), {
+                    var uluru = {lat: lat, lng: lng};
+                    map = new google.maps.Map(document.getElementById('map'), {
                         zoom: 15,
                         center: uluru
                     });
-                    var marker = new google.maps.Marker({
+                    marker = new google.maps.Marker({
                         position: uluru,
                         map: map
                     });
@@ -164,9 +175,6 @@
             </script>
             <div class="p2 half-right align-middle" id="list">
                 <div>
-                    <br/><p><img src="../../assets/images/location.svg" class="skin" >' + item.address + '</p>
-                    <br><p><img src="../../assets/images/calendar.svg" class="skin">' + item.calendar + '</p>
-                    <br><p><img src="../../assets/images/clock.svg" class="skin">' + item.orari + '</p>
                 </div>
 
             </div>
