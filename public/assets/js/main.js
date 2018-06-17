@@ -25,10 +25,15 @@ function show(what, callback) {
     var level1 = levels[0];
     var level2 = levels[1];
     var parameters = window.location.search.substr(1);
+    var test= false;
+    var source= 'api/'
 
     //console.log(what);
 
-    fetch("/api/" + what)
+    if(test){
+        source='http://localhost:5000/api/';
+    }
+    fetch(source + what)
         .then(function (response) {
             return response.json();
         })
