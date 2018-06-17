@@ -212,13 +212,14 @@ exports.queries = {
         locations : (knex, callback) => {
             knex
             .distinct(
-                "sedi.id as locId",
-                "sedi.nome as locName",
-                "sedi.email as locEmail ",
-                "sedi.immagine as image",
-                "personale.nome as managerName",
-                "personale.cognome  as managerSurname",
-                "personale.email as managerEmail")
+                "sedi.id as id",
+                "sedi.nome as nome_sede",
+                "sedi.indirizzo as indirizzo",
+                "sedi.email as second_mail ",
+                "sedi.telefono as telefono",
+                "personale.nome as responsabile_nome",
+                "personale.cognome  as responsabile_cognome",
+                "personale.email as first_mail")
                 .from("sedi")
                 .join("responsabile", {"sedi.id" : "id_sede"})
                 .join("personale", {"id_manager" : "personale.id"})
