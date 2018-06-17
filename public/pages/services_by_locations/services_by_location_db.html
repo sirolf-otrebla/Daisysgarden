@@ -25,7 +25,7 @@
 
     <script>
         //MUST BE DEFINED, EVEN BLANK
-        var apiCall = "services/locations/" + item.id;
+        var apiCall = "services/locations/" + window.location.search.substr(1);
         let specialPage=false;
 
         function init() {
@@ -34,17 +34,17 @@
 
         function format(item) {
             $('#title').html('<div class="container home-section-title"> I NOSTRI SERVIZI A: ' + item.nome_sede + ' </div>');
-            $('#dropdownTitle').html('<a class="nav-link my-nav-pills dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">' + item.nome_sede + '</a>');
+            $('#dropdownTitle').html('<a class="nav-link my-nav-pills dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">' + item.nome_sede + '</a><div id="dropdown" class="dropdown-menu my-nav-pills by-location-dropdown"><a class="dropdown-item my-nav-pills" href="services_by_location_db.html?1">Augusta</a><a class="dropdown-item my-nav-pills" href="services_by_location_db.html?2">Chiari</a><a class="dropdown-item my-nav-pills" href="services_by_location_db.html?3"> Dalmine</a><a class="dropdown-item my-nav-pills" href="services_by_location_db.html?4"> Mozza Grogna</a><a class="dropdown-item my-nav-pills" href="services_by_location_db.html?5"> Tagliacozzo</a><a class="dropdown-item my-nav-pills" href="../all_services_db.html"> Tutti i Servizi</a></div>');
 
             if (iterator % 2 == 0){
-                toOutput += '<a href="single_services_base/service_intro_db.html?' + item.id + '">';
+                toOutput += '<a href="../single_services_base/service_intro_db.html?' + item.id + '">';
                 toOutput += '<div style="cursor: pointer">';
                 toOutput += '<div class="container list-title right">' + item.name + '</div>';
                 toOutput += '<div class="container-fluid list-background color">';
                 toOutput += '<div class="container-fluid list-background image" style="background-image: url(../../assets/images/' + item.image + ')"></div>';
                 toOutput += '</div></div></a>';
             } else {
-                toOutput += '<a href="single_services_base/service_intro_db.html?' + item.id + '">';
+                toOutput += '<a href="../single_services_base/service_intro_db.html?' + item.id + '">';
                 toOutput += '<div style="cursor: pointer">';
                 toOutput += '<div class="container list-title left">' + item.name + '</div>';
                 toOutput += '<div class="container-fluid list-background color">';
@@ -138,24 +138,17 @@
         <div class="container home-section-content">
             <div class="container-fluid sub-nav" id="sub-nav">
                 <ul class="nav nav-pills nav-justified">
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown" id="dropdownTitle">
                         <!--<a class="nav-link my-nav-pills dropdown-toggle service-by-location" data-toggle="dropdown"
                            href="#" role="button" aria-haspopup="true" aria-expanded="false">
                            -->
-                        <div id="dropdownTitle">
+
                             <!--
                             <a class="nav-link my-nav-pills dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">' + item.nome_sede + '</a>
                             -->
-                        </div>
-                        <div id="dropdown" class="dropdown-menu my-nav-pills by-location-dropdown">
-                            <a class="dropdown-item my-nav-pills" href="services_by_location_db.html?1">Dalmine</a>
-                            <a class="dropdown-item my-nav-pills" href="services_by_location_db.html?2">Chiari</a>
-                            <a class="dropdown-item my-nav-pills" href="services_by_location_db.html?3"> Augusta</a>
-                            <a class="dropdown-item my-nav-pills" href="services_by_location_db.html?4"> Mozza Grogna</a>
-                            <a class="dropdown-item my-nav-pills" href="services_by_location_db.html?5"> Tagliacozzo</a>
-                            <a class="dropdown-item my-nav-pills" href="../all_services_db.html"> Tutti i Servizi</a>
+                            <div id="dropdown" class="dropdown-menu my-nav-pills by-location-dropdown"><a class="dropdown-item my-nav-pills" href="services_by_location_db.html?1">Augusta</a><a class="dropdown-item my-nav-pills" href="services_by_location_db.html?2">Chiari</a><a class="dropdown-item my-nav-pills" href="services_by_location_db.html?3"> Dalmine</a><a class="dropdown-item my-nav-pills" href="services_by_location_db.html?4"> Mozza Grogna</a><a class="dropdown-item my-nav-pills" href="services_by_location_db.html?5"> Tagliacozzo</a><a class="dropdown-item my-nav-pills" href="../all_services_db.html"> Tutti i Servizi</a></div>
 
-                        </div>
+
                     </li>
 
                 </ul>

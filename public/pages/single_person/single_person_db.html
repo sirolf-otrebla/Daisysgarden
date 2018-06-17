@@ -36,7 +36,10 @@
 
         function format(item) {
             console.log(item);
-            $('#breadcrumb').html('<ol class="breadcrumb oi" ><li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../../index.html" >Home</a></li><li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../all_services_db.html">Servizi</a></li><li class="breadcrumb-item oi-item"><a class="oi-item-link" href="service_intro_db.html?' + item.id + '">' + item.name + '</a></li><li class="breadcrumb-item oi-item active">Calendario</li></ol>');
+            $('#breadcrumb').html('<ol class="breadcrumb oi" ><li class="breadcrumb-item oi-item">' +
+                '<a class="oi-item-link" href="../../index.html" >Home</a></li><li class="breadcrumb-item oi-item">' +
+                '<a class="oi-item-link" href="../people_db.html">Personale</a></li><li class="breadcrumb-item oi-item active">' +
+                item.name + ' ' + item.surname + '</li>');
 
             document.title = item.name + ' ' + item.surname;
 
@@ -55,7 +58,7 @@
             toOutput += '<div class=" col-12  story-single-person">' + item.description + '</div>';
             toOutput += '</div>';
             toOutput += '<div class="d-flex flex-row justify-content-around" style="margin-top: 7vh">';
-            toOutput += '<a class="btn btn-outline-primary btn-large link-button" href="../transition_pages/services_of_single_person.html?' + item.id + '">Servizi di cui si occupa</a>';
+            toOutput += '<a class="btn btn-outline-primary btn-large link-button" href="../transition_pages/services_of_person_db.html?' + item.id + '">Servizi di cui si occupa</a>';
             toOutput += '</div>';
 
         }
