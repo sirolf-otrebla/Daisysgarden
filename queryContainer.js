@@ -13,7 +13,7 @@ exports.queries = {
         by_id : (knex, id, res) => {
             knex
                 .select("id", "nome", "mansione", "descrizione", "immagine","email", "telefono")
-                .from("Personale")
+                .from("personale")
                 .where({
                     "id" : id
                 })
@@ -24,9 +24,9 @@ exports.queries = {
         byService : (knex, serviceID, callback) => {
 
             knex
-                .distinct("Personale.id", "Personale.nome", "Personale.immagine")
-                .from("Personale")
-                .join("lavora", {"Personale.id" : "id_personale"})
+                .distinct("personale.id", "personale.nome", "personale.immagine")
+                .from("personale")
+                .join("lavora", {"personale.id" : "id_personale"})
                 .join("servizi", {"id_servizio" : "servizi.id"})
                 .where({
                     "id_servizio" : serviceID
@@ -49,10 +49,10 @@ exports.queries = {
         },
         intro : (knex, argid, res) => {
             knex
-                .select("id as serviceId", "nome as serviceName", "intro as serviceIntro", "immagine as serviceImage")
+                .select("id", "nome as anem", "intro as description", "immagine as image")
                 .from("servizi")
                 .where({
-                    "serviceId" : argid
+                    "id" : argid
                 })
                 .then(results => {
                     res(results);
@@ -60,7 +60,7 @@ exports.queries = {
         },
         calendar : (knex, argid, res) => {
             knex
-                .select("id", "nome", "calendario", "immagine")
+                .select("id", "nome as name", "week", "weekend", "immagine as image")
                 .from("servizi")
                 .where({
                     "id" : argid
@@ -72,7 +72,7 @@ exports.queries = {
         },
         when_useful : (knex, argid, callback) => {
             knex
-                .select("id", "nome", "quando_utile", "immagine")
+                .select("id", "nome as name", "quando_utile as description", "immagine as image")
                 .from("servizi")
                 .where({
                     "id" : argid
@@ -84,7 +84,7 @@ exports.queries = {
         ,
         how_to_access : (knex, argid, callback) => {
             knex
-                .select("id", "nome", "come_accedere", "immagine")
+                .select("id", "nome as name", "come_accedere as description", "immagine as image", "servizi.email as mail", "servizi.telefono as tel")
                 .from("servizi")
                 .where({
                     "id" : argid
@@ -97,7 +97,7 @@ exports.queries = {
         byLocation : (knex, locationID, callback) => {
 
             knex
-                .select("servizi.id", "servizi.nome", "servizi.immagine")
+                .distinct("servizi.id as id", "servizi.nome as name", "servizi.immagine as image", "sedi.nome as nome_sede", "sedi.id as id_sede" )
                 .from("servizi")
                 .join("tenuto", {"servizi.id" : "id_servizio"})
                 .join("sedi", {"id_sede" : "sedi.id"})
@@ -111,7 +111,7 @@ exports.queries = {
 
         byPeople : (knex, peopleID, callback) =>{
             knex
-                .select("servizi.id", "servizi.nome", "servizi.immagine")
+                .distinct("servizi.id as id", "servizi.nome as name", "servizi.immagine as image", "personale.nome as nome_personale", "personale.cognome as cognome_personale", "personale.id as id_personale")
                 .from("servizi")
                 .join("lavora", {"servizi.id" : "id_servizio"})
                 .join("personale", {"id_personale" : "personale.id"})
@@ -150,7 +150,7 @@ exports.queries = {
 
         map : (knex, argid, callback) => {
             knex
-                .select("id", "nome", "indirizzo", "orari", "immagine")
+                .select("id", "nome as name", "indirizzo as address", "orari", "immagine as image", "lat", "lng", "giorni as calendar")
                 .from("sedi")
                 .where({
                     "id" : argid
@@ -163,13 +163,15 @@ exports.queries = {
         contacts : (knex, argid, callback) => {
             knex
                 .distinct(
-                    "sedi.id as locId",
-                    "sedi.nome as locName",
-                    "sedi.email as locEmail ",
+                    "sedi.id as id",
+                    "sedi.nome as name",
+                    "sedi.email as mail ",
                     "sedi.immagine as image",
-                    "personale.nome as managerName",
-                    "personale.cognome  as managerSurname",
-                    "personale.email as managerEmail")
+                    "sedi.telefono as tel",
+                    "personale.nome as manager_name",
+                    "personale.cognome  as manager_surname",
+                    "personale.id as manager_id",
+                    "personale.email as manager_mail")
                 .from("sedi")
                 .join("responsabile", {"sedi.id" : "id_sede"})
                 .join("personale", {"id_manager" : "personale.id"})
@@ -183,7 +185,7 @@ exports.queries = {
         },
         byService : (knex, serviceID, callback) => {
             knex
-                .distinct("sedi.id", "sedi.nome", "sedi.immagine")
+                .distinct("sedi.id as id", "sedi.nome as name", "sedi.immagine as image", "servizi.nome as nome_servizio", "servizi.id as id_servizio")
                 .from("sedi")
                 .join("tenuto", {"sedi.id" : "id_sede"})
                 .join("servizi", {"id_servizio" : "servizi.id"})
@@ -230,8 +232,8 @@ exports.queries = {
     about : {
         history : (knex, callback) => {
             knex
-                .select("versione", "storia")
-                .from("Chi_Siamo")
+                .select("versione", "storia as description")
+                .from("chi_siamo")
                 .orderBy("versione", "desc")
                 .limit(1)
                 .then((results) => {
@@ -241,7 +243,7 @@ exports.queries = {
 
         introduction : (knex, callback) => {
             knex
-                .select("chi_siamo.versione", "chi_siamo.introduzione")
+                .select("chi_siamo.versione", "chi_siamo.introduzione as description")
                 .from("chi_siamo")
                 .orderBy("versione", "desc")
                 .limit(1)
@@ -253,7 +255,7 @@ exports.queries = {
 
         whatWeDo : (knex, callback) => {
             knex
-                .select("chi_siamo.versione", "chi_siamo.cosa_facciamo")
+                .select("chi_siamo.versione", "chi_siamo.cosa_facciamo as description")
                 .from("chi_siamo")
                 .orderBy("versione", "desc")
                 .limit(1)
