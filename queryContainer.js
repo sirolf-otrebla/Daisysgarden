@@ -3,7 +3,7 @@ exports.queries = {
     people : {
         all : (knex, res) => {
             knex
-                .select("id", "nome", "cognome", "mansione")
+                .select("id", "nome as name", "cognome as surname", "mansione")
                 .from("personale")
                 .orderBy("cognome", "nome")
                 .then(results => {
@@ -13,7 +13,7 @@ exports.queries = {
         by_id : (knex, id, res) => {
             knex
                 .select("id", "nome", "mansione", "descrizione", "immagine","email", "telefono")
-                .from("personale")
+                .from("Personale")
                 .where({
                     "id" : id
                 })
@@ -24,9 +24,9 @@ exports.queries = {
         byService : (knex, serviceID, callback) => {
 
             knex
-                .select("personale.id", "personale.nome", "personale.immagine")
-                .from("sedi")
-                .join("lavora", {"personale.id" : "id_personale"})
+                .distinct("Personale.id", "Personale.nome", "Personale.immagine")
+                .from("Personale")
+                .join("lavora", {"Personale.id" : "id_personale"})
                 .join("servizi", {"id_servizio" : "servizi.id"})
                 .where({
                     "id_servizio" : serviceID
@@ -183,7 +183,7 @@ exports.queries = {
         },
         byService : (knex, serviceID, callback) => {
             knex
-                .select("sedi.id", "sedi.nome", "sedi.immagine")
+                .distinct("sedi.id", "sedi.nome", "sedi.immagine")
                 .from("sedi")
                 .join("tenuto", {"sedi.id" : "id_sede"})
                 .join("servizi", {"id_servizio" : "servizi.id"})
@@ -202,20 +202,27 @@ exports.queries = {
             knex
                 .select("*")
                 .from("contatti")
-                .whereRaw("contatti.versione > all")
+                .orderBy("versione", "desc")
+                .limit(1)
                 .then(callback)
         },
 
         locations : (knex, callback) => {
             knex
-                .select("sedi.nome", "sedi.email", "sedi.immagine")
+            .distinct(
+                "sedi.id as locId",
+                "sedi.nome as locName",
+                "sedi.email as locEmail ",
+                "sedi.immagine as image",
+                "personale.nome as managerName",
+                "personale.cognome  as managerSurname",
+                "personale.email as managerEmail")
                 .from("sedi")
-                .join("responsabile", {"id" : "id_sede"})
+                .join("responsabile", {"sedi.id" : "id_sede"})
                 .join("personale", {"id_manager" : "personale.id"})
                 .then(results => {
                     callback(results);
                 });
-
         }
 
     },
@@ -223,9 +230,10 @@ exports.queries = {
     about : {
         history : (knex, callback) => {
             knex
-                .select("chi_siamo.versione", "chi_siamo.storia")
-                .from("chi_siamo")
-                .whereRaw("versione > all")
+                .select("versione", "storia")
+                .from("Chi_Siamo")
+                .orderBy("versione", "desc")
+                .limit(1)
                 .then((results) => {
                     callback(results)
                 });
@@ -235,7 +243,8 @@ exports.queries = {
             knex
                 .select("chi_siamo.versione", "chi_siamo.introduzione")
                 .from("chi_siamo")
-                .whereRaw("versione > all")
+                .orderBy("versione", "desc")
+                .limit(1)
                 .then((results) => {
                     callback(results)
                 });
@@ -246,7 +255,8 @@ exports.queries = {
             knex
                 .select("chi_siamo.versione", "chi_siamo.cosa_facciamo")
                 .from("chi_siamo")
-                .whereRaw("versione > all")
+                .orderBy("versione", "desc")
+                .limit(1)
                 .then((results) => {
                     callback(results)
                 });

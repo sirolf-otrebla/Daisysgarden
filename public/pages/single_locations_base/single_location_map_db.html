@@ -28,6 +28,8 @@
         //MUST BE DEFINED, EVEN BLANK
         var apiCall = "locations/" + item.id + "?page=map";
         var toOutput = '';
+        var lat;
+        var lng;
 
         function format(item) {
             $('#breadcrumb').html('<ol class="breadcrumb oi" ><li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../../index.html" >Home</a></li><li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../all_locations_db.html">Sedi</a></li><li class="breadcrumb-item oi-item"><a class="oi-item-link" href="single_location_intro_db.html?' + item.id + '">' + item.name + '</a></li><li class="breadcrumb-item oi-item active">Mappa</li></ol>')
@@ -40,6 +42,9 @@
             toOutput += '<br/><p><img src="../../assets/images/location.svg" class="skin" >' + item.address + '</p>';
             toOutput += '<br><p><img src="../../assets/images/calendar.svg" class="skin">' + item.calendar + '</p>';
             toOutput += '<br><p><img src="../../assets/images/clock.svg" class="skin">' + item.orari + '</p>';
+
+            lat= item.lat;
+            lng= item.lng;
 
         }
     </script>
@@ -143,7 +148,7 @@
             </div>
             <script>
                 function initMap() {
-                    var uluru = {lat: 37.2490889, lng: 15.2233656};
+                    var uluru = {lat, lng};
                     var map = new google.maps.Map(document.getElementById('map'), {
                         zoom: 15,
                         center: uluru

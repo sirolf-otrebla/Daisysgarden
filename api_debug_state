@@ -14,19 +14,18 @@ http://localhost:5000/api/services                              funziona
 
 http://localhost:5000/api/services/1?page=intro                 funziona
 
-http://localhost:5000/api/services/1?page=calendar              contenuti?
+http://localhost:5000/api/services/1?page=calendar              contenuti
 
-http://localhost:5000/api/services/1?page=when_useful           contenuti?
+http://localhost:5000/api/services/1?page=when_useful           contenuti
 
 http://localhost:5000/api/services/people/1                     funziona
 
-http://localhost:5000/api/services/locations/1                  non funziona (errore callback non definita)
+http://localhost:5000/api/services/locations/1                  funziona
 
+http://localhost:5000/api/people/services/1                     funziona
 
-http://localhost:5000/api/people/services/1                     non funziona (errore no such column personale.id)
+http://localhost:5000/api/locations/services/1                  funziona
 
-http://localhost:5000/api/locations/services/1                  non funziona (errore callback non definita)
+http://localhost:5000/api/about                                 funziona
 
-http://localhost:5000/api/about                                 non funziona (Unhandled rejection Error: SQLITE_ERROR: near "all": syntax error)
-                                                                (history/introduction/whatwedo non sono usati secondo il compilatore)
 http://localhost:5000/api/contact-us                            non funziona (Unhandled rejection Error: SQLITE_ERROR: near "all": syntax error)
