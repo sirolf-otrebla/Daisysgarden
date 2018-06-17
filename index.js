@@ -9,8 +9,8 @@ let knex;
 let sqlDbFactory = require("knex");
 let dbManagement = require("./dbManagement");
 let queries = queryContainer.queries;
-process.env.TEST = true;
-process.env.SETUP = true;
+const TEST = true;
+const SETUP = true;
 
 function defineSQLenv(callback) {
     /* Locally we should launch the app with TEST=true to use SQLlite:
@@ -18,7 +18,7 @@ function defineSQLenv(callback) {
          > TEST=false node ./index_old.js
 
       */
-    if (process.env.TEST) {
+    if (TEST) {
         knex = sqlDbFactory({
             client: "sqlite3",
             debug: true,
@@ -54,7 +54,7 @@ function defineSQLenv(callback) {
 }
 
 defineSQLenv(() =>{
-    if (process.env.SETUP)
+    if (SETUP)
         dbManagement.buildSchema(knex, dbManagement.populateDb);
 });
 
