@@ -28,7 +28,6 @@
         let specialPage=false;
 
 
-
         function format(item) {
 
             toOutput += '<div class="container-fluid list-container top">';
@@ -52,6 +51,22 @@
 
             toOutput += '</div>';
 
+            iterator++;
+        }
+
+        fetch('http://localhost:5000/api/locations/namelist')
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                data.map(dropd);
+                $("#dropdown").append(secondOutput);
+
+            });
+        var secondOutput = "<a class=\"dropdown-item my-nav-pills\" href=\"all_services_db.html\"> Tutti i Servizi</a>";
+
+        function dropd(item) {
+            secondOutput += '<a class="dropdown-item my-nav-pills" href="services_by_locations/services_by_location_db.html?' + item.id + '">' + item.name + '</a>';
             iterator++;
         }
     </script>
@@ -140,13 +155,6 @@
                            href="#" role="button" aria-haspopup="true" aria-expanded="false">
                             Tutti i servizi</a>
                         <div id="dropdown" class="dropdown-menu my-nav-pills by-location-dropdown">
-                            <a class="dropdown-item my-nav-pills" href="services_by_locations/services_by_location_db.html?1">Augusta</a>
-                            <a class="dropdown-item my-nav-pills" href="services_by_locations/services_by_location_db.html?2">Chiari</a>
-                            <a class="dropdown-item my-nav-pills" href="services_by_locations/services_by_location_db.html?3"> Dalmine</a>
-                            <a class="dropdown-item my-nav-pills" href="services_by_locations/services_by_location_db.html?4"> Mozza Grogna</a>
-                            <a class="dropdown-item my-nav-pills" href="services_by_locations/services_by_location_db.html?5"> Tagliacozzo</a>
-                            <a class="dropdown-item my-nav-pills" href="all_services_db.html"> Tutti i Servizi</a>
-
                         </div>
                     </li>
 

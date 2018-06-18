@@ -84,6 +84,12 @@ app.get("/api/locations", (req, res) => {
     })
 });
 
+app.get("/api/locations/namelist", (req, res) => {
+    queries.locations.namelist(knex, (results) => {
+        res.json(results);
+    })
+});
+
 // retrieves informations about a specific location. it is possible
 // to retrieve only infos which are useful for a certain page: example
 //
