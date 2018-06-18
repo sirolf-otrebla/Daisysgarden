@@ -37,6 +37,14 @@ exports.queries = {
         }
     },
     services : {
+        namelist : (knex, res) => {
+            knex
+                .distinct("id", "nome as name" )
+                .from("servizi")
+                .then((results) => {
+                    res(results);
+                });
+        },
         all : (knex, res) => {
             knex
                 .select("id", "nome as name", "immagine as image")
@@ -125,6 +133,14 @@ exports.queries = {
 
     },
     locations : {
+        namelist : (knex, res) => {
+            knex
+                .distinct("id", "nome as name" )
+                .from("sedi")
+                .then((results) => {
+                    res(results);
+                });
+        },
         all : (knex, callback) => {
             knex
                 .select("id", "nome as name", "immagine as image")
