@@ -10,7 +10,7 @@ let sqlDbFactory = require("knex");
 let dbManagement = require("./dbManagement");
 let queries = queryContainer.queries;
 const TEST = true;
-const SETUP = true;
+const SETUP = false;
 
 function defineSQLenv(callback) {
     /* Locally we should launch the app with TEST=true to use SQLlite:
@@ -80,6 +80,12 @@ app.get("/api/people/:people_id", (req, res) => {
 // containing location name, ID and image
 app.get("/api/locations", (req, res) => {
     queries.locations.all(knex, (results) => {
+        res.json(results);
+    })
+});
+
+app.get("/api/locations/namelist", (req, res) => {
+    queries.locations.namelist(knex, (results) => {
         res.json(results);
     })
 });

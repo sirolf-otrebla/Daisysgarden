@@ -27,6 +27,7 @@
         //MUST BE DEFINED, EVEN BLANK
         var apiCall = "services/locations/" + window.location.search.substr(1);
         let specialPage=false;
+        var firstTime = true;
 
         function init() {
             toOutput += '<div class="container-fluid list-container top">';
@@ -34,7 +35,16 @@
 
         function format(item) {
             $('#title').html('<div class="container home-section-title"> I NOSTRI SERVIZI A: ' + item.nome_sede + ' </div>');
-            $('#dropdownTitle').html('<a class="nav-link my-nav-pills dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">' + item.nome_sede + '</a><div id="dropdown" class="dropdown-menu my-nav-pills by-location-dropdown"><a class="dropdown-item my-nav-pills" href="services_by_location_db.html?1">Augusta</a><a class="dropdown-item my-nav-pills" href="services_by_location_db.html?2">Chiari</a><a class="dropdown-item my-nav-pills" href="services_by_location_db.html?3"> Dalmine</a><a class="dropdown-item my-nav-pills" href="services_by_location_db.html?4"> Mozza Grogna</a><a class="dropdown-item my-nav-pills" href="services_by_location_db.html?5"> Tagliacozzo</a><a class="dropdown-item my-nav-pills" href="../all_services_db.html"> Tutti i Servizi</a></div>');
+            $('#breadcrumb').html('<ol class="breadcrumb oi" style="border-bottom-width: 1vh " id="breadcrumb">' +
+                '<li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../../index.html" >Home</a></li>' +
+            '<li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../all_services_db.html" >Servizi</a></li>' +
+            '<li class="breadcrumb-item oi-item active">I NOSTRI SERVIZI A: ' + item.nome_sede +'</li></ol>');
+            if (firstTime){
+                firstTime = false;
+                $('#dropdownTitle').append('<a class="nav-link my-nav-pills dropdown-toggle" data-toggle="dropdown"' +
+                    'href="#" role="button" aria-haspopup="true" aria-expanded="false">'+ item.nome_sede +'</a>');
+            }
+
 
             if (iterator % 2 == 0){
                 toOutput += '<a href="../single_services_base/service_intro_db.html?' + item.id + '">';
@@ -55,6 +65,21 @@
             if (iterator % 1 == 0) {
                 toOutput += '</div><div class="container-fluid list-container top">';
             }
+            iterator++;
+        }
+        fetch('http://localhost:5000/api/locations/namelist')
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                data.map(dropd);
+                $("#dropdown").append(secondOutput);
+
+            });
+        var secondOutput = "<a class=\"dropdown-item my-nav-pills\" href=\"../all_services_db.html\"> Tutti i Servizi</a>";
+
+        function dropd(item) {
+            secondOutput += '<a class="dropdown-item my-nav-pills" href="services_by_location_db.html?' + item.id + '">' + item.name + '</a>';
             iterator++;
         }
     </script>
@@ -121,12 +146,8 @@
     </nav>
 </div>
 <div class="container-fluid nc-page ">
-    <div class="container breadcrumb-transition-container" >
-        <ol class="breadcrumb oi" style="border-bottom-width: 1vh ">
-            <li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../../index.html" >Home</a></li>
-            <li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../all_services_db.html" >Servizi</a></li>
-            <li class="breadcrumb-item oi-item active">Tutte i Servizi</li>
-        </ol>
+    <div class="container breadcrumb-transition-container" id="breadcrumb">
+
     </div>
     <div class="container home-section">
         <div id="title">
@@ -139,14 +160,9 @@
             <div class="container-fluid sub-nav" id="sub-nav">
                 <ul class="nav nav-pills nav-justified">
                     <li class="nav-item dropdown" id="dropdownTitle">
-                        <!--<a class="nav-link my-nav-pills dropdown-toggle service-by-location" data-toggle="dropdown"
-                           href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                           -->
 
-                            <!--
-                            <a class="nav-link my-nav-pills dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">' + item.nome_sede + '</a>
-                            -->
-                            <div id="dropdown" class="dropdown-menu my-nav-pills by-location-dropdown"><a class="dropdown-item my-nav-pills" href="services_by_location_db.html?1">Augusta</a><a class="dropdown-item my-nav-pills" href="services_by_location_db.html?2">Chiari</a><a class="dropdown-item my-nav-pills" href="services_by_location_db.html?3"> Dalmine</a><a class="dropdown-item my-nav-pills" href="services_by_location_db.html?4"> Mozza Grogna</a><a class="dropdown-item my-nav-pills" href="services_by_location_db.html?5"> Tagliacozzo</a><a class="dropdown-item my-nav-pills" href="../all_services_db.html"> Tutti i Servizi</a></div>
+                        <div id="dropdown" class="dropdown-menu my-nav-pills by-location-dropdown">
+                        </div>
 
 
                     </li>
