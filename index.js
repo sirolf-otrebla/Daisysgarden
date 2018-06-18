@@ -9,7 +9,7 @@ let knex;
 let sqlDbFactory = require("knex");
 let dbManagement = require("./dbManagement");
 let queries = queryContainer.queries;
-const TEST = false;
+const TEST = true;
 const SETUP = false;
 
 function defineSQLenv(callback) {
