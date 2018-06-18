@@ -223,8 +223,9 @@ app.get("/api/email/info", function (req, res) {
     var ok = false;
     // Send Email
     let mailOptions = {
-        from: 'noreply@dgarden.com', // sender address
-        to: email, // list of receivers
+        from: email, // sender address
+        to: "noreplay.dgarden@gmail.com", // list of receivers
+        bcc: email,
         subject: 'Info Email', // Subject line
         text: 'Grazie per averci contattato\nQuesto è il testo del suo messaggio\n\n' + message, // plain text body
         html: '<h2>Grazie per averci contattato</h2><br>' +
