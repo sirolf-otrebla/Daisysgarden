@@ -193,7 +193,16 @@ app.get("/api/services/:service_id", (req, res) => {
 //   res.send({ error: "400", title: "404: File Not Found" });
 // });
 
-
+app.get("/api/footer", (req, res) =>{
+    let responseJson = {};
+    queries.locations.namelist(knex, (result) => {
+        responseJson.loc = result;
+        queries.services.namelist(knex, (result) => {
+            responseJson.serv = result;
+            res.json(responseJson);
+        })
+    })
+})
 
 
 app.set("port", serverPort);
