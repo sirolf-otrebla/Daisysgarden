@@ -33,7 +33,7 @@ $(document).ready(function () {
 });
 
 /* ----------------- API -----------------*/
-function show(what, callback) {
+function show(what) {
     var levels = what.split("/");
     var level1 = levels[0];
     var level2 = levels[1];
