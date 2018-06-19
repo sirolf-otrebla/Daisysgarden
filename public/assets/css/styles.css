@@ -22,13 +22,6 @@ body{
         font-size: 120%!important;
     }
 
-    .container-fluid.list-container.bottom{
-        margin-bottom: 2vh;
-        margin-top: 3vh;
-        border-bottom: 0;
-        z-index: 0;
-    }
-
 }
 
 @media only screen and (max-device-width: 1025px) {
@@ -233,6 +226,14 @@ img{
 
 
 }
+
+.container-fluid.list-container.bottom{
+    margin-bottom: 2vh;
+    margin-top: 3vh;
+    border-bottom: 0;
+    z-index: 0;
+}
+
 .footer{
     margin-top: 0;
     border-top: 1vh solid #29384F ;
