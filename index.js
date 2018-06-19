@@ -62,12 +62,12 @@ function defineSQLenv(callback) {
 }
 
 exports.logToFile = (str) => {
-    fs.write(descriptor, str + "\n", () => {
+    /* fs.write(descriptor, str + "\n", () => {
         fs.close(descriptor, () => {
             descriptor = fs.open(log_name, "w", () => {});
         });
-    });
-}
+    }); */
+};
 defineSQLenv(() => {
     if (SETUP)
         logToFile("setupping Database;");
