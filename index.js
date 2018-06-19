@@ -13,7 +13,7 @@ let dbManagement = require("./dbManagement");
 let queries = queryContainer.queries;
 let descriptor = fs.openSync(log_name, "w");
 const TEST = false;
-const SETUP = true;
+const SETUP = false;
 
 const transporter = nodemailer.createTransport({ // Setup Account
     host: 'smtp.gmail.com',
