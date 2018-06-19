@@ -141,6 +141,35 @@ in this case we have five different fields:
 as you may notice, the response array is alphabetically ordered taking into 
 consideration the `surname` field.
 
+
+#### how to fetch info about a single person
+you can simply send this GET request:
+
+`http://polimi-hyp-2018-team-10508999.herokuapp.com/api/people`
+
+the response you will receive it's similar to this:
+
+``` 
+ [  
+    {
+        "id":1,
+        "name":"Bruno",
+        "surname":"Biondo",
+        "mansione":"Responsabile 'Dalmine'",
+        "description": *SOME DESCRIPTION YOU MAY NOT WANT TO READ NOW*,
+        "image":"bruno_biondo.jpg",
+        "mail":"bruno.biondo@dgarden.com",
+        "tel":"333-5467890",
+        "id_sede":3
+    }
+]
+```
+as you can notice the meaning of each field is very intuitive. the only field
+ which may be further explained is the `id_sede` field: if the person is a location
+ manager, it will contain the id of the related location so that the page can include a 
+ link to it. in any other case, it will contain `null`.
+ 
+ 
 #### how to fetch info about a single location
 
 obtain only info relating to a specific page. there's no way to obtain all the info in only 
@@ -416,6 +445,7 @@ the response you will receive it's similar to this:
     "nome_personale":"Bruno",
     "cognome_personale":"Biondo",
     "id_personale":1
+   
  },
  ...,
     {"id":3,
