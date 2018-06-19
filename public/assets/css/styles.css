@@ -19,7 +19,7 @@ body{
 
     }
     .page-footer-links{
-        font-size: 110%!important;
+        font-size: 115%!important;
     }
 
     .container-fluid.list-container.bottom{
@@ -38,7 +38,7 @@ body{
     }
 
     .page-footer-links{
-        font-size: 110%!important;
+        font-size: 130%!important;
     }
 }
 @media only screen and (max-device-width: 800px) {
@@ -60,7 +60,7 @@ body{
     }
 
     .page-footer-links{
-        font-size: 130%!important;
+        font-size: 135%!important;
     }
 }
 
