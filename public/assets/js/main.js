@@ -92,7 +92,7 @@ function validateForm(e) {
 
     console.log("message=\"" + message.val() + "\"&mail=" + email.val());
 
-    $.post("http://localhost:5000/api/email/info",{mail: email.val(),message: message.val()},
+    $.post("https://polimi-hyp-2018-team-10508999.herokuapp.com/api/email/info",{mail: email.val(),message: message.val()},
         function(data){
             console.log(data);
             if (data.status == "OK") {
