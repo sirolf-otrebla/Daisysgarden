@@ -237,14 +237,14 @@ app.get("/api/email/info", function (req, res) {
     // Send mail with defined transport object
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
-            console.log("ERROREEE!!!!!!!!!!!!!!!!!!!");
+            console.log("ERRORE!");
             console.log(error);
             ok = false;
             res.json({"status": "Error"});
             return;
         } else {
             ok = true;
-            console.log("OOOOOOOOOOK!!!!!!!!!!!!!!!!!!!");
+            console.log("OK!");
             console.log(info);
             res.json({"status": "OK"});
         }
