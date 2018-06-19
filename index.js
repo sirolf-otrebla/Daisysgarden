@@ -6,10 +6,12 @@ const queryContainer = require("./queryContainer");
 const process = require("process");
 const _ = require("lodash");
 const nodemailer = require("nodemailer");
+const log_name = "node_logs";
 let knex;
 let sqlDbFactory = require("knex");
 let dbManagement = require("./dbManagement");
 let queries = queryContainer.queries;
+let descriptor = fs.openSync(log_name, "w");
 const TEST = false;
 const SETUP = true;
 
@@ -23,7 +25,6 @@ const transporter = nodemailer.createTransport({ // Setup Account
     }
 });
 
-
 function defineSQLenv(callback) {
     /* Locally we should launch the app with TEST=true to use SQLlite:
 
@@ -31,6 +32,7 @@ function defineSQLenv(callback) {
 
       */
     if (TEST) {
+        logToFile("setupping SQLite")
         knex = sqlDbFactory({
             client: "sqlite3",
             debug: true,
@@ -41,6 +43,7 @@ function defineSQLenv(callback) {
         });
         console.log("sqlite");
     } else {
+        logToFile("setupping PostgreSQL;");
         knex = sqlDbFactory({
             client: 'pg',
             connection: {
@@ -58,11 +61,18 @@ function defineSQLenv(callback) {
     callback();
 }
 
+exports.logToFile = (str) => {
+    fs.write(descriptor, str + "\n", () => {
+        fs.close(descriptor, () => {
+            descriptor = fs.open(log_name, "w", () => {});
+        });
+    });
+}
 defineSQLenv(() => {
     if (SETUP)
+        logToFile("setupping Database;");
         dbManagement.buildSchema(knex, dbManagement.populateDb);
 });
-
 let serverPort = process.env.PORT || 5000;
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.json());
