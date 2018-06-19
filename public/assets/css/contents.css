@@ -73,6 +73,14 @@
         z-index: 10;
         color: #ffffff;
     }
+
+    .form-control.contacts{
+        /* put something here /*
+
+         */
+        font-size: 160%!important;
+    }
+
 }
     .container-fluid.content-body{
     font-family: 'Raleway', sans-serif;
