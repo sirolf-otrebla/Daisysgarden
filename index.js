@@ -70,13 +70,28 @@ app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-// /* Register REST entry point */
+// retrieves a list of all people working at Daisy's Garden
+//
+// usage:
+//
+// https://<domainname>.<toplvldomain>/api/people
+//
+//  for more information see README.md
+//
 app.get("/api/people", (req, res) => {
     queries.people.all(knex, (results) => {
         res.json(results);
     })
 });
 
+// retrieves info about a single person
+//
+// usage:
+//
+// https://<domainname>.<toplvldomain>/api/people/<id>
+//
+//    for more information see README.md
+//
 app.get("/api/people/:people_id", (req, res) => {
     queries.people.by_id(knex, parseInt(req.params.people_id), (results) => {
         res.json(results)
@@ -85,12 +100,28 @@ app.get("/api/people/:people_id", (req, res) => {
 
 // retrieves location list, as a list of json objects
 // containing location name, ID and image
+//
+// usage:
+//
+// https://<domainname>.<toplvldomain>/api/locations
+//
+//    for more information see README.md
+//
 app.get("/api/locations", (req, res) => {
     queries.locations.all(knex, (results) => {
         res.json(results);
     })
 });
 
+/*
+    retrieves a list containing only location names and id
+
+    usage:
+
+    // https://<domainname>.<toplvldomain>/api/locations/namelist
+
+    for more information see README.md
+ */
 app.get("/api/locations/namelist", (req, res) => {
     queries.locations.namelist(knex, (results) => {
         res.json(results);
@@ -100,10 +131,9 @@ app.get("/api/locations/namelist", (req, res) => {
 // retrieves informations about a specific location. it is possible
 // to retrieve only infos which are useful for a certain page: example
 //
-// https://<domainname>.<toplvldomain>/api/locations/<id>?page=calendar
+// https://<domainname>.<toplvldomain>/api/locations/<id>?page=<pagename>
 //
-// in this way only informations which are relevant for the selected page
-// will be sent back to the client
+// for more informations see README.md
 app.get("/api/locations/:location_id", (req, res) => {
 
     if (queries.locations[req.query.page])
@@ -118,8 +148,7 @@ app.get("/api/locations/:location_id", (req, res) => {
 //
 // https://<domainname>.<toplvldomain>/api/services/locations/<id>
 //
-// infos are returned as json object containing id, images and names of the
-// required services
+// for more information see README.md
 app.get("/api/services/locations/:location_id", (req, res) => {
     queries.services.byLocation(knex, parseInt(req.params.location_id), (results) => {
         res.json(results);
@@ -133,8 +162,7 @@ app.get("/api/services/locations/:location_id", (req, res) => {
 //
 // https://<domainname>.<toplvldomain>/api/people/services/<id>
 //
-// infos are returned as json object containing id, images and names of the
-// required services
+// for more information see README.md
 app.get("/api/people/services/:service_id", (req, res) => {
     queries.people.byService(knex, parseInt(req.params.service_id), (results) => {
         res.json(results);
@@ -142,6 +170,9 @@ app.get("/api/people/services/:service_id", (req, res) => {
 });
 
 // retrieves locations by service (service_id)
+// https://<domainname>.<toplvldomain>/api/locatiions/services/<id>
+//
+// for more information see README.md
 app.get("/api/locations/services/:service_id", (req, res) => {
     queries.locations.byService(knex, parseInt(req.params.service_id), (results) => {
         res.json(results);
@@ -150,6 +181,12 @@ app.get("/api/locations/services/:service_id", (req, res) => {
 });
 
 // retrieves services by person (people_id)
+//
+// usage:
+//
+// https://<domainname>.<toplvldomain>/api/people/people/<people_id>
+//
+// for more information see README.md
 app.get("/api/services/people/:people_id", (req, res) => {
     queries.services.byPeople(knex, parseInt(req.params.people_id), (results) => {
         res.json(results);
@@ -157,6 +194,12 @@ app.get("/api/services/people/:people_id", (req, res) => {
 });
 
 // retrieves informations which are needed to display in the 'about' page
+//
+// usage:
+//
+// https://<domainname>.<toplvldomain>/api/about
+//
+// for more information see README.md
 app.get("/api/about", (req, res) => {
     if (queries.about[req.query.page])
         queries.about[req.query.page](knex, (results) => {
@@ -165,6 +208,12 @@ app.get("/api/about", (req, res) => {
 });
 
 // retrieves informations which are needed to display in the 'contact us' page
+//
+// usage:
+//
+// https://<domainname>.<toplvldomain>/api/contact-us
+//
+// for more information see README.md
 app.get("/api/contact-us", (req, res) => {
     queries.contacts.general(knex, (results) => {
         let tobeSentBack = {
@@ -180,6 +229,12 @@ app.get("/api/contact-us", (req, res) => {
 
 // retrieves service list, as a list of json objects
 // containing service name, ID and image
+//
+// usage:
+//
+// https://<domainname>.<toplvldomain>/api/people/services/
+//
+// for more information see README.md
 app.get("/api/services", (req, res) => {
     queries.services.all(knex, (results) => {
         res.json(results);
@@ -201,11 +256,13 @@ app.get("/api/services/:service_id", (req, res) => {
         });
 });
 
-// app.use(function(req, res) {
-//   res.status(400);
-//   res.send({ error: "400", title: "404: File Not Found" });
-// });
-
+// retrieves footer dynamic content
+//
+// usage:
+//
+// https://<domainname>.<toplvldomain>/api/footer
+//
+// for more information see README.md
 app.get("/api/footer", (req, res) => {
     let responseJson = {};
     queries.locations.namelist(knex, (result) => {
@@ -217,6 +274,7 @@ app.get("/api/footer", (req, res) => {
     })
 })
 
+//todo: commentare
 app.get("/api/email/info", function (req, res) {
     var message = req.query.message;
     var email = req.query.email;
