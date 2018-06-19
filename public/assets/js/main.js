@@ -38,7 +38,7 @@ function show(what) {
     var level1 = levels[0];
     var level2 = levels[1];
     var parameters = window.location.search.substr(1);
-    var test = false;
+    var test = true;
     var source = "https://polimi-hyp-2018-team-10508999.herokuapp.com/api/";
 
     //console.log(what);
@@ -90,13 +90,10 @@ function validateForm(e) {
     let email = $("#mail");
     let message = $("#text");
 
-    console.log("/api/email/info?type=0&message=\"" + message.val() + "\"&email=" + email.val());
+    console.log("message=\"" + message.val() + "\"&mail=" + email.val());
 
-    fetch("/api/email/info?&message=" + message.val() + "&email=" + email.val())
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (data) {
+    $.post("http://localhost:5000/api/email/info",{mail: email.val(),message: message.val()},
+        function(data){
             console.log(data);
             if (data.status == "OK") {
                 alert("Messaggio Inviato correttamente, riceverai una risposta a breve!");
@@ -107,5 +104,4 @@ function validateForm(e) {
                 alert("Si è verificato un'errore... Riprova...");
             }
         });
-
 }

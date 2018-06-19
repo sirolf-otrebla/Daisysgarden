@@ -12,7 +12,7 @@ let sqlDbFactory = require("knex");
 let dbManagement = require("./dbManagement");
 let queries = queryContainer.queries;
 let descriptor = fs.openSync(log_name, "w");
-const TEST = false;
+const TEST = true;
 const SETUP = false;
 
 
@@ -274,10 +274,15 @@ app.get("/api/footer", (req, res) => {
     })
 })
 
-//todo: commentare
-app.get("/api/email/info", function (req, res) {
-    var message = req.query.message;
-    var email = req.query.email;
+// takes message to be sent and send it to our email and also to the sender of the message
+//
+// usage:
+//
+// post request to https://<domainname>.<toplvldomain>/api/email/info
+//
+app.post("/api/email/info", function (req, res) {
+    var message = req.body.message;
+    var email = req.body.mail;
 
     // Validation takes place on server side too
     var ok = false;
