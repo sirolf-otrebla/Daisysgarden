@@ -80,6 +80,12 @@ body{
         color: #ffffff;
     }
 }
+@media only screen and (max-device-width: 450px) {
+    body {
+        font-size: 23pt!important;
+        background-color: #C0CFE8;
+    }
+}
 img{
     max-width: 95%;
 }
