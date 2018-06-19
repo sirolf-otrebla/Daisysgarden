@@ -149,7 +149,7 @@ app.get("/api/people/services/:service_id", (req, res) => {
     })
 });
 
-// retrieves services by location (location_id)
+// retrieves locations by service (service_id)
 app.get("/api/locations/services/:service_id", (req, res) => {
     queries.locations.byService(knex, parseInt(req.params.service_id), (results) => {
         res.json(results);
@@ -157,7 +157,7 @@ app.get("/api/locations/services/:service_id", (req, res) => {
 
 });
 
-// retrieves people by service (service_id)
+// retrieves services by person (people_id)
 app.get("/api/services/people/:people_id", (req, res) => {
     queries.services.byPeople(knex, parseInt(req.params.people_id), (results) => {
         res.json(results);
