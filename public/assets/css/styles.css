@@ -85,6 +85,15 @@ body{
         font-size: 23pt!important;
         background-color: #C0CFE8;
     }
+
+    .container.list-title.long.right{
+        font-size: 200%;
+    }
+
+    .container.list-title.long.left{
+        font-size: 200%;
+    }
+
 }
 img{
     max-width: 95%;
