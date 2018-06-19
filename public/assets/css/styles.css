@@ -9,7 +9,7 @@ body{
     .container-fluid.site-title{
         position: absolute;
         font-family: 'Montserrat Alternates', sans-serif;
-        font-size: 600%;
+        font-size: 600%!important;
         padding: 0;
         text-align: center;
         top: 25vh;
@@ -23,6 +23,7 @@ body{
     }
 
 }
+
 
 @media only screen and (max-device-width: 1025px) {
     body {
@@ -89,13 +90,13 @@ body{
     }
 
 
-    container.list-title.left{
+    .container.list-title.left{
         position: absolute;
         top: 2vh;
         padding-left: 3vh;
         z-index: 2;
         font-family: 'Montserrat', Arial, sans-serif;
-        font-size: 260%;
+        font-size: 245%!important;
         text-align: left;
         align-content: right;
         color: #ffffff;
@@ -109,7 +110,7 @@ body{
         z-index: 2;
         text-align: right;
         font-family: 'Montserrat', Arial, sans-serif;
-        font-size: 260%;
+        font-size: 245%!important;
         color: #ffffff;
     }
 
