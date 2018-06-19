@@ -135,7 +135,7 @@ as you may notice, the response array is alphabetically ordered taking into cons
 
 #### how to fetch info about a single location
 
-every location possesses three different dialogue acts, therefore it's represented by four different pages.
+obtain only info relating to a specific page. there's no way to obtain all the info in only one response.
 
 in order to minimize the response size, you have to send a parametric GET request in order to
 obtain only info relating to a specific page. there's no way to obtain all the info in only one response.
@@ -211,6 +211,77 @@ or `manager_mail` which contains the manager's prersonal e-mail.
 
 
 #### how to fetch info about a single service
+
+the GET request you have to send is the following:
+
+`http://polimi-hyp-2018-team-10508999.herokuapp.com/api/locations/<service_id>?page=<name>`
+
+as you may see the request is very similar to the single location one. you have to substitute `<service_id>` with the proper ID of the location you chose, 
+and substitute the `<name>` parameter with the name relating to the page you want to see.
+
+correct names to be placed in the `<name>` field are:
+
++ `intro`
++ `when_useful`
++ `calendar`
++ `how_to_access`
+
+##### Examples using different 'name' parameters
+for `?page=intro` you will receive a JSON like this:
+``` 
+[{
+    "id":1,
+    "name":"Centro Socio Educativo",
+    "description": *SOME DESCRIPTIVE TEXT*,
+    "image": "service01.jpg"
+    }]
+```
+as you may notice this response is very similar to the one presented for 
+the single location. as before, 
+`description` field contains descriptive text that is then inserted into the webpage.
+
+for `?page=map` you will receive a JSON like this:
+```
+[{  
+    "id":1,
+    "name":"Augusta",
+    "address":"Via Giuseppe di Vittorio, Augusta (SR)",
+    "orari":"09:00-18:00",
+    "image":"location1.jpg",
+    "lat":"37.2490889",
+    "lng":"15.2233656",
+    "calendar":"Lun-Ven"
+    }]
+```
+the `lat` and `long` fields represents the geographical coordinates of our location
+which are used in order to respresent the location on the map. we also have some 
+other fields like `calendar` which contains the days of the week in which our location
+is open to the public, or `orari` which represents the opening time of our
+location. finally, we have an `address` field which represents the location's
+address as shown in the map and in the page informations.
+
+
+for `?name=calendar` the response will be like this:
+
+```
+[{
+    "id":1,
+    "name":"Centro Socio Educativo",
+    "week":"Da lunedì a venerdì: 8:30 - 15.30",
+    "weekend":"chiuso",
+    "image":"service01.jpg"
+    }]
+```
+the two fields `week` and `weekend` represents when the service is avaiable respectively
+during week days (monday - friday ) and weekend days. 
+
+for `?name=how_to_access` the response will be like this:
+
+
+as you may see, more than the usual contact informations regarding the chosen location
+we pass back also info about the manager of that location, such as `manager_name ` and 
+`manager_surname` which represents respectively the manager's first and last name, 
+or `manager_mail` which contains the manager's prersonal e-mail.
 
 #### how to fetch a list about services issued in a specific location
 

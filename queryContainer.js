@@ -57,7 +57,7 @@ exports.queries = {
         },
         intro : (knex, argid, res) => {
             knex
-                .select("id", "nome as anem", "intro as description", "immagine as image")
+                .select("id", "nome as name", "intro as description", "immagine as image")
                 .from("servizi")
                 .where({
                     "id" : argid
