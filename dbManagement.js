@@ -40,7 +40,7 @@ exports.buildSchema = function(knex ,callback) {
                                         console.log(err);
                                     }).then(() => {
                                             console.log("TUTTO BENE \n \n");
-]                                            callback(knex);
+                                            callback(knex);
 
                                         }
                                     );
