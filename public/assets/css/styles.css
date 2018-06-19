@@ -47,7 +47,7 @@ body{
     .nav-link.my-nav-pills{
         /*border-radius: 0!important;*/
         /*background-color: #29384F!important;*/
-        font-size: 120%!important;
+        font-size: 140%!important;
         color: #29384F!important;
     }
     body {
@@ -484,14 +484,14 @@ img{
 
 .nav-link.my-nav-pills.active{
     background-color: #29384F!important;
-    font-size: 120%;
+    font-size: 130%;
     color: white!important;
 }
 
 .nav-link.my-nav-pills{
     /*border-radius: 0!important;*/
     /*background-color: #29384F!important;*/
-    font-size: 120%;
+    font-size: 130%;
     color: #29384F!important;
 }
 
