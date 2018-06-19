@@ -39,7 +39,7 @@ function show(what) {
     var level2 = levels[1];
     var parameters = window.location.search.substr(1);
     var test = false;
-    var source = "http://polimi-hyp-2018-team-10508999.herokuapp.com/api/";
+    var source = "https://polimi-hyp-2018-team-10508999.herokuapp.com/api/";
 
     //console.log(what);
 
