@@ -9,6 +9,10 @@ body{
         font-size: 12pt!important;
         background-color: #C0CFE8;
     }
+
+    .page-footer-links{
+        font-size: 110%;
+    }
 }
 @media only screen and (max-device-width: 800px) {
     .nav-link.my-nav-link{
@@ -27,6 +31,10 @@ body{
         font-size: 14pt!important;
         background-color: #C0CFE8;
     }
+
+    .page-footer-links{
+        font-size: 120%;
+    }
 }
 
 @media only screen and (max-device-width: 600px) {
@@ -36,6 +44,11 @@ body{
         padding-left: 2vh;
         padding-right: 2vh;
     }
+
+    .page-footer-links{
+        font-size: 140%;
+    }
+
     .nav-link.my-nav-pills{
         /*border-radius: 0!important;*/
         /*background-color: #29384F!important;*/
@@ -82,16 +95,20 @@ body{
 }
 @media only screen and (max-device-width: 450px) {
     body {
-        font-size: 23pt!important;
+        font-size: 21pt!important;
         background-color: #C0CFE8;
     }
 
     .container.list-title.long.right{
-        font-size: 200%;
+        font-size: 210%;
     }
 
     .container.list-title.long.left{
-        font-size: 200%;
+        font-size: 210%;
+    }
+
+    .page-footer-links{
+        font-size: 140%;
     }
 
 }
@@ -307,6 +324,9 @@ img{
 
 }
 
+.page-footer-links{
+    font-size: 100%;
+}
 /* Dropdown menu background color*/
 
 .navbar-nav > li > .dropdown-menu {     background-color: #29384F;  }

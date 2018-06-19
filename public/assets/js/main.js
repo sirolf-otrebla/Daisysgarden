@@ -9,10 +9,10 @@ populatefooter = (data, callback) => {
     let footerLocList = '';
     let footerServList = '';
     data.loc.map((loc) => {
-        footerLocList += '<li><a href="/pages/single_locations_base/single_location_intro_db.html?' + loc.id + '"><i class="fa fa-angle-double-right"></i>' + loc.name + '</a></li>';
+        footerLocList += '<li><a href="/pages/single_locations_base/single_location_intro_db.html?' + loc.id + '" class = "page-footer-links"><i class="fa fa-angle-double-right"></i>' + loc.name + '</a></li>';
     });
     data.serv.map((serv) => {
-        footerServList += '<li><a href="/pages/single_services_base/service_intro_db.html?' + serv.id + '"><i class="fa fa-angle-double-right"></i>' + serv.name + '</a></li>';
+        footerServList += '<li><a href="/pages/single_services_base/service_intro_db.html?' + serv.id + '" class = "page-footer-links"><i class="fa fa-angle-double-right"></i>' + serv.name + '</a></li>';
     });
     callback(footerLocList, footerServList);
 };
