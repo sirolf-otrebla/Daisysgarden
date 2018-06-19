@@ -1,17 +1,20 @@
 # Daisy's Garden README
 
-This repository contains the Hypermedia Application course project developed during the Academic Year 2017/2018.
+This repository contains the Hypermedia Application course project developed during the 
+Academic Year 2017/2018.
 
 ## Division of Work:
 
-Because of the didactical purpose of this project, every team member (Luca Falaschini, Leonardo Febbo, Alberto Floris) partecipated in every activity during the project development.
+Because of the didactical purpose of this project, every team member (Luca Falaschini, 
+Leonardo Febbo, Alberto Floris) partecipated in every activity during the project development.
 
 
 ## Client Side languages used:
 the project is based on CSS3, HTML5 and Javascript.
 
 ## Template used:
-the footer's code is taken from another web application, but we can not remember where we take it.
+the footer's code is taken from another web application, but we can not remember where we 
+take it.
 
 
 ## External scripts, API and plugins:
@@ -27,7 +30,8 @@ we used:
 
 ## Main difficulties faced during the project development:
 
-the most difficult issue to overcame was making the website responsive without breaking containers, titles images and similar elements.
+the most difficult issue to overcame was making the website responsive without breaking 
+containers, titles images and similar elements.
 we all started from zero experience on web design and we are satisfied by our work. 
 
 ## How to test it: 
@@ -64,7 +68,8 @@ as you can see, each element of the array possesses `id`, `name`, and `image`
 fields. `image` field contains the filename of the image, which will be searched inside
 `/public/assets/images` folder.
 
-you may also want to receive a list of location without the image; if that's the case, you can use this GET request:
+you may also want to receive a list of location without the image; if that's the case, 
+you can use this GET request:
 
 `http://polimi-hyp-2018-team-10508999.herokuapp.com/api/locations/namelist`
 
@@ -92,9 +97,11 @@ in that case you will receive a Json Response like this:
 
 as you can see, each element of the array possesses `id`, `name`, and `image`
 fields. `image` field contains the filename of the image, which will be searched inside
-`/public/assets/images` folder. the JSON array will also be ordered in alphabetical order, relating to the `name` field
+`/public/assets/images` folder. the JSON array will also be ordered in alphabetical order, 
+relating to the `name` field
 
-you may also want to receive a list of location without the image; if that's the case, you can use this GET request:
+you may also want to receive a list of location without the image; if that's the case, 
+you can use this GET request:
 
 `http://polimi-hyp-2018-team-10508999.herokuapp.com/api/services/namelist`
 
@@ -131,14 +138,17 @@ in this case we have five different fields:
 * `mansione` field contains the person's role inside Daisy's Garden.
 
 
-as you may notice, the response array is alphabetically ordered taking into consideration the `surname` field.
+as you may notice, the response array is alphabetically ordered taking into 
+consideration the `surname` field.
 
 #### how to fetch info about a single location
 
-obtain only info relating to a specific page. there's no way to obtain all the info in only one response.
+obtain only info relating to a specific page. there's no way to obtain all the info in only 
+one response.
 
 in order to minimize the response size, you have to send a parametric GET request in order to
-obtain only info relating to a specific page. there's no way to obtain all the info in only one response.
+obtain only info relating to a specific page. there's no way to obtain all the info in only 
+one response.
 
 the GET request you have to send is the following:
 
@@ -216,7 +226,8 @@ the GET request you have to send is the following:
 
 `http://polimi-hyp-2018-team-10508999.herokuapp.com/api/locations/<service_id>?page=<name>`
 
-as you may see the request is very similar to the single location one. you have to substitute `<service_id>` with the proper ID of the location you chose, 
+as you may see the request is very similar to the single location one. you have to 
+substitute `<service_id>` with the proper ID of the location you chose, 
 and substitute the `<name>` parameter with the name relating to the page you want to see.
 
 correct names to be placed in the `<name>` field are:
@@ -284,11 +295,46 @@ we pass back also info about the manager of that location, such as `manager_name
 or `manager_mail` which contains the manager's prersonal e-mail.
 
 #### how to fetch a list about services issued in a specific location
+the GET request you have to send is the following:
+
+`http://polimi-hyp-2018-team-10508999.herokuapp.com/api/services/locations/<location_id>`
+
+the response you will receive it's similar to this:
+
+
+as you can see, each element of the array possesses `id`, `name`, and `image`
+fields of services related to <nome_sede>. `image` field contains the filename of the 
+image of the service, which will be searched inside`/public/assets/images` folder.
+
+you must replace `<location_id>` with the correct ID of the location you want 
+to know about its services.
+
 
 #### how to fetch which locations are related to a single service
+the GET request you have to send is the following:
+
+`http://polimi-hyp-2018-team-10508999.herokuapp.com/api/locations/services/<service_id>`
+
+the response you will receive it's similar to this:
+
+
 
 #### how to fetch which people are related to a single service
+the GET request you have to send is the following:
+
+`http://polimi-hyp-2018-team-10508999.herokuapp.com/api/people/services/<service_id>`
+
+the response you will receive it's similar to this:
+
+
 
 #### how to fetch a list of services related to a single person
+the GET request you have to send is the following:
+
+`http://polimi-hyp-2018-team-10508999.herokuapp.com/api/services/people/<people_id>`
+
+the response you will receive it's similar to this:
+
+
 
 #### how to fetch footer infos
