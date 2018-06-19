@@ -3,7 +3,7 @@ const process = require("process");
 const _ = require("lodash");
 
 exports.buildSchema = function(knex ,callback) {
-    knex.schema.raw("DROP SCHEMA public").catch(err =>{
+    knex.schema.raw(';').catch(err =>{
         console.log("ERRORE NEL DDL dropping previous tables");
         console.log(err);
     }).then(() =>{

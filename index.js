@@ -45,6 +45,7 @@ function defineSQLenv(callback) {
         knex = sqlDbFactory({
             client: 'pg',
             connection: {
+
                 host: "ec2-54-217-208-52.eu-west-1.compute.amazonaws.com",
                 port: 5432,
                 user: "rgkjhqjtzhvwnl",
