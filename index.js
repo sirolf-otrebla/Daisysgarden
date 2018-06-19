@@ -12,8 +12,9 @@ let sqlDbFactory = require("knex");
 let dbManagement = require("./dbManagement");
 let queries = queryContainer.queries;
 let descriptor = fs.openSync(log_name, "w");
-const TEST = true;
-const SETUP = true;
+const TEST = false;
+const SETUP = false;
+
 
 const transporter = nodemailer.createTransport({ // Setup Account
     host: 'smtp.gmail.com',
@@ -45,6 +46,7 @@ function defineSQLenv(callback) {
         knex = sqlDbFactory({
             client: 'pg',
             connection: {
+
                 host: "ec2-54-217-208-52.eu-west-1.compute.amazonaws.com",
                 port: 5432,
                 user: "rgkjhqjtzhvwnl",
