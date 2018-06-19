@@ -12,7 +12,7 @@ let sqlDbFactory = require("knex");
 let dbManagement = require("./dbManagement");
 let queries = queryContainer.queries;
 let descriptor = fs.openSync(log_name, "w");
-const TEST = false;
+const TEST = true;
 const SETUP = true;
 
 const transporter = nodemailer.createTransport({ // Setup Account
