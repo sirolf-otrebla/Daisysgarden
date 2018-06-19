@@ -43,7 +43,10 @@
             toOutput += '<img src="../../assets/images/people/' + item.image + '" class=" img-fluid rounded-circle mx-auto d-block gap-bottom " />';
             toOutput += '</div>';
             toOutput += '<div class=" col-12 col-sm-12 col-md-12 col-lg-7 col-xl-7 contacts-single-person gap-bottom">';
-            toOutput += '<span>' + item.mansione + '</span><br>';
+            if (item.id_sede === null) toOutput += '<span>' + item.mansione + '</span><br>';
+            else {
+                toOutput = '<span> <a href="https://polimi-hyp-2018-team-10508999.herokuapp.com/api/locations/'+ item.id_sede + '?page=intro">' + item.mansione + '</a></span>';
+            }
             toOutput += '<span>Email: <a href="mailto:' + item.mail + '">' + item.mail + '</a></span><br>';
             toOutput += '<span>N. Telefono: <a href="tel:' + item.tel + '">' + item.tel + '</a></span>';
             toOutput += '</div></div>';
