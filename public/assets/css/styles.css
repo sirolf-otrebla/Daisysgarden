@@ -94,18 +94,14 @@ body{
     }
 
     .person-title{
-        font-size: 130%!important;%;
+        font-size: 120%!important;%;
     }
 
     .person-subText{
-        font-size: 130%!important;
+        font-size: 120%!important;
     }
 }
 @media only screen and (max-device-width: 450px) {
-    body {
-        font-size: 21pt!important;
-        background-color: #C0CFE8;
-    }
 
     .container.list-title.long.right{
         font-size: 210%;
@@ -117,14 +113,6 @@ body{
 
     .page-footer-links{
         font-size: 150%!important;
-    }
-
-    .person-title{
-        font-size: 130%!important;%;
-    }
-
-    .person-subText{
-        font-size: 130%!important;
     }
 
 }
