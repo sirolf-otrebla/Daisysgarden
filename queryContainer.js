@@ -12,8 +12,18 @@ exports.queries = {
         },
         by_id : (knex, id, res) => {
             knex
-                .select("id", "nome as name", "cognome as surname", "mansione", "descrizione as description", "immagine as image","email as mail", "telefono as tel")
+                .select("id",
+                        "nome as name",
+                        "cognome as surname",
+                        "mansione",
+                        "descrizione as description",
+                        "immagine as image",
+                        "email as mail",
+                        "telefono as tel",
+                        "id_sede"
+                )
                 .from("personale")
+                .leftOuterJoin('responsabile', 'id', 'id_manager')
                 .where({
                     "id" : id
                 })

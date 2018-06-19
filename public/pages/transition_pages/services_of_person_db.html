@@ -31,7 +31,7 @@
 
         function format(item) {
             $('#title').html('<div class="container home-section-title"> I SERVIZI DI: ' + item.nome_personale + ' </div>');
-            $('#breadcrumb').html('<ol class="breadcrumb oi" style="border-bottom-width: 1vh "><li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../people_db.html" >Collaboratori</a></li><li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../single_person/single_person_db.html?' + item.id_personale + '">' + item.nome_personale + '</a></li><li class="breadcrumb-item oi-item active">Servizi di ' + item.nome_personale + '</li></ol>');
+            $('#breadcrumb').html('<ol class="breadcrumb oi" style="border-bottom-width: 1vh "><li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../people_db.html" >Collaboratori</a></li><li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../single_person/single_person_db.html?' + item.id_personale + '">' + item.nome_personale + item.cognome_personale + '</a></li><li class="breadcrumb-item oi-item active">Servizi di ' + item.nome_personale + '</li></ol>');
 
             toOutput += '<div class="container-fluid list-container top">';
 

@@ -60,17 +60,7 @@
             toOutput += '<div class="container contact-type">recapito telefonico:</div>';
             toOutput += '<div class="container"><a href="tel:' + item.telefono + '">' + item.telefono + '</a></div>';
             toOutput += '</div></div></div>';
-            /*  toOutput += '<div class="d-flex flex-column" >'; //1
-            toOutput += '<div class="d-flex flex-column" style="margin-bottom: 2vh; margin-top: 2vh">';
-            toOutput += '<div class="container contact-type">' + item.nome_sede + ':</div>';
-            toOutput += '<div class="container">' + item.indirizzo + '<br><a>Responsabile: ' + item.responsabile + '</a> <br><a href="mailto:' + item.first_email + '">' + item.first_email + '</a> <br><a href="mailto:' + item.second_email + '">' + item.second_email + '</a> <br><a href="' + item.telefono + '">' + item.telefono + '</a></div>';
 
-            if (iterator % 1 == 0) {
-                toOutput += '</div><div class="d-flex flex-column" style="margin-bottom: 2vh; margin-top: 2vh">';
-            }
-
-            iterator++;
-            */
         }
         function format_locations(item) {
             if (isFirstTime){
@@ -79,7 +69,6 @@
                 toOutput += '<div class="container home-section-content">';//2
                 toOutput += '<div class="d-flex flex-column" >';
             }
-            //toOutput += '<div class="d-flex flex-column" >'; //1
             toOutput += '<div class="d-flex flex-column" style="margin-bottom: 2vh; margin-top: 2vh">';
             toOutput += '<div class="container contact-type">' + item.nome_sede + ':</div>';
             toOutput += '<div class="container">' + item.indirizzo + '<br><a>Responsabile: ' + item.responsabile_nome + ' ' + item.responsabile_cognome + '</a> <br><a href="mailto:' + item.first_email + '">' + item.first_email + '</a> <br><a href="mailto:' + item.second_email + '">' + item.second_email + '</a> <br><a href="' + item.telefono + '">' + item.telefono + '</a></div>';
