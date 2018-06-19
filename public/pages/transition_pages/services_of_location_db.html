@@ -31,7 +31,7 @@
 
         function format(item) {
             $('#title').html('<div class="container home-section-title"> I NOSTRI SERVIZI A: ' + item.nome_sede + ' </div>');
-            $('#breadcrumb').html('<ol class="breadcrumb oi" style="border-bottom-width: 1vh "><li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../../index.html" >Home</a></li><li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../all_locations_db.html" >Sedi</a></li><li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../single_locations_base/single_location_intro_db.html?' + item.id_sede + '">' + item.nome_sede + '</a></li><li class="breadcrumb-item oi-item active">Servizi di ' + item.nome_sede + '</li></ol>');
+            $('#breadcrumb').html('<ol class="breadcrumb oi" style="border-bottom-width: 1vh "><li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../all_locations_db.html" >Sedi</a></li><li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../single_locations_base/single_location_intro_db.html?' + item.id_sede + '">' + item.nome_sede + '</a></li><li class="breadcrumb-item oi-item active">Servizi di ' + item.nome_sede + '</li></ol>');
 
             toOutput += '<div class="container-fluid list-container top">';
 

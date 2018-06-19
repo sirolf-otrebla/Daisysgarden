@@ -35,12 +35,13 @@
         }
 
         function format(item) {
-            $('#breadcrumb').html('<ol class="breadcrumb oi" ><li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../../index.html" >Home</a></li><li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../all_services_db.html">Servizi</a></li><li class="breadcrumb-item oi-item"><a class="oi-item-link" href="service_intro_db.html?' + item.id + '">' + item.name + '</a></li><li class="breadcrumb-item oi-item active">Calendario</li></ol>');
+            $('#breadcrumb').html('<ol class="breadcrumb oi" ><li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../all_services_db.html">Servizi</a></li><li class="breadcrumb-item oi-item"><a class="oi-item-link" href="service_intro_db.html?' + item.id + '">' + item.name + '</a></li><li class="breadcrumb-item oi-item active">Calendario</li></ol>');
             $('#serviceTitle').html('<div class="container content-title">' + item.name + '</div>')
             $('#serviceImage').html('<div class="container content-title-image color"><div class="container content-title-image image" style="background-image: url(../../assets/images/' + item.image + ')"></div></div>')
             $('#buttons').html('<a class="btn btn-outline-primary btn-large link-button" href="../transition_pages/locations_of_service_db.html?' + item.id +'">Le Nostre Sedi</a><a class="btn btn-outline-primary btn-large link-button" href="../transition_pages/people_of_service_db.html?' + item.id + '">I nostri collaboratori</a>')
             $('#subnav').html('<li class="nav-item"><a class="nav-link my-nav-pills" href="service_intro_db.html?' + item.id + '">Introduzione</a></li><li class="nav-item"><a class="nav-link my-nav-pills active" href="service_calendar_db.html?' + item.id + '">Calendario</a></li><li class="nav-item"><a class="nav-link my-nav-pills" href="service_when_useful_db.html?' + item.id + '">Quando è utile</a></li><li class="nav-item"><a class="nav-link my-nav-pills" href="service_how_to_access_db.html?' + item.id + '">Come accedere</a></li>')
 
+            document.title = item.name;
 
             //DURANTE SETTIMANA
             toOutput += '<div class="d-flex flex-column" style="margin-bottom: 2vh; margin-top: 2vh">';

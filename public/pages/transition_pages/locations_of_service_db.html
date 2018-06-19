@@ -28,7 +28,7 @@
 
         function format(item) {
             $('#title').html('<div class="container home-section-title"> le nostre sedi per: ' + item.nome_servizio + ' </div>');
-            $('#breadcrumb').html('<ol class="breadcrumb oi" style="border-bottom-width: 1vh "><li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../../index.html" >Home</a></li><li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../all_services_db.html" >Servizio</a></li><li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../single_services_base/service_intro_db.html?' + item.id_servizio + '">' + item.nome_servizio + '</a></li><li class="breadcrumb-item oi-item active">Sedi per ' + item.nome_servizio + '</li></ol>');
+            $('#breadcrumb').html('<ol class="breadcrumb oi" style="border-bottom-width: 1vh "><li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../all_services_db.html" >Servizio</a></li><li class="breadcrumb-item oi-item"><a class="oi-item-link" href="../single_services_base/service_intro_db.html?' + item.id_servizio + '">' + item.nome_servizio + '</a></li><li class="breadcrumb-item oi-item active">Sedi per ' + item.nome_servizio + '</li></ol>');
 
             toOutput += '<div class="container-fluid list-container top">';
 
