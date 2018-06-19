@@ -4,6 +4,29 @@ body{
         font-size: 10pt!important;
         background-color: #C0CFE8;
 }
+
+@media only screen and (max-width: 1178px){
+    .container-fluid.site-title{
+        position: absolute;
+        font-family: 'Montserrat Alternates', sans-serif;
+        font-size: 600%;
+        padding: 0;
+        text-align: center;
+        top: 25vh;
+        width: 100vw;
+        color: #ffffff;
+        z-index: 20;
+
+    }
+}
+.container-fluid.list-container.bottom{
+    margin-bottom: 2vh;
+    margin-top: 3vh;
+    border-bottom: 0;
+    z-index: 0;
+}
+
+
 @media only screen and (max-device-width: 1025px) {
     body {
         font-size: 12pt!important;
@@ -94,11 +117,11 @@ body{
     }
 
     .person-title{
-        font-size: 120%!important;%;
+        font-size: 110%!important;%;
     }
 
     .person-subText{
-        font-size: 120%!important;
+        font-size: 110%!important;
     }
 }
 @media only screen and (max-device-width: 450px) {
@@ -246,27 +269,6 @@ img{
     color: #ffffff;
     z-index: 20;
 
-}
-
-@media only screen and (max-width: 1178px){
-    .container-fluid.site-title{
-        position: absolute;
-        font-family: 'Montserrat Alternates', sans-serif;
-        font-size: 600%;
-        padding: 0;
-        text-align: center;
-        top: 25vh;
-        width: 100vw;
-        color: #ffffff;
-        z-index: 20;
-
-    }
-}
-    .container-fluid.list-container.bottom{
-    margin-bottom: 2vh;
-    margin-top: 3vh;
-    border-bottom: 0;
-    z-index: 0;
 }
 
 .container-fluid.list-container:hover .container-fluid.list-background.image{
