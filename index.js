@@ -32,7 +32,6 @@ function defineSQLenv(callback) {
 
       */
     if (TEST) {
-        logToFile("setupping SQLite")
         knex = sqlDbFactory({
             client: "sqlite3",
             debug: true,
@@ -43,7 +42,6 @@ function defineSQLenv(callback) {
         });
         console.log("sqlite");
     } else {
-        logToFile("setupping PostgreSQL;");
         knex = sqlDbFactory({
             client: 'pg',
             connection: {
@@ -61,16 +59,8 @@ function defineSQLenv(callback) {
     callback();
 }
 
-exports.logToFile = (str) => {
-    fs.write(descriptor, str + "\n", () => {
-        fs.close(descriptor, () => {
-            descriptor = fs.open(log_name, "w", () => {});
-        });
-    });
-}
 defineSQLenv(() => {
     if (SETUP)
-        logToFile("setupping Database;");
         dbManagement.buildSchema(knex, dbManagement.populateDb);
 });
 let serverPort = process.env.PORT || 5000;
