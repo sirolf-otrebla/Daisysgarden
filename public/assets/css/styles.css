@@ -305,6 +305,7 @@ img{
     z-index: 1;
     opacity: 0.45;
     transition: opacity linear .2s;
+    background-position: center;
 
 }
 
