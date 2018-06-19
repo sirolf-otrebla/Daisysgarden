@@ -15,6 +15,7 @@ let descriptor = fs.openSync(log_name, "w");
 const TEST = false;
 const SETUP = false;
 
+
 const transporter = nodemailer.createTransport({ // Setup Account
     host: 'smtp.gmail.com',
     port: 465,

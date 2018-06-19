@@ -301,10 +301,33 @@ the GET request you have to send is the following:
 
 the response you will receive it's similar to this:
 
+```
+[{
+    "id":1,
+    "name":"Centro Socio Educativo",
+    "image":"service01.jpg",
+    "nome_sede":"Augusta",
+    "id_sede":1
+ },
+ {
+    "id":3,
+    "name":"Noi con Te",
+    "image":"service03.jpg",
+    "nome_sede":"Augusta",
+    "id_sede":1
+ },
+ {
+    "id":5,
+    "name":"Biblioteca Speciale",
+    "image":"service05.jpg",
+    "nome_sede":"Augusta",
+    "id_sede":1
+ }]
+```
 
 as you can see, each element of the array possesses `id`, `name`, and `image`
-fields of services related to <nome_sede>. `image` field contains the filename of the 
-image of the service, which will be searched inside`/public/assets/images` folder.
+fields of services related to `<nome_sede>`. `image` field contains the filename of the 
+image of the services, which will be searched inside`/public/assets/images` folder.
 
 you must replace `<location_id>` with the correct ID of the location you want 
 to know about its services.
@@ -317,7 +340,29 @@ the GET request you have to send is the following:
 
 the response you will receive it's similar to this:
 
+```
+[{
+    "id":1,
+    "name":"Augusta",
+    "image":"location1.jpg",
+    "nome_servizio":"Centro Socio Educativo",
+    "id_servizio":1
+ },
+ ...,
+     {"id":5,
+     "name":"Tagliacozzo",
+     "image":"location5.jpg",
+     "nome_servizio":"Centro Socio Educativo",
+     "id_servizio":1
+ }]
+```
 
+as you can see, each element of the array possesses `id`, `name`, and `image`
+fields of locations related to `<nome_servizio>`. `image` field contains the filename of the 
+image of the locations, which will be searched inside`/public/assets/images` folder.
+
+you must replace `<service_id>` with the correct ID of the location you want 
+to know about its services.
 
 #### how to fetch which people are related to a single service
 the GET request you have to send is the following:
@@ -326,7 +371,35 @@ the GET request you have to send is the following:
 
 the response you will receive it's similar to this:
 
+```
+[{
+    "id_servizio":1,
+    "nome_servizio":"Centro Socio Educativo",
+    "id":1,
+    "name":"Bruno",
+    "surname":"Biondo",
+    "image":"bruno_biondo.jpg",
+    "mansione":"Responsabile 'Dalmine'"
+  },
+  ...,
+  {
+    "id_servizio":1,
+    "nome_servizio":"Centro Socio Educativo",
+    "id":12,
+    "name":"Marina",
+    "surname":"Stella",
+    "image":"marina_stella.jpg",
+    "mansione":"Responsabile 'Tagliacozzo'"
+  }]
+```
 
+as you can see, each element of the array possesses 
+`id`, `name`, `surname`, `image` and `mansione`
+fields of people related to `<nome_servizio>`. `image` field contains the filename of the 
+image of the people, which will be searched inside`/public/assets/images` folder.
+
+you must replace `<service_id>` with the correct ID of the location you want 
+to know about its services.
 
 #### how to fetch a list of services related to a single person
 the GET request you have to send is the following:
@@ -335,6 +408,72 @@ the GET request you have to send is the following:
 
 the response you will receive it's similar to this:
 
+```
+[{
+    "id":1,
+    "name":"Centro Socio Educativo",
+    "image":"service01.jpg",
+    "nome_personale":"Bruno",
+    "cognome_personale":"Biondo",
+    "id_personale":1
+ },
+ ...,
+    {"id":3,
+    "name":"Noi con Te",
+    "image":"service03.jpg",
+    "nome_personale":"Bruno",
+    "cognome_personale":"Biondo",
+    "id_personale":1
+ }]
+```
+
+as you can see, each element of the array possesses `id`, `name`, and `image`
+fields of services related to `<nome_personale> + <cognome_personale>`. `image` field contains the filename of the 
+image of the services, which will be searched inside`/public/assets/images` folder.
+
+you must replace `<people_id>` with the correct ID of the location you want 
+to know about its services.
 
 
 #### how to fetch footer infos
+the GET request you have to send is the following:
+
+`http://polimi-hyp-2018-team-10508999.herokuapp.com/api/footer`
+
+which only get the names of available services and available locations 
+so as to dynamically insert them into the footer
+
+
+the response you will receive it's this:
+
+```
+{"loc":
+    [{
+        "id":1,
+        "name":"Augusta"
+     },
+     {
+         "id":2,
+         "name":"Chiari"
+     },
+     ...,
+     {
+         "id":5,
+         "name":"Tagliacozzo"
+     }],
+"serv":
+    [{
+        "id":1,
+        "name":"Centro Socio Educativo"
+    },
+    {
+        "id":2,
+        "name":"Comunicazione per l’autismo"
+    },
+    ...,
+    {
+        "id":5,
+        "name":"Biblioteca Speciale"
+    }]
+}
+```
