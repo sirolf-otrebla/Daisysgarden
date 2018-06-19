@@ -54,7 +54,7 @@
             iterator++;
         }
 
-        fetch('http://localhost:5000/api/locations/namelist')
+        fetch('/api/locations/namelist')
             .then(function (response) {
                 return response.json();
             })
