@@ -37,7 +37,7 @@
 
             toOutput += '<a href="../single_person/single_person_db.html?' +item.id + '" class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3" style="padding-bottom: 5vh">';
             toOutput += '<img class="image-grid" src="../../assets/images/people/' + item.image + '">';
-            toOutput += '<div class="bottom-left"><span class="title">' + item.name + ' ' + item.surname + '</span><br><span class="subText">' + item.mansione + '</span></div>';
+            toOutput += '<div class="bottom-left"><span class="person-title">' + item.name + ' ' + item.surname + '</span><br><span class="person-subText">' + item.mansione + '</span></div>';
             toOutput += '</a>';
             if (iterator % 4 == 0) {
                 toOutput += '</div><div class="row form-group">';

@@ -92,6 +92,14 @@ body{
         font-size: 260%;
         color: #ffffff;
     }
+
+    .person-title{
+        font-size: 130%!important;%;
+    }
+
+    .person-subText{
+        font-size: 130%!important;
+    }
 }
 @media only screen and (max-device-width: 450px) {
     body {
@@ -109,6 +117,14 @@ body{
 
     .page-footer-links{
         font-size: 150%!important;
+    }
+
+    .person-title{
+        font-size: 130%!important;%;
+    }
+
+    .person-subText{
+        font-size: 130%!important;
     }
 
 }
@@ -440,7 +456,7 @@ img{
     }
 }
 
-.title{
+.person-title{
     color: white;
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.54);
     font-family: 'Montserrat', Arial, sans-serif;
@@ -458,7 +474,7 @@ img{
     }
 }*/
 
-.subText{
+.person-subText{
     color: white;
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.54);
     font-family: 'Montserrat', Arial, sans-serif;
